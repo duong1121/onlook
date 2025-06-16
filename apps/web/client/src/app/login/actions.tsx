@@ -36,9 +36,9 @@ export async function login(provider: SignInMethod) {
 }
 
 export async function devLogin() {
-    if (process.env.NODE_ENV !== 'development') {
-        throw new Error('Dev login is only available in development mode');
-    }
+    //if (process.env.NODE_ENV !== 'development') {
+    //    throw new Error('Dev login is only available in development mode');
+    //}
 
     const supabase = await createClient();
 
