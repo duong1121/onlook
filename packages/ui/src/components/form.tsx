@@ -32,8 +32,8 @@ const FormField = <
     ...props
 }: ControllerProps<TFieldValues, TName>) => {
     return (
-        <FormFieldContext.Provider value={{ name: props.name }}>
-            <Controller {...props} />
+        <FormFieldContext.Provider value={{ name: props.name }} data-oid="2lw_kg8">
+            <Controller {...props} data-oid="8:6s--z" />
         </FormFieldContext.Provider>
     );
 };
@@ -71,8 +71,13 @@ function FormItem({ className, ...props }: React.ComponentProps<'div'>) {
     const id = React.useId();
 
     return (
-        <FormItemContext.Provider value={{ id }}>
-            <div data-slot="form-item" className={cn('grid gap-2', className)} {...props} />
+        <FormItemContext.Provider value={{ id }} data-oid="a2ln9by">
+            <div
+                data-slot="form-item"
+                className={cn('grid gap-2', className)}
+                {...props}
+                data-oid="rqgj9o-"
+            />
         </FormItemContext.Provider>
     );
 }
@@ -87,6 +92,7 @@ function FormLabel({ className, ...props }: React.ComponentProps<typeof LabelPri
             className={cn('data-[error=true]:text-destructive', className)}
             htmlFor={formItemId}
             {...props}
+            data-oid="wn8mia2"
         />
     );
 }
@@ -103,6 +109,7 @@ function FormControl({ ...props }: React.ComponentProps<typeof Slot>) {
             }
             aria-invalid={!!error}
             {...props}
+            data-oid="ayx1xp-"
         />
     );
 }
@@ -116,6 +123,7 @@ function FormDescription({ className, ...props }: React.ComponentProps<'p'>) {
             id={formDescriptionId}
             className={cn('text-muted-foreground text-sm', className)}
             {...props}
+            data-oid="sjapr:i"
         />
     );
 }
@@ -134,6 +142,7 @@ function FormMessage({ className, ...props }: React.ComponentProps<'p'>) {
             id={formMessageId}
             className={cn('text-destructive text-sm', className)}
             {...props}
+            data-oid="dh0cfme"
         >
             {body}
         </p>

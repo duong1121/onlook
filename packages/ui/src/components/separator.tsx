@@ -21,6 +21,7 @@ function Separator({
                 className,
             )}
             {...props}
+            data-oid="_9h58sq"
         />
     );
 }

@@ -7,13 +7,13 @@ import { Color } from '@onlook/utility';
 interface SVPickerGradientProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 const SVPickerGradient: React.FC<SVPickerGradientProps> = ({ ...props }) => (
-    <div className="absolute inset-0 z-[-1]" {...props}></div>
+    <div className="absolute inset-0 z-[-1]" {...props} data-oid="tmq4737"></div>
 );
 
 interface SVPickerWrapProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 const SVPickerWrap: React.FC<SVPickerWrapProps> = ({ children, ...props }) => (
-    <div className="relative z-0" {...props}>
+    <div className="relative z-0" {...props} data-oid="m6c4v3v">
         {children}
     </div>
 );
@@ -24,6 +24,7 @@ const SVPickerBody: React.FC<SVPickerBodyProps> = ({ children, ...props }) => (
     <div
         className="relative shadow-inner border border-gray-300 rounded-sm overflow-hidden cursor-pointer"
         {...props}
+        data-oid="43uu08:"
     >
         {children}
     </div>
@@ -63,18 +64,21 @@ export const SVPicker: React.FC<{
     });
 
     return (
-        <SVPickerWrap>
+        <SVPickerWrap data-oid=".yxv_gn">
             <SVPickerBody
                 style={{
                     width: `${width}px`,
                     height: `${height}px`,
                 }}
                 {...pointerProps}
+                data-oid="r2ov8qs"
             >
-                <SVPickerGradient style={{ background: valueGradient }} />
+                <SVPickerGradient style={{ background: valueGradient }} data-oid="at3wrx8" />
                 <SVPickerGradient
                     style={{ background: saturationGradient, mixBlendMode: 'multiply' }}
+                    data-oid="eull3_9"
                 />
+
                 <ColorHandle
                     style={{
                         position: 'absolute',
@@ -84,6 +88,7 @@ export const SVPicker: React.FC<{
                         height: `${handleSize}px`,
                         color: color.toHex(),
                     }}
+                    data-oid="ygpe309"
                 />
             </SVPickerBody>
         </SVPickerWrap>

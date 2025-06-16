@@ -116,23 +116,32 @@ export const ZoomControls = observer(() => {
     };
 
     return (
-        <Popover open={isDropdownOpen} onOpenChange={setIsDropdownOpen}>
-            <Tooltip>
-                <TooltipTrigger asChild>
+        <Popover open={isDropdownOpen} onOpenChange={setIsDropdownOpen} data-oid="3rkdotd">
+            <Tooltip data-oid="ux1g67e">
+                <TooltipTrigger asChild data-oid="3ozwptt">
                     <PopoverTrigger
                         className="w-full h-full flex items-center justify-center"
                         asChild
+                        data-oid="gxau_u7"
                     >
-                        <button className="w-16 h-10 rounded-xl text-small flex flex-col items-center justify-center gap-1.5 text-foreground hover:text-muted-foreground">
-                            <span>{Math.round(scale * 100)}%</span>
+                        <button
+                            className="w-16 h-10 rounded-xl text-small flex flex-col items-center justify-center gap-1.5 text-foreground hover:text-muted-foreground"
+                            data-oid=".b_0ws_"
+                        >
+                            <span data-oid="58hjds7">{Math.round(scale * 100)}%</span>
                         </button>
                     </PopoverTrigger>
                 </TooltipTrigger>
-                <TooltipPortal>
-                    <TooltipContent side="right">{t(transKeys.editor.zoom.level)}</TooltipContent>
+                <TooltipPortal data-oid="uy0xwwt">
+                    <TooltipContent side="right" data-oid="mqa5t0.">
+                        {t(transKeys.editor.zoom.level)}
+                    </TooltipContent>
                 </TooltipPortal>
             </Tooltip>
-            <PopoverContent className="flex flex-col p-1.5 bg-background/85 backdrop-blur-md w-42 min-w-42 ml-5">
+            <PopoverContent
+                className="flex flex-col p-1.5 bg-background/85 backdrop-blur-md w-42 min-w-42 ml-5"
+                data-oid="v84dtxx"
+            >
                 <Input
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}
@@ -143,45 +152,59 @@ export const ZoomControls = observer(() => {
                     }}
                     className={`p-1 h-6 text-left text-smallPlus rounded border mb-1 focus-visible:border-red-500`}
                     autoFocus
+                    data-oid="8ql9r4w"
                 />
+
                 <button
                     onClick={() => handleZoom(1)}
                     className="w-full text-left px-2 py-1.5 rounded hover:bg-accent"
+                    data-oid="e0ln9.c"
                 >
                     <HotkeyLabel
                         className="w-full justify-between text-mini"
                         hotkey={Hotkey.ZOOM_IN}
+                        data-oid="wl_o7dg"
                     />
                 </button>
                 <button
                     onClick={() => handleZoom(-1)}
                     className="w-full text-left px-2 py-1.5 rounded hover:bg-accent"
+                    data-oid="gns8nqv"
                 >
                     <HotkeyLabel
                         className="w-full justify-between text-mini"
                         hotkey={Hotkey.ZOOM_OUT}
+                        data-oid="5bksioo"
                     />
                 </button>
                 <button
                     onClick={handleZoomToFit}
                     className="w-full text-left px-2 py-1.5 rounded hover:bg-accent"
+                    data-oid="0dt8x5r"
                 >
                     <HotkeyLabel
                         className="w-full justify-between text-mini"
                         hotkey={Hotkey.ZOOM_FIT}
+                        data-oid="qsze1t8"
                     />
                 </button>
                 <button
                     onClick={() => (editorEngine.canvas.scale = 1)}
                     className="w-full text-left px-2 py-1.5 rounded hover:bg-accent"
+                    data-oid="e3xc3ae"
                 >
-                    <span className="flex-grow text-mini">{t(transKeys.editor.zoom.reset)}</span>
+                    <span className="flex-grow text-mini" data-oid="aeaz-l7">
+                        {t(transKeys.editor.zoom.reset)}
+                    </span>
                 </button>
                 <button
                     onClick={() => (editorEngine.canvas.scale = 2)}
                     className="w-full text-left px-2 py-1.5 rounded hover:bg-accent"
+                    data-oid="jyowyy3"
                 >
-                    <span className="flex-grow text-mini">{t(transKeys.editor.zoom.double)}</span>
+                    <span className="flex-grow text-mini" data-oid="-f2e9bx">
+                        {t(transKeys.editor.zoom.double)}
+                    </span>
                 </button>
             </PopoverContent>
         </Popover>

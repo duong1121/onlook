@@ -11,5 +11,5 @@ export const HoverRect: React.FC<HoverRectProps> = ({ rect, isComponent }) => {
     if (!rect) {
         return null;
     }
-    return <BaseRect {...rect} isComponent={isComponent} strokeWidth={1} />;
+    return <BaseRect {...rect} isComponent={isComponent} strokeWidth={1} data-oid="cw78d0j" />;
 };

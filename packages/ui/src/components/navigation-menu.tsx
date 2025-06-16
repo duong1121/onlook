@@ -10,9 +10,7 @@ function NavigationMenu({
     children,
     viewport = true,
     ...props
-}: React.ComponentProps<typeof NavigationMenuPrimitive.Root> & {
-    viewport?: boolean;
-}) {
+}: React.ComponentProps<typeof NavigationMenuPrimitive.Root> & { viewport?: boolean }) {
     return (
         <NavigationMenuPrimitive.Root
             data-slot="navigation-menu"
@@ -22,9 +20,10 @@ function NavigationMenu({
                 className,
             )}
             {...props}
+            data-oid="7cpm3a1"
         >
             {children}
-            {viewport && <NavigationMenuViewport />}
+            {viewport && <NavigationMenuViewport data-oid="-0nikzz" />}
         </NavigationMenuPrimitive.Root>
     );
 }
@@ -41,6 +40,7 @@ function NavigationMenuList({
                 className,
             )}
             {...props}
+            data-oid="8ltgp9x"
         />
     );
 }
@@ -54,6 +54,7 @@ function NavigationMenuItem({
             data-slot="navigation-menu-item"
             className={cn('relative', className)}
             {...props}
+            data-oid="pn96fn1"
         />
     );
 }
@@ -72,11 +73,13 @@ function NavigationMenuTrigger({
             data-slot="navigation-menu-trigger"
             className={cn(navigationMenuTriggerStyle(), 'group', className)}
             {...props}
+            data-oid="8rd5.3d"
         >
             {children}{' '}
             <ChevronDownIcon
                 className="relative top-[1px] ml-1 size-3 transition duration-300 group-data-[state=open]:rotate-180"
                 aria-hidden="true"
+                data-oid="i.33_qh"
             />
         </NavigationMenuPrimitive.Trigger>
     );
@@ -95,6 +98,7 @@ function NavigationMenuContent({
                 className,
             )}
             {...props}
+            data-oid="mtjjtnb"
         />
     );
 }
@@ -104,7 +108,10 @@ function NavigationMenuViewport({
     ...props
 }: React.ComponentProps<typeof NavigationMenuPrimitive.Viewport>) {
     return (
-        <div className={cn('absolute top-full left-0 isolate z-50 flex justify-center')}>
+        <div
+            className={cn('absolute top-full left-0 isolate z-50 flex justify-center')}
+            data-oid=":asu_36"
+        >
             <NavigationMenuPrimitive.Viewport
                 data-slot="navigation-menu-viewport"
                 className={cn(
@@ -112,6 +119,7 @@ function NavigationMenuViewport({
                     className,
                 )}
                 {...props}
+                data-oid="v_l5tp4"
             />
         </div>
     );
@@ -129,6 +137,7 @@ function NavigationMenuLink({
                 className,
             )}
             {...props}
+            data-oid="kr9e-hn"
         />
     );
 }
@@ -145,8 +154,12 @@ function NavigationMenuIndicator({
                 className,
             )}
             {...props}
+            data-oid="nc72krs"
         >
-            <div className="bg-border relative top-[60%] h-2 w-2 rotate-45 rounded-tl-sm shadow-md" />
+            <div
+                className="bg-border relative top-[60%] h-2 w-2 rotate-45 rounded-tl-sm shadow-md"
+                data-oid="6wi63uo"
+            />
         </NavigationMenuPrimitive.Indicator>
     );
 }

@@ -87,6 +87,7 @@ export const ResizeHandles = observer(({ frame }: { frame: FrameImpl }) => {
                 'absolute inset-0 opacity-40 transition min-w-0 visible hover:opacity-60',
                 lockedPreset && 'hover:opacity-40',
             )}
+            data-oid="bslrgcx"
         >
             <div
                 className={cn(
@@ -94,8 +95,9 @@ export const ResizeHandles = observer(({ frame }: { frame: FrameImpl }) => {
                     lockedPreset ? 'cursor-not-allowed' : 'cursor-s-resize',
                 )}
                 onMouseDown={(e) => startResize(e, [HandleType.Bottom])}
+                data-oid="fj85k:i"
             >
-                <div className="rounded bg-foreground-primary/80 w-48 h-1"></div>
+                <div className="rounded bg-foreground-primary/80 w-48 h-1" data-oid="7f7.k.y"></div>
             </div>
             <div
                 className={cn(
@@ -103,8 +105,9 @@ export const ResizeHandles = observer(({ frame }: { frame: FrameImpl }) => {
                     lockedPreset ? 'cursor-not-allowed' : 'cursor-e-resize',
                 )}
                 onMouseDown={(e) => startResize(e, [HandleType.Right])}
+                data-oid="5ud96kl"
             >
-                <div className="rounded bg-foreground-primary/80 w-1 h-48"></div>
+                <div className="rounded bg-foreground-primary/80 w-1 h-48" data-oid="4r2irhv"></div>
             </div>
             <div
                 className={cn(
@@ -112,8 +115,9 @@ export const ResizeHandles = observer(({ frame }: { frame: FrameImpl }) => {
                     lockedPreset ? 'cursor-not-allowed' : 'cursor-se-resize',
                 )}
                 onMouseDown={(e) => startResize(e, [HandleType.Right, HandleType.Bottom])}
+                data-oid="q6-903-"
             >
-                <div className="rounded bg-foreground-primary/80 w-2 h-2"></div>
+                <div className="rounded bg-foreground-primary/80 w-2 h-2" data-oid="t8kkb3a"></div>
             </div>
         </div>
     );

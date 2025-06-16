@@ -19,15 +19,18 @@ const ChatMessageList = React.forwardRef<HTMLDivElement, ChatMessageListProps>(
             });
 
         return (
-            <div className="relative h-full">
+            <div className="relative h-full" data-oid="_7-20hj">
                 <div
                     className={cn('flex flex-col w-full h-full overflow-y-auto', className)}
                     ref={scrollRef}
                     onWheel={disableAutoScroll}
                     onTouchMove={disableAutoScroll}
                     {...props}
+                    data-oid="b2e6kqn"
                 >
-                    <div className="flex flex-col gap-2">{children}</div>
+                    <div className="flex flex-col gap-2" data-oid="m9-94w5">
+                        {children}
+                    </div>
                 </div>
 
                 {!isAtBottom && (
@@ -39,8 +42,9 @@ const ChatMessageList = React.forwardRef<HTMLDivElement, ChatMessageListProps>(
                         variant="outline"
                         className="absolute dark:bg-background bottom-2 left-1/2 transform -translate-x-1/2 inline-flex rounded-full"
                         aria-label="Scroll to bottom"
+                        data-oid="gdgci:y"
                     >
-                        <Icons.ArrowDown className="h-4 w-4" />
+                        <Icons.ArrowDown className="h-4 w-4" data-oid="fpfv.wn" />
                     </Button>
                 )}
             </div>

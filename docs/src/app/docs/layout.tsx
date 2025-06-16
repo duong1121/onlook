@@ -7,16 +7,13 @@ const docsOptions = {
     ...baseOptions,
     nav: {
         ...baseOptions.nav,
-        component: null
-    }
+        component: null,
+    },
 };
 
 export default function Layout({ children }: { children: ReactNode }) {
     return (
-        <DocsLayout
-            tree={source.pageTree}
-            {...docsOptions}
-        >
+        <DocsLayout tree={source.pageTree} {...docsOptions} data-oid="unme-zp">
             {children}
         </DocsLayout>
     );

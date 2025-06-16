@@ -108,7 +108,10 @@ export const Carousel: React.FC<CarouselProps> = ({ slides, onSlideChange }) => 
             const images: { [key: string]: string } = {};
             for (const slide of slides) {
                 if (slide.metadata.previewImg) {
-                    const img = await getFileUrlFromStorage(STORAGE_BUCKETS.PREVIEW_IMAGES, slide.metadata.previewImg.storagePath?.path ?? '');
+                    const img = await getFileUrlFromStorage(
+                        STORAGE_BUCKETS.PREVIEW_IMAGES,
+                        slide.metadata.previewImg.storagePath?.path ?? '',
+                    );
                     if (img) {
                         images[slide.id] = img;
                     } else {
@@ -231,7 +234,11 @@ export const Carousel: React.FC<CarouselProps> = ({ slides, onSlideChange }) => 
     }, []);
 
     return (
-        <div className="embla relative h-full overflow-hidden" style={{ zIndex: 0 }}>
+        <div
+            className="embla relative h-full overflow-hidden"
+            style={{ zIndex: 0 }}
+            data-oid="-gsh1kn"
+        >
             <div
                 className="embla__viewport h-full absolute inset-0 overflow-hidden pl-[7.5rem]"
                 ref={emblaRef}
@@ -239,11 +246,13 @@ export const Carousel: React.FC<CarouselProps> = ({ slides, onSlideChange }) => 
                     transition: 'transform 0.2s cubic-bezier(0.25, 1, 0.5, 1)',
                     zIndex: -1,
                 }}
+                data-oid="-8s7flm"
             >
                 <div
                     className="embla__container flex flex-col h-full items-center px-16"
                     style={{ marginTop: '0' }}
                     onWheel={handleWheel}
+                    data-oid="kdf4-rt"
                 >
                     {slides.map((slide, index) => (
                         <div
@@ -258,16 +267,21 @@ export const Carousel: React.FC<CarouselProps> = ({ slides, onSlideChange }) => 
                                 opacity: index === currentIndex ? 1 : 0.6,
                                 zIndex: index === currentIndex ? 2 : 1,
                             }}
+                            data-oid="ki5csw4"
                         >
-                            <div className="relative bg-background">
+                            <div className="relative bg-background" data-oid="ojt.dfu">
                                 {previewImages[slide.id] ? (
                                     <img
                                         src={previewImages[slide.id] ?? ''}
                                         alt={slide.name}
                                         className="rounded-lg object-cover max-w-full max-h-[80%] bg-foreground border-[0.5px]"
+                                        data-oid="jsyjxzr"
                                     />
                                 ) : (
-                                    <div className="w-[30rem] h-[40rem] rounded-lg bg-gradient-to-t from-gray-800/40 via-gray-500/40 to-gray-400/40 border-gray-500 border-[0.5px]" />
+                                    <div
+                                        className="w-[30rem] h-[40rem] rounded-lg bg-gradient-to-t from-gray-800/40 via-gray-500/40 to-gray-400/40 border-gray-500 border-[0.5px]"
+                                        data-oid="in7bnmu"
+                                    />
                                 )}
                                 <motion.div
                                     initial="rest"
@@ -275,36 +289,58 @@ export const Carousel: React.FC<CarouselProps> = ({ slides, onSlideChange }) => 
                                     animate="rest"
                                     variants={containerVariants}
                                     className="rounded-lg absolute inset-0 flex items-center justify-center z-10 bg-background/30"
+                                    data-oid="xbg4qvs"
                                 >
-                                    <EditAppButton variants={buttonVariants} project={slide} />
+                                    <EditAppButton
+                                        variants={buttonVariants}
+                                        project={slide}
+                                        data-oid="vc3cxdv"
+                                    />
                                 </motion.div>
                             </div>
                         </div>
                     ))}
                 </div>
             </div>
-            <div className="bg-secondary/20 backdrop-blur p-2 rounded-lg embla__buttons absolute left-14 top-1/2 transform -translate-y-1/2 flex flex-col gap-4 z-10 items-center">
+            <div
+                className="bg-secondary/20 backdrop-blur p-2 rounded-lg embla__buttons absolute left-14 top-1/2 transform -translate-y-1/2 flex flex-col gap-4 z-10 items-center"
+                data-oid="v_:t4cf"
+            >
                 <button
                     className="embla__button embla__button--prev"
                     onClick={scrollPrev}
                     disabled={!prevBtnEnabled}
+                    data-oid="z61rlb0"
                 >
                     <Icons.ChevronUp
                         className={`w-7 h-7 transition duration-300 ease-in-out ${prevBtnEnabled ? 'text-foreground' : 'text-muted'}`}
+                        data-oid="zhi_7w2"
                     />
                 </button>
-                <div className="flex flex-row space-x-1 text-foreground items-center justify-center min-w-[50px]">
-                    <span className="text-active">{currentIndex + 1}</span>
-                    <span className="text-sm text-gray-500"> of </span>
-                    <span className="text-active">{slides.length}</span>
+                <div
+                    className="flex flex-row space-x-1 text-foreground items-center justify-center min-w-[50px]"
+                    data-oid="dfhhk3k"
+                >
+                    <span className="text-active" data-oid="8-xbzbb">
+                        {currentIndex + 1}
+                    </span>
+                    <span className="text-sm text-gray-500" data-oid="1g41mfw">
+                        {' '}
+                        of{' '}
+                    </span>
+                    <span className="text-active" data-oid="ihr7hb1">
+                        {slides.length}
+                    </span>
                 </div>
                 <button
                     className="embla__button embla__button--next"
                     onClick={scrollNext}
                     disabled={!nextBtnEnabled}
+                    data-oid="ojosz:2"
                 >
                     <Icons.ChevronDown
                         className={`w-7 h-7 transition duration-300 ease-in-out ${nextBtnEnabled ? 'text-foreground' : 'text-muted'}`}
+                        data-oid="k_-c4.l"
                     />
                 </button>
             </div>

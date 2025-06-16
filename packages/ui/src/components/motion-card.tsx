@@ -21,6 +21,7 @@ const MotionCard = React.forwardRef<HTMLDivElement, MotionDivProps>(
                 ...style,
             }}
             {...props}
+            data-oid="m2gm4an"
         >
             {props.children}
         </motion.div>
@@ -34,6 +35,7 @@ const MotionCardHeader = React.forwardRef<HTMLDivElement, MotionDivProps>(
             ref={ref}
             className={cn('flex flex-col space-y-1.5 p-6', className)}
             {...props}
+            data-oid=".vd525x"
         />
     ),
 );
@@ -41,7 +43,12 @@ MotionCardHeader.displayName = 'MotionCardHeader';
 
 const MotionCardTitle = React.forwardRef<HTMLHeadingElement, HTMLMotionProps<'h3'>>(
     ({ className, ...props }, ref) => (
-        <motion.h3 ref={ref} className={cn('text-title3', className)} {...props} />
+        <motion.h3
+            ref={ref}
+            className={cn('text-title3', className)}
+            {...props}
+            data-oid="3s1hchh"
+        />
     ),
 );
 MotionCardTitle.displayName = 'MotionCardTitle';
@@ -52,6 +59,7 @@ const MotionCardDescription = React.forwardRef<HTMLParagraphElement, HTMLMotionP
             ref={ref}
             className={cn('text-regular text-muted-foreground', className)}
             {...props}
+            data-oid="uwi695f"
         />
     ),
 );
@@ -59,14 +67,19 @@ MotionCardDescription.displayName = 'MotionCardDescription';
 
 const MotionCardContent = React.forwardRef<HTMLDivElement, MotionDivProps>(
     ({ className, ...props }, ref) => (
-        <motion.div ref={ref} className={cn('p-6 pt-0', className)} {...props} />
+        <motion.div ref={ref} className={cn('p-6 pt-0', className)} {...props} data-oid="svjkoj0" />
     ),
 );
 MotionCardContent.displayName = 'MotionCardContent';
 
 const MotionCardFooter = React.forwardRef<HTMLDivElement, MotionDivProps>(
     ({ className, ...props }, ref) => (
-        <motion.div ref={ref} className={cn('flex items-center p-6 pt-0', className)} {...props} />
+        <motion.div
+            ref={ref}
+            className={cn('flex items-center p-6 pt-0', className)}
+            {...props}
+            data-oid="k65h6me"
+        />
     ),
 );
 MotionCardFooter.displayName = 'MotionCardFooter';

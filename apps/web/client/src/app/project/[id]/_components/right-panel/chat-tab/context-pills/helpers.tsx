@@ -30,8 +30,13 @@ export function getContextIcon(context: ChatMessageContext) {
             break;
         case MessageContextType.HIGHLIGHT:
             return (
-                <NodeIcon tagName={context.displayName} iconClass="w-3 h-3 ml-1 mr-2 flex-none" />
+                <NodeIcon
+                    tagName={context.displayName}
+                    iconClass="w-3 h-3 ml-1 mr-2 flex-none"
+                    data-oid="wmphial"
+                />
             );
+
         case MessageContextType.PROJECT:
             icon = Icons.Cube;
             break;

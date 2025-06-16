@@ -31,9 +31,10 @@ export const EditAppButton = observer(({ project, ...props }: EditAppButtonProps
             className="gap-2 bg-background-active border-[0.5px] border-border-active w-auto hover:bg-background-onlook cursor-pointer"
             onClick={() => selectProject(project)}
             {...props}
+            data-oid="t.7p_po"
         >
-            <Icons.PencilPaper />
-            <p>{t(transKeys.projects.actions.editApp)}</p>
+            <Icons.PencilPaper data-oid="_vsfv2-" />
+            <p data-oid="ej:7vm1">{t(transKeys.projects.actions.editApp)}</p>
         </ButtonMotion>
     );
 });

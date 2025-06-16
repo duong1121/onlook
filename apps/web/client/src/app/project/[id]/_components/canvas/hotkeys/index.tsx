@@ -20,12 +20,20 @@ export const HotkeysArea = ({ children }: { children: ReactNode }) => {
         },
         { preventDefault: true },
     );
-    useHotkeys(Hotkey.ZOOM_IN.command, () => (editorEngine.canvas.scale = editorEngine.canvas.scale * 1.2), {
-        preventDefault: true,
-    });
-    useHotkeys(Hotkey.ZOOM_OUT.command, () => (editorEngine.canvas.scale = editorEngine.canvas.scale * 0.8), {
-        preventDefault: true,
-    });
+    useHotkeys(
+        Hotkey.ZOOM_IN.command,
+        () => (editorEngine.canvas.scale = editorEngine.canvas.scale * 1.2),
+        {
+            preventDefault: true,
+        },
+    );
+    useHotkeys(
+        Hotkey.ZOOM_OUT.command,
+        () => (editorEngine.canvas.scale = editorEngine.canvas.scale * 0.8),
+        {
+            preventDefault: true,
+        },
+    );
 
     // Modes
     useHotkeys(Hotkey.SELECT.command, () => (editorEngine.state.editorMode = EditorMode.DESIGN));
@@ -55,8 +63,14 @@ export const HotkeysArea = ({ children }: { children: ReactNode }) => {
     useHotkeys(Hotkey.REDO.command, () => editorEngine.action.redo(), {
         preventDefault: true,
     });
-    useHotkeys(Hotkey.ENTER.command, () => editorEngine.text.editSelectedElement(), { preventDefault: true });
-    useHotkeys([Hotkey.BACKSPACE.command, Hotkey.DELETE.command], () => editorEngine.elements.delete(), { preventDefault: true });
+    useHotkeys(Hotkey.ENTER.command, () => editorEngine.text.editSelectedElement(), {
+        preventDefault: true,
+    });
+    useHotkeys(
+        [Hotkey.BACKSPACE.command, Hotkey.DELETE.command],
+        () => editorEngine.elements.delete(),
+        { preventDefault: true },
+    );
 
     // Group
     useHotkeys(Hotkey.GROUP.command, () => editorEngine.group.groupSelectedElements());
@@ -66,9 +80,13 @@ export const HotkeysArea = ({ children }: { children: ReactNode }) => {
     useHotkeys(Hotkey.COPY.command, () => editorEngine.copy.copy(), { preventDefault: true });
     useHotkeys(Hotkey.PASTE.command, () => editorEngine.copy.paste(), { preventDefault: true });
     useHotkeys(Hotkey.CUT.command, () => editorEngine.copy.cut(), { preventDefault: true });
-    useHotkeys(Hotkey.DUPLICATE.command, () => {
-        editorEngine.copy.duplicate();
-    }, { preventDefault: true });
+    useHotkeys(
+        Hotkey.DUPLICATE.command,
+        () => {
+            editorEngine.copy.duplicate();
+        },
+        { preventDefault: true },
+    );
 
     // AI
     useHotkeys(
@@ -88,9 +106,5 @@ export const HotkeysArea = ({ children }: { children: ReactNode }) => {
         () => (editorEngine.state.hotkeysOpen = !editorEngine.state.hotkeysOpen),
     );
 
-    return (
-        <>
-            {children}
-        </>
-    );
+    return <>{children}</>;
 };

@@ -14,15 +14,15 @@ const MODE_TOGGLE_ITEMS: {
     mode: EditorMode;
     hotkey: Hotkey;
 }[] = [
-        {
-            mode: EditorMode.DESIGN,
-            hotkey: Hotkey.SELECT,
-        },
-        {
-            mode: EditorMode.PREVIEW,
-            hotkey: Hotkey.PREVIEW,
-        },
-    ];
+    {
+        mode: EditorMode.DESIGN,
+        hotkey: Hotkey.SELECT,
+    },
+    {
+        mode: EditorMode.PREVIEW,
+        hotkey: Hotkey.PREVIEW,
+    },
+];
 
 export const ModeToggle = observer(() => {
     const t = useTranslations();
@@ -36,7 +36,7 @@ export const ModeToggle = observer(() => {
     }
 
     return (
-        <div className="relative">
+        <div className="relative" data-oid="rmhawpi">
             <ToggleGroup
                 className="font-normal h-7 mt-1"
                 type="single"
@@ -46,10 +46,11 @@ export const ModeToggle = observer(() => {
                         editorEngine.state.editorMode = value as EditorMode;
                     }
                 }}
+                data-oid="a.fg3c8"
             >
                 {MODE_TOGGLE_ITEMS.map((item) => (
-                    <Tooltip key={item.mode}>
-                        <TooltipTrigger asChild>
+                    <Tooltip key={item.mode} data-oid="y01t2oy">
+                        <TooltipTrigger asChild data-oid="y-k-n_3">
                             <ToggleGroupItem
                                 value={item.mode}
                                 aria-label={item.hotkey.description}
@@ -59,12 +60,17 @@ export const ModeToggle = observer(() => {
                                         ? 'text-active text-sm hover:text-active hover:bg-transparent'
                                         : 'text-foreground-secondary text-sm hover:text-foreground-hover hover:bg-transparent',
                                 )}
+                                data-oid="ic3.2-9"
                             >
-                                {t(transKeys.editor.modes[item.mode.toLowerCase() as keyof typeof transKeys.editor.modes].name)}
+                                {t(
+                                    transKeys.editor.modes[
+                                        item.mode.toLowerCase() as keyof typeof transKeys.editor.modes
+                                    ].name,
+                                )}
                             </ToggleGroupItem>
                         </TooltipTrigger>
-                        <TooltipContent side="bottom">
-                            <HotkeyLabel hotkey={item.hotkey} />
+                        <TooltipContent side="bottom" data-oid="61c35kb">
+                            <HotkeyLabel hotkey={item.hotkey} data-oid="tiz5md6" />
                         </TooltipContent>
                     </Tooltip>
                 ))}
@@ -81,6 +87,7 @@ export const ModeToggle = observer(() => {
                     ease: 'easeInOut',
                     duration: 0.2,
                 }}
+                data-oid="bzniv2m"
             />
         </div>
     );

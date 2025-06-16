@@ -12,14 +12,19 @@ export const FrameView = ({ frame }: { frame: FrameImpl }) => {
         <div
             className="flex flex-col fixed"
             style={{ transform: `translate(${frame.position.x}px, ${frame.position.y}px)` }}
+            data-oid="-mlh4cc"
         >
-            <TopBar frame={frame as WebFrameImpl} />
-            <div className="relative">
-                <ResizeHandles frame={frame} />
+            <TopBar frame={frame as WebFrameImpl} data-oid="jzc0qd3" />
+            <div className="relative" data-oid="oynko3l">
+                <ResizeHandles frame={frame} data-oid="ksqc:ab" />
                 {frame.type === FrameType.WEB && (
-                    <WebFrameComponent frame={frame as WebFrameImpl} ref={webFrameRef} />
+                    <WebFrameComponent
+                        frame={frame as WebFrameImpl}
+                        ref={webFrameRef}
+                        data-oid="eapf10q"
+                    />
                 )}
-                <GestureScreen frame={frame as WebFrameImpl} />
+                <GestureScreen frame={frame as WebFrameImpl} data-oid="o:s5r6h" />
             </div>
         </div>
     );

@@ -99,18 +99,36 @@ export const Main = observer(({ projectId }: { projectId: string }) => {
 
     if (isLoading) {
         return (
-            <div className="h-screen w-screen flex items-center justify-center gap-2">
-                <Icons.Shadow className="h-6 w-6 animate-spin text-foreground-primary" />
-                <div className="text-xl">Loading project...</div>
+            <div
+                className="h-screen w-screen flex items-center justify-center gap-2"
+                data-oid="m3.vt:r"
+            >
+                <Icons.Shadow
+                    className="h-6 w-6 animate-spin text-foreground-primary"
+                    data-oid="kalo:2y"
+                />
+
+                <div className="text-xl" data-oid=":b1vl64">
+                    Loading project...
+                </div>
             </div>
         );
     }
 
     if (!result) {
         return (
-            <div className="h-screen w-screen flex flex-col items-center justify-center gap-4">
-                <div className="text-xl">Project not found</div>
-                <Link href={Routes.PROJECTS} className="text-sm text-foreground-secondary">
+            <div
+                className="h-screen w-screen flex flex-col items-center justify-center gap-4"
+                data-oid="tpy9-_4"
+            >
+                <div className="text-xl" data-oid="xmjcw.r">
+                    Project not found
+                </div>
+                <Link
+                    href={Routes.PROJECTS}
+                    className="text-sm text-foreground-secondary"
+                    data-oid="h327p0i"
+                >
                     Go to projects
                 </Link>
             </div>
@@ -119,28 +137,41 @@ export const Main = observer(({ projectId }: { projectId: string }) => {
 
     if (editorEngine.sandbox.session.isConnecting) {
         return (
-            <div className="h-screen w-screen flex items-center justify-center gap-2">
-                <Icons.Shadow className="h-6 w-6 animate-spin text-foreground-primary" />
-                <div className="text-xl">Connecting to sandbox...</div>
+            <div
+                className="h-screen w-screen flex items-center justify-center gap-2"
+                data-oid="tq7mfc2"
+            >
+                <Icons.Shadow
+                    className="h-6 w-6 animate-spin text-foreground-primary"
+                    data-oid="2az2612"
+                />
+
+                <div className="text-xl" data-oid="13v0s.c">
+                    Connecting to sandbox...
+                </div>
             </div>
         );
     }
 
     return (
-        <TooltipProvider>
-            <div className="h-screen w-screen flex flex-row select-none relative">
-                <Canvas />
+        <TooltipProvider data-oid=":jd:ob2">
+            <div
+                className="h-screen w-screen flex flex-row select-none relative"
+                data-oid="r0iue-k"
+            >
+                <Canvas data-oid="2rwu2gs" />
 
-                <div className="absolute top-0 w-full">
-                    <TopBar projectId={projectId} />
+                <div className="absolute top-0 w-full" data-oid="x2as7qu">
+                    <TopBar projectId={projectId} data-oid="87vrnoq" />
                 </div>
 
                 {/* Left Panel */}
                 <div
                     ref={leftPanelRef}
                     className="absolute top-10 left-0 animate-layer-panel-in h-[calc(100%-40px)] z-50"
+                    data-oid=":a7yop8"
                 >
-                    <LeftPanel />
+                    <LeftPanel data-oid="fmv4r32" />
                 </div>
 
                 {/* EditorBar anchored between panels */}
@@ -156,9 +187,10 @@ export const Main = observer(({ projectId }: { projectId: string }) => {
                         justifyContent: 'center',
                         alignItems: 'flex-start',
                     }}
+                    data-oid="lgze8v7"
                 >
-                    <div style={{ pointerEvents: 'auto' }}>
-                        <EditorBar availableWidth={editorBarAvailableWidth} />
+                    <div style={{ pointerEvents: 'auto' }} data-oid="6x38v.n">
+                        <EditorBar availableWidth={editorBarAvailableWidth} data-oid="42h2j12" />
                     </div>
                 </div>
 
@@ -166,12 +198,16 @@ export const Main = observer(({ projectId }: { projectId: string }) => {
                 <div
                     ref={rightPanelRef}
                     className="absolute top-10 right-0 animate-edit-panel-in h-[calc(100%-40px)] z-50"
+                    data-oid="yajy0ra"
                 >
-                    <RightPanel />
+                    <RightPanel data-oid="vm-xd0x" />
                 </div>
 
-                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 animate-toolbar-up ">
-                    <BottomBar />
+                <div
+                    className="absolute bottom-4 left-1/2 transform -translate-x-1/2 animate-toolbar-up "
+                    data-oid="wu0.1ly"
+                >
+                    <BottomBar data-oid="k3b83e5" />
                 </div>
             </div>
         </TooltipProvider>

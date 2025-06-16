@@ -27,38 +27,51 @@ export const TEXT_SELECTED_GROUPS = [
     {
         key: 'text-dimensions',
         label: 'Dimensions',
-        components: [<Width />, <Height />],
+        components: [<Width data-oid="llmq782" />, <Height data-oid="qwpwerg" />],
     },
     {
         key: 'text-base',
         label: 'Base',
-        components: [<ColorBackground />, <Border />, <BorderColor />, <Radius />],
+        components: [
+            <ColorBackground data-oid="dvrl:z-" />,
+            <Border data-oid="0479l8t" />,
+            <BorderColor data-oid="89et0zx" />,
+            <Radius data-oid="7a8:557" />,
+        ],
     },
     {
         key: 'text-layout',
         label: 'Layout',
-        components: [<Display />, <Padding />, <Margin />],
+        components: [
+            <Display data-oid="5pf7dbf" />,
+            <Padding data-oid="jzwd_l0" />,
+            <Margin data-oid="-cs6ohm" />,
+        ],
     },
     {
         key: 'text-font',
         label: 'Font',
         components: [
-            <FontFamilySelector />,
-            <InputSeparator />,
-            <FontWeightSelector />,
-            <InputSeparator />,
-            <FontSizeSelector />,
+            <FontFamilySelector data-oid="oxmsucn" />,
+            <InputSeparator data-oid="pldvuzu" />,
+            <FontWeightSelector data-oid="u0s5f6k" />,
+            <InputSeparator data-oid="a21_huw" />,
+            <FontSizeSelector data-oid="owt9.gu" />,
         ],
     },
     {
         key: 'text-typography',
         label: 'Typography',
-        components: [<TextColor />, <TextAlignSelector />, <AdvancedTypography />],
+        components: [
+            <TextColor data-oid="66z5i0g" />,
+            <TextAlignSelector data-oid="0558c_r" />,
+            <AdvancedTypography data-oid="2dkl8bf" />,
+        ],
     },
     {
         key: 'text-opacity',
         label: 'Opacity',
-        components: [<Opacity />],
+        components: [<Opacity data-oid="y9o.3ou" />],
     },
 ];
 
@@ -69,18 +82,21 @@ export const TextSelected = ({ availableWidth = 0 }: { availableWidth?: number }
     });
     const { isOpen, onOpenChange } = useDropdownControl({
         id: 'text-selected-overflow-dropdown',
-        isOverflow: true
+        isOverflow: true,
     });
 
     const visibleGroups = TEXT_SELECTED_GROUPS.slice(0, visibleCount);
     const overflowGroups = TEXT_SELECTED_GROUPS.slice(visibleCount);
 
     return (
-        <div className="flex items-center justify-center gap-0.5 w-full overflow-hidden">
+        <div
+            className="flex items-center justify-center gap-0.5 w-full overflow-hidden"
+            data-oid="_7en5g:"
+        >
             {visibleGroups.map((group, groupIdx) => (
                 <React.Fragment key={group.key}>
-                    {groupIdx > 0 && <InputSeparator />}
-                    <div className="flex items-center justify-center gap-0.5">
+                    {groupIdx > 0 && <InputSeparator data-oid="j8zdxyi" />}
+                    <div className="flex items-center justify-center gap-0.5" data-oid="e5.1u3k">
                         {group.components.map((comp, idx) => (
                             <React.Fragment key={idx}>{comp}</React.Fragment>
                         ))}
@@ -92,6 +108,7 @@ export const TextSelected = ({ availableWidth = 0 }: { availableWidth?: number }
                 onOpenChange={onOpenChange}
                 overflowGroups={overflowGroups}
                 visibleCount={visibleCount}
+                data-oid="ws1mg_4"
             />
         </div>
     );

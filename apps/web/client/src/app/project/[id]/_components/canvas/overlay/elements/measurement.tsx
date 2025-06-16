@@ -382,7 +382,7 @@ export const MeasurementOverlay: React.FC<MeasurementProps> = memo(({ fromRect, 
     );
 
     const svgContent = (
-        <g transform={`translate(${-viewBox.minX},${-viewBox.minY})`}>
+        <g transform={`translate(${-viewBox.minX},${-viewBox.minY})`} data-oid="n_ewefk">
             <rect
                 x={fromRect.left}
                 y={fromRect.top}
@@ -393,7 +393,9 @@ export const MeasurementOverlay: React.FC<MeasurementProps> = memo(({ fromRect, 
                 strokeWidth={1}
                 strokeLinecap="round"
                 strokeLinejoin="round"
+                data-oid="nln7e46"
             />
+
             <rect
                 x={toRect.left}
                 y={toRect.top}
@@ -404,6 +406,7 @@ export const MeasurementOverlay: React.FC<MeasurementProps> = memo(({ fromRect, 
                 strokeWidth={1}
                 strokeLinecap="round"
                 strokeLinejoin="round"
+                data-oid="u8qu_7p"
             />
 
             {/* Distance lines and labels */}
@@ -413,7 +416,7 @@ export const MeasurementOverlay: React.FC<MeasurementProps> = memo(({ fromRect, 
                 const midY = (distance.start.y + distance.end.y) / 2 + (isHorizontal ? 0 : 16);
 
                 return (
-                    <g key={index}>
+                    <g key={index} data-oid="8qezrsv">
                         <line
                             x1={distance.start.x}
                             y1={distance.start.y}
@@ -423,7 +426,9 @@ export const MeasurementOverlay: React.FC<MeasurementProps> = memo(({ fromRect, 
                             strokeWidth={1}
                             strokeLinecap="round"
                             strokeLinejoin="round"
+                            data-oid="-x2g52."
                         />
+
                         {distance.supportLine && (
                             <line
                                 x1={distance.supportLine.start.x}
@@ -435,9 +440,10 @@ export const MeasurementOverlay: React.FC<MeasurementProps> = memo(({ fromRect, 
                                 strokeLinecap="round"
                                 strokeLinejoin="round"
                                 strokeDasharray="10 6"
+                                data-oid="odq1f_t"
                             />
                         )}
-                        <g transform={`translate(${midX},${midY})`}>
+                        <g transform={`translate(${midX},${midY})`} data-oid="72-ug4b">
                             <rect
                                 x={-20}
                                 y={-10}
@@ -445,7 +451,9 @@ export const MeasurementOverlay: React.FC<MeasurementProps> = memo(({ fromRect, 
                                 height={20}
                                 fill={colors.red[500]}
                                 rx={2}
+                                data-oid="65t-l2v"
                             />
+
                             <text
                                 x={0}
                                 y={0}
@@ -453,6 +461,7 @@ export const MeasurementOverlay: React.FC<MeasurementProps> = memo(({ fromRect, 
                                 fontSize={12}
                                 textAnchor="middle"
                                 dominantBaseline="middle"
+                                data-oid="qynnlr."
                             >
                                 {Math.round(distance.value)}
                             </text>
@@ -470,6 +479,7 @@ export const MeasurementOverlay: React.FC<MeasurementProps> = memo(({ fromRect, 
             top={viewBox.minY}
             left={viewBox.minX}
             strokeWidth={0}
+            data-oid="8o3ci6e"
         >
             {svgContent}
         </BaseRect>

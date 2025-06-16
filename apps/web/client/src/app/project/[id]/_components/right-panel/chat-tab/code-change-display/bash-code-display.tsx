@@ -50,7 +50,11 @@ const formatCommandOutput = (output: string) => {
         }
 
         // Default styling for other lines
-        return <div key={index} className="text-foreground-secondary">{cleanLine}</div>;
+        return (
+            <div key={index} className="text-foreground-secondary">
+                {cleanLine}
+            </div>
+        );
     });
 };
 
@@ -60,7 +64,6 @@ export const BashCodeDisplay = observer(
         const [running, setRunning] = useState(false);
         const [stdOut, setStdOut] = useState<string | null>(null);
         const [stdErr, setStdErr] = useState<string | null>(null);
-
 
         const runCommand = async () => {
             setRunning(true);

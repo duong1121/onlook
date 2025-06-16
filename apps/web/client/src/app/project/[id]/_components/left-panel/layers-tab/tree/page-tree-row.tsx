@@ -18,12 +18,14 @@ export const PageTreeRow = forwardRef<
                     isHighlighted && 'bg-background-onlook text-foreground-primary',
                     'hover:text-foreground-primary hover:bg-background-onlook',
                 ],
+
                 attrs['aria-selected'] && [
                     '!bg-[#FA003C] dark:!bg-[#FA003C]',
                     '!text-primary dark:!text-primary',
                     '![&]:hover:bg-[#FA003C] dark:[&]:hover:bg-[#FA003C]',
                 ],
             )}
+            data-oid="9ju8g8:"
         >
             {children}
         </div>

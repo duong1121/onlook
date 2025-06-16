@@ -41,52 +41,59 @@ const TERMINAL_THEME: Record<'LIGHT' | 'DARK', ITheme> = {
     DARK: {}, // Use default dark theme
 };
 
-export const Terminal = memo(observer(({ hidden = false, terminalSessionId }: TerminalProps) => {
-    const editorEngine = useEditorEngine();
-    const terminalSession = editorEngine.sandbox.session.getTerminalSession(terminalSessionId);
-    const containerRef = useRef<HTMLDivElement>(null);
-    const { theme } = useTheme();
+export const Terminal = memo(
+    observer(({ hidden = false, terminalSessionId }: TerminalProps) => {
+        const editorEngine = useEditorEngine();
+        const terminalSession = editorEngine.sandbox.session.getTerminalSession(terminalSessionId);
+        const containerRef = useRef<HTMLDivElement>(null);
+        const { theme } = useTheme();
 
-    // Mount xterm to DOM
-    useEffect(() => {
-        if (!containerRef.current || !terminalSession?.xterm) return;
-        // Only open if not already attached
-        if (!terminalSession.xterm.element || terminalSession.xterm.element.parentElement !== containerRef.current) {
-            terminalSession.xterm.open(containerRef.current);
-        }
-        return () => {
-            // Detach xterm from DOM on unmount (but do not dispose)
+        // Mount xterm to DOM
+        useEffect(() => {
+            if (!containerRef.current || !terminalSession?.xterm) return;
+            // Only open if not already attached
             if (
-                terminalSession.xterm.element &&
-                containerRef.current &&
-                terminalSession.xterm.element.parentElement === containerRef.current
+                !terminalSession.xterm.element ||
+                terminalSession.xterm.element.parentElement !== containerRef.current
             ) {
-                containerRef.current.innerHTML = '';
+                terminalSession.xterm.open(containerRef.current);
             }
-        };
-    }, [terminalSessionId, terminalSession, containerRef]);
+            return () => {
+                // Detach xterm from DOM on unmount (but do not dispose)
+                if (
+                    terminalSession.xterm.element &&
+                    containerRef.current &&
+                    terminalSession.xterm.element.parentElement === containerRef.current
+                ) {
+                    containerRef.current.innerHTML = '';
+                }
+            };
+        }, [terminalSessionId, terminalSession, containerRef]);
 
-    useEffect(() => {
-        if (terminalSession?.xterm) {
-            terminalSession.xterm.options.theme = theme === 'light' ? TERMINAL_THEME.LIGHT : TERMINAL_THEME.DARK;
-        }
-    }, [theme, terminalSession]);
+        useEffect(() => {
+            if (terminalSession?.xterm) {
+                terminalSession.xterm.options.theme =
+                    theme === 'light' ? TERMINAL_THEME.LIGHT : TERMINAL_THEME.DARK;
+            }
+        }, [theme, terminalSession]);
 
-    useEffect(() => {
-        if (!hidden && terminalSession?.xterm) {
-            setTimeout(() => {
-                terminalSession.xterm?.focus();
-            }, 100);
-        }
-    }, [hidden, terminalSession]);
+        useEffect(() => {
+            if (!hidden && terminalSession?.xterm) {
+                setTimeout(() => {
+                    terminalSession.xterm?.focus();
+                }, 100);
+            }
+        }, [hidden, terminalSession]);
 
-    return (
-        <div
-            ref={containerRef}
-            className={cn(
-                'h-full w-full p-2 transition-opacity duration-200',
-                hidden ? 'opacity-0' : 'opacity-100 delay-300',
-            )}
-        />
-    );
-}));
+        return (
+            <div
+                ref={containerRef}
+                className={cn(
+                    'h-full w-full p-2 transition-opacity duration-200',
+                    hidden ? 'opacity-0' : 'opacity-100 delay-300',
+                )}
+                data-oid="5o.jqn6"
+            />
+        );
+    }),
+);

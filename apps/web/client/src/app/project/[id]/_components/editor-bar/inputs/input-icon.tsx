@@ -33,15 +33,20 @@ export const InputIcon = ({ value, unit = 'px', icon, onChange, onUnitChange }: 
     const [unitValue, setUnitValue] = useState(unit);
     const { localValue, handleKeyDown, handleChange } = useInputControl(value, onChange);
 
-
     const IconComponent = icon ? Icons[icon] : null;
 
     return (
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2" data-oid="qjt.iee">
             {IconComponent && (
-                <IconComponent className="h-5 w-5 min-h-5 min-w-5 text-muted-foreground" />
+                <IconComponent
+                    className="h-5 w-5 min-h-5 min-w-5 text-muted-foreground"
+                    data-oid="ts.pxt:"
+                />
             )}
-            <div className="flex items-center bg-background-tertiary/50 justify-between rounded-md px-3 h-[36px] w-full">
+            <div
+                className="flex items-center bg-background-tertiary/50 justify-between rounded-md px-3 h-[36px] w-full"
+                data-oid="a-i85bu"
+            >
                 <input
                     type="text"
                     inputMode="numeric"
@@ -50,13 +55,21 @@ export const InputIcon = ({ value, unit = 'px', icon, onChange, onUnitChange }: 
                     onChange={(e) => handleChange(Number(e.target.value))}
                     onKeyDown={handleKeyDown}
                     className="w-full bg-transparent text-sm text-white focus:outline-none uppercase hover:text-white"
+                    data-oid="3aawz78"
                 />
 
-                <DropdownMenu>
-                    <DropdownMenuTrigger className="text-[12px] text-muted-foreground focus:outline-none cursor-pointer hover:text-white transition-colors">
+                <DropdownMenu data-oid="4rkir02">
+                    <DropdownMenuTrigger
+                        className="text-[12px] text-muted-foreground focus:outline-none cursor-pointer hover:text-white transition-colors"
+                        data-oid="q2t6lcd"
+                    >
                         {unitValue === 'px' ? '' : unitValue}
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent align="start" className="min-w-0 w-[64px]">
+                    <DropdownMenuContent
+                        align="start"
+                        className="min-w-0 w-[64px]"
+                        data-oid="ot594mk"
+                    >
                         {UNITS.map((unitOption) => (
                             <DropdownMenuItem
                                 key={unitOption}
@@ -65,6 +78,7 @@ export const InputIcon = ({ value, unit = 'px', icon, onChange, onUnitChange }: 
                                     setUnitValue(unitOption);
                                 }}
                                 className="text-[12px] text-center px-2 hover:bg-background-tertiary/70 hover:text-white transition-colors"
+                                data-oid="sjq5do4"
                             >
                                 {unitOption}
                             </DropdownMenuItem>

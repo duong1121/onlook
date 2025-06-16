@@ -113,14 +113,18 @@ export const ResizablePanel: React.FC<ResizablePanelProps> = ({
                 className,
             )}
             {...props}
+            data-oid="bcedszx"
         >
-            <div className="h-full">{children}</div>
+            <div className="h-full" data-oid="89ots-j">
+                {children}
+            </div>
             <div
                 className={cn(
                     'absolute top-0 h-full w-1 cursor-col-resize transition-all',
                     side === 'left' ? 'right-0' : 'left-0',
                 )}
                 onMouseDown={handleMouseDown}
+                data-oid="4m:mwhr"
             />
         </div>
     );

@@ -19,9 +19,9 @@ const inter = Inter({
 
 export default function Layout({ children }: { children: ReactNode }) {
     return (
-        <html lang="en" className={inter.variable} suppressHydrationWarning>
-            <body className="flex flex-col min-h-screen">
-                <RootProvider>{children}</RootProvider>
+        <html lang="en" className={inter.variable} suppressHydrationWarning data-oid="hy1qqpw">
+            <body className="flex flex-col min-h-screen" data-oid="gi-1lis">
+                <RootProvider data-oid="4b49eex">{children}</RootProvider>
             </body>
         </html>
     );

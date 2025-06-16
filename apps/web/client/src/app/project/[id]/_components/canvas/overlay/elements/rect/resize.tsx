@@ -182,7 +182,9 @@ const EdgeHandle: React.FC<EdgeHandleProps> = ({
                 fill="transparent"
                 style={{ cursor: getCursorStyle(position), pointerEvents: 'auto' }}
                 onMouseDown={handleMouseDownRect}
+                data-oid="b2ouk0f"
             />
+
             {showHandle && (
                 <rect
                     x={
@@ -203,6 +205,7 @@ const EdgeHandle: React.FC<EdgeHandleProps> = ({
                     strokeWidth={1}
                     style={{ cursor: getCursorStyle(position), pointerEvents: 'auto' }}
                     onMouseDown={handleMouseDownRect}
+                    data-oid="45cg2ll"
                 />
             )}
         </>
@@ -230,9 +233,17 @@ const CornerHandle: React.FC<HandleProps> = ({
             }}
             transform={`translate(${x - halfSize}, ${y - halfSize})`}
             onMouseDown={(e) => handleMouseDown(e, position, styles)}
+            data-oid="a5kxrv6"
         >
             {/* Invisible larger circle for hit area */}
-            <circle cx={halfSize} cy={halfSize} r={hitAreaHalfSize} fill="transparent" />
+            <circle
+                cx={halfSize}
+                cy={halfSize}
+                r={hitAreaHalfSize}
+                fill="transparent"
+                data-oid="ah8os_j"
+            />
+
             <circle
                 cx={halfSize}
                 cy={halfSize}
@@ -240,6 +251,7 @@ const CornerHandle: React.FC<HandleProps> = ({
                 fill="white"
                 stroke={color}
                 strokeWidth={1}
+                data-oid="n2_wr.u"
             />
         </g>
     );
@@ -266,8 +278,16 @@ const RadiusHandle: React.FC<HandleProps> = ({
             }}
             transform={`translate(${x - halfSize}, ${y - halfSize})`}
             onMouseDown={(e) => handleMouseDown(e, position, styles)}
+            data-oid="wvysw19"
         >
-            <circle cx={halfSize} cy={halfSize} r={hitAreaHalfSize} fill="transparent" />
+            <circle
+                cx={halfSize}
+                cy={halfSize}
+                r={hitAreaHalfSize}
+                fill="transparent"
+                data-oid="-1uti0j"
+            />
+
             <circle
                 cx={halfSize}
                 cy={halfSize}
@@ -275,8 +295,10 @@ const RadiusHandle: React.FC<HandleProps> = ({
                 fill="white"
                 stroke={color}
                 strokeWidth={1}
+                data-oid="upm1qz6"
             />
-            <circle cx={halfSize} cy={halfSize} r={1.5} fill={color} />
+
+            <circle cx={halfSize} cy={halfSize} r={1.5} fill={color} data-oid="dqb7c2m" />
         </g>
     );
 };
@@ -474,6 +496,7 @@ export const ResizeHandles: React.FC<ResizeHandlesProps> = ({
                     handleMouseDown={handleMouseDownDimensions}
                     handleDoubleClick={handleDoubleClick}
                     showHandle={false}
+                    data-oid="my:drvz"
                 />
             )}
             {/* Right Edge handle - only show if width is set */}
@@ -487,6 +510,7 @@ export const ResizeHandles: React.FC<ResizeHandlesProps> = ({
                     handleMouseDown={handleMouseDownDimensions}
                     handleDoubleClick={handleDoubleClick}
                     showHandle={!enableHeight}
+                    data-oid="az4tv:v"
                 />
             )}
             {/* Bottom Edge handle - only show if height is set */}
@@ -500,6 +524,7 @@ export const ResizeHandles: React.FC<ResizeHandlesProps> = ({
                     handleMouseDown={handleMouseDownDimensions}
                     handleDoubleClick={handleDoubleClick}
                     showHandle={!enableWidth}
+                    data-oid="ydzr2gw"
                 />
             )}
             {/* Left Edge handle - only show if width is set */}
@@ -513,6 +538,7 @@ export const ResizeHandles: React.FC<ResizeHandlesProps> = ({
                     handleMouseDown={handleMouseDownDimensions}
                     handleDoubleClick={handleDoubleClick}
                     showHandle={false}
+                    data-oid="og01d11"
                 />
             )}
 
@@ -525,6 +551,7 @@ export const ResizeHandles: React.FC<ResizeHandlesProps> = ({
                     position={ResizeHandlePosition.TOP_LEFT}
                     styles={styles}
                     handleMouseDown={handleMouseDownDimensions}
+                    data-oid="sc1wxry"
                 />
             )}
             {enableHeight && enableWidth && (
@@ -535,6 +562,7 @@ export const ResizeHandles: React.FC<ResizeHandlesProps> = ({
                     position={ResizeHandlePosition.TOP_RIGHT}
                     styles={styles}
                     handleMouseDown={handleMouseDownDimensions}
+                    data-oid="t7p49p7"
                 />
             )}
             {enableHeight && enableWidth && (
@@ -545,6 +573,7 @@ export const ResizeHandles: React.FC<ResizeHandlesProps> = ({
                     position={ResizeHandlePosition.BOTTOM_RIGHT}
                     styles={styles}
                     handleMouseDown={handleMouseDownDimensions}
+                    data-oid="uaov:4y"
                 />
             )}
             {enableHeight && enableWidth && (
@@ -555,6 +584,7 @@ export const ResizeHandles: React.FC<ResizeHandlesProps> = ({
                     position={ResizeHandlePosition.BOTTOM_LEFT}
                     styles={styles}
                     handleMouseDown={handleMouseDownDimensions}
+                    data-oid="-ffq381"
                 />
             )}
 
@@ -566,6 +596,7 @@ export const ResizeHandles: React.FC<ResizeHandlesProps> = ({
                     position={ResizeHandlePosition.TOP_LEFT}
                     styles={styles}
                     handleMouseDown={handleMouseDownRadius}
+                    data-oid="uc_0wwi"
                 />
             )}
         </>

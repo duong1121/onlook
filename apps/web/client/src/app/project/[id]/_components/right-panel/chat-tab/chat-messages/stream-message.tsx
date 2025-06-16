@@ -11,21 +11,25 @@ export const StreamMessage = () => {
     return (
         <>
             {streamMessage && isAssistantStreamMessage && streamMessage.parts && isWaiting && (
-                <div className="px-4 py-2 text-small content-start">
-                    <div className="flex flex-col text-wrap gap-2">
+                <div className="px-4 py-2 text-small content-start" data-oid="4qrp1u:">
+                    <div className="flex flex-col text-wrap gap-2" data-oid="uznb_sw">
                         <MessageContent
                             messageId={streamMessage.id}
                             parts={streamMessage.parts}
                             applied={false}
                             isStream={true}
+                            data-oid="vorz0pe"
                         />
                     </div>
                 </div>
             )}
             {isWaiting && (
-                <div className="flex w-full h-full flex-row items-center gap-2 px-4 my-2 text-small content-start text-foreground-secondary">
-                    <Icons.Shadow className="animate-spin" />
-                    <p>Thinking ...</p>
+                <div
+                    className="flex w-full h-full flex-row items-center gap-2 px-4 my-2 text-small content-start text-foreground-secondary"
+                    data-oid="h018mn5"
+                >
+                    <Icons.Shadow className="animate-spin" data-oid="x_e9.4u" />
+                    <p data-oid="c4a1t56">Thinking ...</p>
                 </div>
             )}
         </>

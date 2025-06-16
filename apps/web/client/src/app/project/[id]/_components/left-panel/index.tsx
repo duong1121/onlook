@@ -13,50 +13,53 @@ import { PagesTab } from './page-tab';
 import { WindowsTab } from './windows-tab';
 import { ZoomControls } from './zoom-controls';
 
-const tabs: { value: LeftPanelTabValue; icon: React.ReactNode; label: string; disabled?: boolean }[] =
-    [
+const tabs: {
+    value: LeftPanelTabValue;
+    icon: React.ReactNode;
+    label: string;
+    disabled?: boolean;
+}[] = [
+    {
+        value: LeftPanelTabValue.BRAND,
+        icon: <Icons.Brand className="w-5 h-5" data-oid="l8kwufd" />,
+        label: transKeys.editor.panels.layers.tabs.brand,
+    },
+    {
+        value: LeftPanelTabValue.PAGES,
+        icon: <Icons.File className="w-5 h-5" data-oid="x.0lioz" />,
+        label: transKeys.editor.panels.layers.tabs.pages,
+    },
+    {
+        value: LeftPanelTabValue.WINDOWS,
+        icon: <Icons.Desktop className="w-5 h-5" data-oid=".mofof9" />,
+        label: transKeys.editor.panels.layers.tabs.windows.name,
+    },
+    {
+        value: LeftPanelTabValue.LAYERS,
+        icon: <Icons.Layers className="w-5 h-5" data-oid="6c0fp6o" />,
+        label: transKeys.editor.panels.layers.tabs.layers,
+        disabled: true,
+    },
 
-        {
-            value: LeftPanelTabValue.BRAND,
-            icon: <Icons.Brand className="w-5 h-5" />,
-            label: transKeys.editor.panels.layers.tabs.brand,
-        },
-        {
-            value: LeftPanelTabValue.PAGES,
-            icon: <Icons.File className="w-5 h-5" />,
-            label: transKeys.editor.panels.layers.tabs.pages,
-        },
-        {
-            value: LeftPanelTabValue.WINDOWS,
-            icon: <Icons.Desktop className="w-5 h-5" />,
-            label: transKeys.editor.panels.layers.tabs.windows.name,
-        },
-        {
-            value: LeftPanelTabValue.LAYERS,
-            icon: <Icons.Layers className="w-5 h-5" />,
-            label: transKeys.editor.panels.layers.tabs.layers,
-            disabled: true,
-        },
-
-        {
-            value: LeftPanelTabValue.IMAGES,
-            icon: <Icons.Image className="w-5 h-5" />,
-            label: transKeys.editor.panels.layers.tabs.images,
-            disabled: true,
-        },
-        {
-            value: LeftPanelTabValue.APPS,
-            icon: <Icons.ViewGrid className="w-5 h-5" />,
-            label: transKeys.editor.panels.layers.tabs.apps,
-            disabled: true,
-        },
-        {
-            value: LeftPanelTabValue.COMPONENTS,
-            icon: <Icons.Component className="w-5 h-5" />,
-            label: transKeys.editor.panels.layers.tabs.components,
-            disabled: true,
-        },
-    ];
+    {
+        value: LeftPanelTabValue.IMAGES,
+        icon: <Icons.Image className="w-5 h-5" data-oid="0:93hr3" />,
+        label: transKeys.editor.panels.layers.tabs.images,
+        disabled: true,
+    },
+    {
+        value: LeftPanelTabValue.APPS,
+        icon: <Icons.ViewGrid className="w-5 h-5" data-oid="_7hfsk." />,
+        label: transKeys.editor.panels.layers.tabs.apps,
+        disabled: true,
+    },
+    {
+        value: LeftPanelTabValue.COMPONENTS,
+        icon: <Icons.Component className="w-5 h-5" data-oid="-iu4-ca" />,
+        label: transKeys.editor.panels.layers.tabs.components,
+        disabled: true,
+    },
+];
 
 export const LeftPanel = observer(() => {
     const editorEngine = useEditorEngine();
@@ -115,9 +118,13 @@ export const LeftPanel = observer(() => {
                 editorEngine.state.editorMode === EditorMode.PREVIEW && 'hidden',
             )}
             onMouseLeave={handleMouseLeave}
+            data-oid="norzcdd"
         >
             {/* Left sidebar with tabs */}
-            <div className="w-20 bg-background-onlook/60 backdrop-blur-xl flex flex-col items-center py-0.5 gap-2">
+            <div
+                className="w-20 bg-background-onlook/60 backdrop-blur-xl flex flex-col items-center py-0.5 gap-2"
+                data-oid=":k6u7qj"
+            >
                 {tabs.map((tab) => (
                     <button
                         key={tab.value}
@@ -126,38 +133,58 @@ export const LeftPanel = observer(() => {
                             selectedTab === tab.value && isLocked
                                 ? 'bg-accent text-foreground border-[0.5px] border-foreground/20 '
                                 : 'text-muted-foreground hover:text-foreground hover:bg-accent/50',
-                            tab.disabled && 'opacity-50 cursor-not-allowed hover:bg-transparent hover:text-muted-foreground',
+                            tab.disabled &&
+                                'opacity-50 cursor-not-allowed hover:bg-transparent hover:text-muted-foreground',
                         )}
                         disabled={tab.disabled}
                         onClick={() => !tab.disabled && handleClick(tab.value)}
                         onMouseEnter={() => !tab.disabled && handleMouseEnter(tab.value)}
+                        data-oid="xyc-jyi"
                     >
                         {tab.icon}
-                        <span className="text-xs leading-tight">{t(tab.label as any)}</span>
+                        <span className="text-xs leading-tight" data-oid="q68irtx">
+                            {t(tab.label as any)}
+                        </span>
                     </button>
                 ))}
 
-                <div className="mt-auto flex flex-col gap-0 items-center mb-4">
-                    <ZoomControls />
-                    <HelpDropdown />
+                <div className="mt-auto flex flex-col gap-0 items-center mb-4" data-oid="o5tub8v">
+                    <ZoomControls data-oid="-1rcv:." />
+                    <HelpDropdown data-oid="mfsnke-" />
                 </div>
             </div>
 
             {/* Content panel */}
             {editorEngine.state.leftPanelTab && (
                 <>
-                    <div className="flex-1 w-[280px] bg-background/95 rounded-xl">
-                        <div className="border backdrop-blur-xl h-full shadow overflow-auto p-0 rounded-xl">
-                            {selectedTab === LeftPanelTabValue.LAYERS && <LayersTab />}
-                            {selectedTab === LeftPanelTabValue.PAGES && <PagesTab />}
-                            {selectedTab === LeftPanelTabValue.IMAGES && <ImagesTab />}
-                            {selectedTab === LeftPanelTabValue.WINDOWS && <WindowsTab />}
-                            {selectedTab === LeftPanelTabValue.BRAND && <BrandTab />}
+                    <div
+                        className="flex-1 w-[280px] bg-background/95 rounded-xl"
+                        data-oid="yy9rl7j"
+                    >
+                        <div
+                            className="border backdrop-blur-xl h-full shadow overflow-auto p-0 rounded-xl"
+                            data-oid="yr9sn15"
+                        >
+                            {selectedTab === LeftPanelTabValue.LAYERS && (
+                                <LayersTab data-oid="h1ofy_h" />
+                            )}
+                            {selectedTab === LeftPanelTabValue.PAGES && (
+                                <PagesTab data-oid="c0d0i61" />
+                            )}
+                            {selectedTab === LeftPanelTabValue.IMAGES && (
+                                <ImagesTab data-oid="jle_4-." />
+                            )}
+                            {selectedTab === LeftPanelTabValue.WINDOWS && (
+                                <WindowsTab data-oid="m5zeinf" />
+                            )}
+                            {selectedTab === LeftPanelTabValue.BRAND && (
+                                <BrandTab data-oid="lxjb9-d" />
+                            )}
                         </div>
                     </div>
 
                     {/* Invisible padding area that maintains hover state */}
-                    {!isLocked && <div className="w-24 h-full" />}
+                    {!isLocked && <div className="w-24 h-full" data-oid="0ot2c:2" />}
                 </>
             )}
         </div>

@@ -90,8 +90,8 @@ export const ColorNameInput = ({
     };
 
     return (
-        <Tooltip open={!!error}>
-            <TooltipTrigger asChild>
+        <Tooltip open={!!error} data-oid="wa08v56">
+            <TooltipTrigger asChild data-oid="-idje-d">
                 <input
                     type="text"
                     value={inputValue}
@@ -100,14 +100,21 @@ export const ColorNameInput = ({
                     onBlur={() => onBlur?.(inputValue)}
                     className={`text-sm font-normal w-full rounded-md border ${
                         error ? 'border-red-500' : 'border-white/10'
-                    } bg-background-secondary px-2 py-1 ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
+                    } bg-background-secondary px-2 py-1 ${
+                        disabled ? 'opacity-50 cursor-not-allowed' : ''
+                    }`}
                     placeholder="Enter color name"
                     autoFocus={autoFocus}
                     disabled={disabled}
+                    data-oid="j4oa_tm"
                 />
             </TooltipTrigger>
-            <TooltipPortal>
-                <TooltipContent side="top" className="text-white bg-red-500 max-w-xs">
+            <TooltipPortal data-oid="9i8-1:g">
+                <TooltipContent
+                    side="top"
+                    className="text-white bg-red-500 max-w-xs"
+                    data-oid="tu197vt"
+                >
                     {error}
                 </TooltipContent>
             </TooltipPortal>

@@ -204,7 +204,7 @@ export const GestureScreen = observer(({ frame }: { frame: WebFrame }) => {
     };
 
     return (
-        <RightClickMenu>
+        <RightClickMenu data-oid="plm8b3_">
             <div
                 className={gestureScreenClassName}
                 onClick={handleClick}
@@ -216,6 +216,7 @@ export const GestureScreen = observer(({ frame }: { frame: WebFrame }) => {
                 onDoubleClick={handleDoubleClick}
                 onDragOver={handleDragOver}
                 onDrop={handleDrop}
+                data-oid="9ko53q-"
             ></div>
         </RightClickMenu>
     );

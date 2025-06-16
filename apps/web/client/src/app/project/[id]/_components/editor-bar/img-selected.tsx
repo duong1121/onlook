@@ -18,17 +18,21 @@ export const IMG_SELECTED_GROUPS = [
     {
         key: 'dimensions',
         label: 'Dimensions',
-        components: [<Width />, <Height />],
+        components: [<Width data-oid="436chv:" />, <Height data-oid="yty1tyy" />],
     },
     {
         key: 'base',
         label: 'Base',
-        components: [<ColorBackground />, <Border />, <Radius />],
+        components: [
+            <ColorBackground data-oid="aw6nfui" />,
+            <Border data-oid="b58pv19" />,
+            <Radius data-oid="_8troc9" />,
+        ],
     },
     {
         key: 'layout',
         label: 'Layout',
-        components: [<Padding />, <Margin />],
+        components: [<Padding data-oid="9qaqhyx" />, <Margin data-oid="ar0mlyb" />],
     },
     // {
     //     key: 'image',
@@ -52,11 +56,14 @@ export const ImgSelected = memo(({ availableWidth = 0 }: { availableWidth?: numb
     const overflowGroups = IMG_SELECTED_GROUPS.slice(visibleCount);
 
     return (
-        <div className="flex items-center justify-center gap-0.5 w-full overflow-hidden">
+        <div
+            className="flex items-center justify-center gap-0.5 w-full overflow-hidden"
+            data-oid="pq676fq"
+        >
             {visibleGroups.map((group, groupIdx) => (
                 <React.Fragment key={group.key}>
-                    {groupIdx > 0 && <InputSeparator />}
-                    <div className="flex items-center justify-center gap-0.5">
+                    {groupIdx > 0 && <InputSeparator data-oid="nqdn-eq" />}
+                    <div className="flex items-center justify-center gap-0.5" data-oid="epmrw4:">
                         {group.components.map((comp, idx) => (
                             <React.Fragment key={idx}>{comp}</React.Fragment>
                         ))}
@@ -68,6 +75,7 @@ export const ImgSelected = memo(({ availableWidth = 0 }: { availableWidth?: numb
                 onOpenChange={onOpenChange}
                 overflowGroups={overflowGroups}
                 visibleCount={visibleCount}
+                data-oid="kd.iovl"
             />
         </div>
     );

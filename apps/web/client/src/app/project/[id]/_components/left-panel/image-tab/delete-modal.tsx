@@ -36,22 +36,23 @@ export default function DeleteImageModal({
     };
 
     return (
-        <AlertDialog open={isOpen} onOpenChange={handleClose}>
-            <AlertDialogContent>
-                <AlertDialogHeader>
-                    <AlertDialogTitle>{'Delete this image?'}</AlertDialogTitle>
-                    <AlertDialogDescription>
+        <AlertDialog open={isOpen} onOpenChange={handleClose} data-oid="bm80uj7">
+            <AlertDialogContent data-oid="t07xa2l">
+                <AlertDialogHeader data-oid="ovu2f8o">
+                    <AlertDialogTitle data-oid="io5808k">{'Delete this image?'}</AlertDialogTitle>
+                    <AlertDialogDescription data-oid="m_bovfp">
                         {"This will delete the image from the project. You can't undo this action."}
                     </AlertDialogDescription>
                 </AlertDialogHeader>
-                <AlertDialogFooter>
-                    <Button variant={'ghost'} onClick={handleClose}>
+                <AlertDialogFooter data-oid="tl4ua4w">
+                    <Button variant={'ghost'} onClick={handleClose} data-oid="d0hpofi">
                         Cancel
                     </Button>
                     <Button
                         variant={'destructive'}
                         className="rounded-md text-sm"
                         onClick={handleDelete}
+                        data-oid="uw:9-mx"
                     >
                         Delete
                     </Button>

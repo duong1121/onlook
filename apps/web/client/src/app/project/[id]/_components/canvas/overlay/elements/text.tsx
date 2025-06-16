@@ -25,10 +25,10 @@ const contentHelpers = {
     // Convert content with newlines to ProseMirror nodes
     createNodesFromContent: (content: string) => {
         if (!content) return [];
-        
+
         const lines = content.split('\n');
         const nodes = [];
-        
+
         for (let i = 0; i < lines.length; i++) {
             if (lines[i] || i === 0) {
                 nodes.push(schema.text(lines[i] || ''));
@@ -40,10 +40,10 @@ const contentHelpers = {
                 }
             }
         }
-        
+
         return nodes;
     },
-    
+
     // Convert ProseMirror document to text with newlines
     extractContentWithNewlines: (view: EditorView) => {
         let content = '';
@@ -55,7 +55,7 @@ const contentHelpers = {
             }
         });
         return content;
-    }
+    },
 };
 
 export const TextEditor: React.FC<TextEditorProps> = ({
@@ -154,6 +154,7 @@ export const TextEditor: React.FC<TextEditorProps> = ({
             }}
             data-onlook-ignore={EditorAttributes.DATA_ONLOOK_IGNORE}
             id={EditorAttributes.ONLOOK_RECT_ID}
+            data-oid=":9nt5vj"
         />
     );
 };

@@ -51,7 +51,7 @@ export const RightClickMenu = observer(({ children }: RightClickMenuProps) => {
                 editorEngine.state.rightPanelTab = EditorTabValue.CHAT;
                 editorEngine.chat.focusChatInput();
             },
-            icon: <Icons.MagicWand className="mr-2 h-4 w-4" />,
+            icon: <Icons.MagicWand className="mr-2 h-4 w-4" data-oid="leg.t08" />,
             hotkey: Hotkey.ADD_AI_CHAT,
             disabled: !editorEngine.elements.selected.length,
         },
@@ -62,7 +62,7 @@ export const RightClickMenu = observer(({ children }: RightClickMenuProps) => {
                 editorEngine.chat.conversation.startNewConversation();
                 editorEngine.chat.focusChatInput();
             },
-            icon: <Icons.MagicWand className="mr-2 h-4 w-4" />,
+            icon: <Icons.MagicWand className="mr-2 h-4 w-4" data-oid="e2s.3w0" />,
             hotkey: Hotkey.NEW_AI_CHAT,
         },
     ];
@@ -71,14 +71,14 @@ export const RightClickMenu = observer(({ children }: RightClickMenuProps) => {
         {
             label: 'Group',
             action: () => editorEngine.group.groupSelectedElements(),
-            icon: <Icons.Box className="mr-2 h-4 w-4" />,
+            icon: <Icons.Box className="mr-2 h-4 w-4" data-oid="qg2tfky" />,
             // disabled: !editorEngine.group.canGroupElements(),
             hotkey: Hotkey.GROUP,
         },
         {
             label: 'Ungroup',
             action: () => editorEngine.group.ungroupSelectedElement(),
-            icon: <Icons.Group className="mr-2 h-4 w-4" />,
+            icon: <Icons.Group className="mr-2 h-4 w-4" data-oid="cd9g7ed" />,
             disabled: !editorEngine.group.canUngroupElement(),
             hotkey: Hotkey.UNGROUP,
         },
@@ -88,37 +88,37 @@ export const RightClickMenu = observer(({ children }: RightClickMenuProps) => {
         {
             label: 'Edit text',
             action: () => editorEngine.text.editSelectedElement(),
-            icon: <Icons.Pencil className="mr-2 h-4 w-4" />,
+            icon: <Icons.Pencil className="mr-2 h-4 w-4" data-oid="k7tt0ef" />,
             hotkey: Hotkey.ENTER,
         },
         {
             label: 'Copy',
             action: () => editorEngine.copy.copy(),
-            icon: <Icons.Clipboard className="mr-2 h-4 w-4" />,
+            icon: <Icons.Clipboard className="mr-2 h-4 w-4" data-oid="q9-n.sy" />,
             hotkey: Hotkey.COPY,
         },
         {
             label: 'Paste',
             action: () => editorEngine.copy.paste(),
-            icon: <Icons.ClipboardCopy className="mr-2 h-4 w-4" />,
+            icon: <Icons.ClipboardCopy className="mr-2 h-4 w-4" data-oid="h688ju_" />,
             hotkey: Hotkey.PASTE,
         },
         {
             label: 'Cut',
             action: () => editorEngine.copy.cut(),
-            icon: <Icons.Scissors className="mr-2 h-4 w-4" />,
+            icon: <Icons.Scissors className="mr-2 h-4 w-4" data-oid="oweewhh" />,
             hotkey: Hotkey.CUT,
         },
         {
             label: 'Duplicate',
             action: () => editorEngine.copy.duplicate(),
-            icon: <Icons.Copy className="mr-2 h-4 w-4" />,
+            icon: <Icons.Copy className="mr-2 h-4 w-4" data-oid="k48uwp_" />,
             hotkey: Hotkey.DUPLICATE,
         },
         {
             label: 'Delete',
             action: () => editorEngine.elements.delete(),
-            icon: <Icons.Trash className="mr-2 h-4 w-4" />,
+            icon: <Icons.Trash className="mr-2 h-4 w-4" data-oid="zh5_b_6" />,
             hotkey: Hotkey.DELETE,
             destructive: true,
         },
@@ -128,13 +128,13 @@ export const RightClickMenu = observer(({ children }: RightClickMenuProps) => {
         {
             label: 'Duplicate',
             action: () => editorEngine.frames.duplicateSelected(),
-            icon: <Icons.Copy className="mr-2 h-4 w-4" />,
+            icon: <Icons.Copy className="mr-2 h-4 w-4" data-oid="7gxw00u" />,
             hotkey: Hotkey.DUPLICATE,
         },
         {
             label: 'Delete',
             action: () => editorEngine.frames.deleteSelected(),
-            icon: <Icons.Trash className="mr-2 h-4 w-4" />,
+            icon: <Icons.Trash className="mr-2 h-4 w-4" data-oid="c10wxgs" />,
             hotkey: Hotkey.DELETE,
             destructive: true,
             disabled: !editorEngine.frames.canDelete(),
@@ -161,16 +161,16 @@ export const RightClickMenu = observer(({ children }: RightClickMenuProps) => {
                 instance !== null && {
                     label: 'View instance code',
                     action: () => viewSource(instance),
-                    icon: <Icons.ComponentInstance className="mr-2 h-4 w-4" />,
+                    icon: <Icons.ComponentInstance className="mr-2 h-4 w-4" data-oid="l2bgc__" />,
                 },
                 {
                     label: `View ${instance ? 'component' : 'element'} in ${ide.displayName}`,
                     disabled: !root,
                     action: () => viewSource(root),
                     icon: instance ? (
-                        <Icons.Component className="mr-2 h-4 w-4" />
+                        <Icons.Component className="mr-2 h-4 w-4" data-oid="6reojzf" />
                     ) : (
-                        <Icons.ExternalLink className="mr-2 h-4 w-4" />
+                        <Icons.ExternalLink className="mr-2 h-4 w-4" data-oid="8f57m_n" />
                     ),
                 },
                 ...TOOL_ITEMS,
@@ -191,33 +191,44 @@ export const RightClickMenu = observer(({ children }: RightClickMenuProps) => {
     }
 
     return (
-        <ContextMenu>
-            <ContextMenuTrigger>{children}</ContextMenuTrigger>
-            <ContextMenuContent className="w-64 bg-background/95 backdrop-blur-lg">
+        <ContextMenu data-oid="9xdnmc9">
+            <ContextMenuTrigger data-oid="d6zd2qt">{children}</ContextMenuTrigger>
+            <ContextMenuContent
+                className="w-64 bg-background/95 backdrop-blur-lg"
+                data-oid="me5w7ph"
+            >
                 {menuItems.map((group, groupIndex) => (
-                    <div key={groupIndex}>
+                    <div key={groupIndex} data-oid="f603tc2">
                         {group.map((item) => (
                             <ContextMenuItem
                                 key={item.label}
                                 onClick={item.action}
                                 disabled={item.disabled}
                                 className="cursor-pointer"
+                                data-oid="r8y:7dy"
                             >
                                 <span
                                     className={cn(
                                         'flex w-full items-center gap-1',
                                         item.destructive && 'text-red',
                                     )}
+                                    data-oid="dp_mra:"
                                 >
-                                    <span>{item.icon}</span>
-                                    <span>{item.label}</span>
-                                    <span className="ml-auto">
-                                        {item.hotkey && <Kbd>{item.hotkey.readableCommand}</Kbd>}
+                                    <span data-oid="0teb3vj">{item.icon}</span>
+                                    <span data-oid="bjfyx:v">{item.label}</span>
+                                    <span className="ml-auto" data-oid="3utgf.6">
+                                        {item.hotkey && (
+                                            <Kbd data-oid="p9-r0uw">
+                                                {item.hotkey.readableCommand}
+                                            </Kbd>
+                                        )}
                                     </span>
                                 </span>
                             </ContextMenuItem>
                         ))}
-                        {groupIndex < menuItems.length - 1 && <ContextMenuSeparator />}
+                        {groupIndex < menuItems.length - 1 && (
+                            <ContextMenuSeparator data-oid="_kx__44" />
+                        )}
                     </div>
                 ))}
             </ContextMenuContent>

@@ -129,8 +129,9 @@ export const LayersTab = observer(() => {
             className="flex h-full w-full overflow-hidden text-xs text-active p-3"
             onMouseOver={() => setTreeHovered(true)}
             onMouseLeave={handleMouseLeaveTree}
+            data-oid="kb61y5a"
         >
-            <RightClickMenu>
+            <RightClickMenu data-oid="s329gjy">
                 <Tree
                     idAccessor={(node) => node.domId}
                     childrenAccessor={childrenAccessor}
@@ -147,8 +148,11 @@ export const LayersTab = observer(() => {
                     onMove={handleDragEnd}
                     disableDrop={disableDrop}
                     className="overflow-auto"
+                    data-oid="pi-1x0j"
                 >
-                    {(props) => <TreeNode {...props} treeHovered={treeHovered} />}
+                    {(props) => (
+                        <TreeNode {...props} treeHovered={treeHovered} data-oid="8b1l2pt" />
+                    )}
                 </Tree>
             </RightClickMenu>
         </div>

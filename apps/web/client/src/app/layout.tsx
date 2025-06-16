@@ -14,13 +14,15 @@ import { AuthProvider } from './auth/auth-context';
 
 export const metadata: Metadata = {
     title: 'Onlook – Cursor for Designers',
-    description: 'The power of Cursor for your own website. Onlook lets you edit your React website and write your changes back to code in real-time. Iterate and experiment with AI.',
+    description:
+        'The power of Cursor for your own website. Onlook lets you edit your React website and write your changes back to code in real-time. Iterate and experiment with AI.',
     icons: [{ rel: 'icon', url: '/favicon.ico' }],
     openGraph: {
         url: 'https://onlook.com/',
         type: 'website',
         title: 'Onlook – Cursor for Designers',
-        description: 'The power of Cursor for your own website. Onlook lets you edit your React website and write your changes back to code in real-time. Iterate and experiment with AI.',
+        description:
+            'The power of Cursor for your own website. Onlook lets you edit your React website and write your changes back to code in real-time. Iterate and experiment with AI.',
         images: [
             {
                 url: 'https://framerusercontent.com/images/ScnnNT7JpmUya7afqGAets8.png',
@@ -32,7 +34,8 @@ export const metadata: Metadata = {
         site: '@onlookdev',
         creator: '@onlookdev',
         title: 'Onlook – Cursor for Designers',
-        description: 'The power of Cursor for your own website. Onlook lets you edit your React website and write your changes back to code in real-time. Iterate and experiment with AI.',
+        description:
+            'The power of Cursor for your own website. Onlook lets you edit your React website and write your changes back to code in real-time. Iterate and experiment with AI.',
         images: [
             {
                 url: 'https://framerusercontent.com/images/ScnnNT7JpmUya7afqGAets8.png',
@@ -50,21 +53,22 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     const locale = await getLocale();
 
     return (
-        <html lang={locale} className={inter.variable} suppressHydrationWarning>
-            <body>
-                <FeatureFlagsProvider>
-                    <PostHogProvider>
+        <html lang={locale} className={inter.variable} suppressHydrationWarning data-oid="z6.ggmx">
+            <body data-oid="0uqp3-s">
+                <FeatureFlagsProvider data-oid="f929svg">
+                    <PostHogProvider data-oid="kjn60ff">
                         <ThemeProvider
                             attribute="class"
                             forcedTheme="dark"
                             enableSystem
                             disableTransitionOnChange
+                            data-oid="hhhinam"
                         >
-                            <TRPCReactProvider>
-                                <AuthProvider>
-                                    <NextIntlClientProvider>
+                            <TRPCReactProvider data-oid="2yu6_9l">
+                                <AuthProvider data-oid="p6-m_ia">
+                                    <NextIntlClientProvider data-oid="rsiydoj">
                                         {children}
-                                        <Toaster />
+                                        <Toaster data-oid="k49o20v" />
                                     </NextIntlClientProvider>
                                 </AuthProvider>
                             </TRPCReactProvider>

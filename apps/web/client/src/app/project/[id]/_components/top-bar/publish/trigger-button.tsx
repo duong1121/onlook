@@ -11,27 +11,27 @@ export const TriggerButton = observer(() => {
     const status = editorEngine.hosting.state.status;
 
     let colorClasses = 'border-input bg-background hover:bg-background-onlook text-foreground';
-    let icon: React.ReactNode | null = <Icons.Globe className="mr-2 h-4 w-4" />;
+    let icon: React.ReactNode | null = <Icons.Globe className="mr-2 h-4 w-4" data-oid="vzao0fd" />;
     let text = 'Publish';
 
     if (status === PublishStatus.PUBLISHED) {
         colorClasses =
             'border-teal-300 bg-teal-400/90 hover:bg-teal-400 dark:border-teal-300 dark:bg-teal-700 dark:hover:bg-teal-500/20 dark:text-teal-100 text-white hover:text-background';
         text = editorEngine.history.length > 0 ? 'Update' : 'Live';
-        icon = <Icons.Globe className="mr-2 h-4 w-4" />;
+        icon = <Icons.Globe className="mr-2 h-4 w-4" data-oid="aajtup7" />;
     } else if (status === PublishStatus.LOADING) {
-        icon = <Icons.Shadow className="mr-2 h-4 w-4 animate-spin" />;
+        icon = <Icons.Shadow className="mr-2 h-4 w-4 animate-spin" data-oid="4bocz-_" />;
         text = 'Publishing';
     } else if (status === PublishStatus.UNPUBLISHED) {
         colorClasses = 'border-input bg-background hover:bg-background-onlook text-foreground';
     } else if (status === PublishStatus.ERROR) {
         colorClasses =
             'border-red-500/30 bg-red-500/10 hover:bg-red-500/20 text-red-500 hover:text-red-600 hover:border-red-500';
-        icon = <Icons.ExclamationTriangle className="mr-2 h-4 w-4" />;
+        icon = <Icons.ExclamationTriangle className="mr-2 h-4 w-4" data-oid="27jnctj" />;
     }
 
     return (
-        <DropdownMenuTrigger asChild>
+        <DropdownMenuTrigger asChild data-oid=".b9:f10">
             <Button
                 variant="outline"
                 size="sm"
@@ -39,6 +39,7 @@ export const TriggerButton = observer(() => {
                     'px-3 flex items-center border-[0.5px] text-xs justify-center shadow-sm h-8 rounded-md transition-all duration-300 ease-in-out',
                     colorClasses,
                 )}
+                data-oid="-6ahcs-"
             >
                 {icon}
                 {text}

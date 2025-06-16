@@ -11,7 +11,7 @@ import {
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuSeparator,
-    DropdownMenuTrigger
+    DropdownMenuTrigger,
 } from '@onlook/ui/dropdown-menu';
 import { Icons } from '@onlook/ui/icons';
 import { toast } from '@onlook/ui/sonner';
@@ -49,15 +49,12 @@ export const ProjectBreadcrumb = observer(() => {
     }
 
     async function captureProjectScreenshot() {
-        const frameView = editorEngine.frames.getAll().find(f => !!f.view)?.view;
+        const frameView = editorEngine.frames.getAll().find((f) => !!f.view)?.view;
         if (!frameView) {
             console.warn('No frames found');
             return null;
         }
-        const {
-            mimeType,
-            data: screenshotData
-        } = await frameView.captureScreenshot();
+        const { mimeType, data: screenshotData } = await frameView.captureScreenshot();
         const data = await uploadScreenshot(mimeType, screenshotData);
 
         if (!data) {
@@ -76,8 +73,8 @@ export const ProjectBreadcrumb = observer(() => {
                             bucket: STORAGE_BUCKETS.PREVIEW_IMAGES,
                             path: data?.path,
                         },
-                    }
-                }
+                    },
+                },
             });
         }
     }
@@ -99,7 +96,7 @@ export const ProjectBreadcrumb = observer(() => {
                 sendAnalytics('download project code', {
                     projectId: project.id,
                     projectName: project.name,
-                    method: 'codesandbox_download_url'
+                    method: 'codesandbox_download_url',
                 });
 
                 toast.success(t(transKeys.projects.actions.downloadSuccess));
@@ -109,18 +106,17 @@ export const ProjectBreadcrumb = observer(() => {
         } catch (error) {
             console.error('Download failed:', error);
             toast.error(t(transKeys.projects.actions.downloadError), {
-                description: error instanceof Error ? error.message : 'Unknown error'
+                description: error instanceof Error ? error.message : 'Unknown error',
             });
 
             sendAnalytics('download project code failed', {
                 projectId: project.id,
-                error: error instanceof Error ? error.message : 'Unknown error'
+                error: error instanceof Error ? error.message : 'Unknown error',
             });
         } finally {
             setIsDownloading(false);
         }
     }
-
 
     async function uploadScreenshot(mimeType: string, screenshotData: string) {
         if (!project?.id) {
@@ -128,9 +124,14 @@ export const ProjectBreadcrumb = observer(() => {
             return;
         }
         const file = base64ToBlob(screenshotData, mimeType);
-        const data = await uploadBlobToStorage(STORAGE_BUCKETS.PREVIEW_IMAGES, getScreenshotPath(project.id, mimeType), file, {
-            contentType: mimeType,
-        });
+        const data = await uploadBlobToStorage(
+            STORAGE_BUCKETS.PREVIEW_IMAGES,
+            getScreenshotPath(project.id, mimeType),
+            file,
+            {
+                contentType: mimeType,
+            },
+        );
         if (!data) {
             console.error('No data returned from upload to storage');
             return;
@@ -139,23 +140,32 @@ export const ProjectBreadcrumb = observer(() => {
     }
 
     return (
-        <div className="mx-2 flex flex-row items-center text-small gap-2">
-            <DropdownMenu open={isDropdownOpen} onOpenChange={setIsDropdownOpen}>
-                <DropdownMenuTrigger asChild>
+        <div className="mx-2 flex flex-row items-center text-small gap-2" data-oid="-jzl2jd">
+            <DropdownMenu open={isDropdownOpen} onOpenChange={setIsDropdownOpen} data-oid="o:by2dc">
+                <DropdownMenuTrigger asChild data-oid="c5s0idt">
                     <Button
                         variant={'ghost'}
                         className="mx-0 px-0 gap-2 text-foreground-onlook text-small hover:text-foreground-active hover:bg-transparent cursor-pointer group transition-colors duration-200"
+                        data-oid="r33cdf_"
                     >
                         <Icons.OnlookLogo
                             className={cn(
                                 'w-9 h-9 hidden md:block transition-colors duration-200',
                                 isClosingProject && 'animate-pulse',
                             )}
+                            data-oid="zbzs4v5"
                         />
-                        <span className="mx-0 max-w-[60px] md:max-w-[100px] lg:max-w-[200px] px-0 text-foreground-onlook text-small truncate cursor-pointer group-hover:text-foreground-active transition-colors duration-200">
+
+                        <span
+                            className="mx-0 max-w-[60px] md:max-w-[100px] lg:max-w-[200px] px-0 text-foreground-onlook text-small truncate cursor-pointer group-hover:text-foreground-active transition-colors duration-200"
+                            data-oid="2mdwmsk"
+                        >
                             {isClosingProject ? 'Stopping project...' : project?.name}
                         </span>
-                        <Icons.ChevronDown className="transition-all rotate-0 group-data-[state=open]:-rotate-180 duration-200 ease-in-out text-foreground-onlook group-hover:text-foreground-active" />
+                        <Icons.ChevronDown
+                            className="transition-all rotate-0 group-data-[state=open]:-rotate-180 duration-200 ease-in-out text-foreground-onlook group-hover:text-foreground-active"
+                            data-oid="w-5hm28"
+                        />
                     </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent
@@ -171,17 +181,24 @@ export const ProjectBreadcrumb = observer(() => {
                             setIsDropdownOpen(false);
                         }, 300);
                     }}
+                    data-oid="x8idjlk"
                 >
-                    <DropdownMenuItem onClick={() => handleNavigateToProjects()}>
-                        <div className="flex row center items-center group">
-                            <Icons.Tokens className="mr-2 group-hover:rotate-12 transition-transform" />
+                    <DropdownMenuItem onClick={() => handleNavigateToProjects()} data-oid="sun-0k_">
+                        <div className="flex row center items-center group" data-oid="b429o5q">
+                            <Icons.Tokens
+                                className="mr-2 group-hover:rotate-12 transition-transform"
+                                data-oid="hri6l0u"
+                            />
                             {t(transKeys.projects.actions.goToAllProjects)}
                         </div>
                     </DropdownMenuItem>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem onClick={() => router.push(Routes.HOME)}>
-                        <div className="flex row center items-center group">
-                            <Icons.Plus className="mr-2 group-hover:rotate-12 transition-transform" />
+                    <DropdownMenuSeparator data-oid="_.4oeyi" />
+                    <DropdownMenuItem onClick={() => router.push(Routes.HOME)} data-oid="xhf4we:">
+                        <div className="flex row center items-center group" data-oid="ci52a.s">
+                            <Icons.Plus
+                                className="mr-2 group-hover:rotate-12 transition-transform"
+                                data-oid="lwrd.u7"
+                            />
                             {t(transKeys.projects.actions.newProject)}
                         </div>
                     </DropdownMenuItem>
@@ -189,10 +206,16 @@ export const ProjectBreadcrumb = observer(() => {
                     <DropdownMenuItem
                         onClick={handleDownloadCode}
                         disabled={isDownloading}
+                        data-oid="mmpg6tx"
                     >
-                        <div className="flex row center items-center group">
-                            <Icons.Download className="mr-2 group-hover:scale-110 transition-transform" />
-                            {isDownloading ? t(transKeys.projects.actions.downloadingCode) : t(transKeys.projects.actions.downloadCode)}
+                        <div className="flex row center items-center group" data-oid="1sox.px">
+                            <Icons.Download
+                                className="mr-2 group-hover:scale-110 transition-transform"
+                                data-oid=".6rqqjn"
+                            />
+                            {isDownloading
+                                ? t(transKeys.projects.actions.downloadingCode)
+                                : t(transKeys.projects.actions.downloadCode)}
                         </div>
                     </DropdownMenuItem>
                 </DropdownMenuContent>

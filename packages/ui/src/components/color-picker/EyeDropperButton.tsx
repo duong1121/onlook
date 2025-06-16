@@ -38,8 +38,9 @@ export const EyeDropperButton = ({ onColorSelect, disabled }: EyeDropperButtonPr
             size="icon"
             disabled={!isSupported() || disabled}
             onClick={pickColor}
+            data-oid="insu76y"
         >
-            <Icons.EyeDropper />
+            <Icons.EyeDropper data-oid="kqww_d6" />
         </Button>
     );
 };

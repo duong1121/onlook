@@ -30,6 +30,7 @@ function Alert({
             role="alert"
             className={cn(alertVariants({ variant }), className)}
             {...props}
+            data-oid="v0qn-en"
         />
     );
 }
@@ -40,6 +41,7 @@ function AlertTitle({ className, ...props }: React.ComponentProps<'div'>) {
             data-slot="alert-title"
             className={cn('col-start-2 line-clamp-1 min-h-4 font-medium tracking-tight', className)}
             {...props}
+            data-oid="68:1u37"
         />
     );
 }
@@ -53,6 +55,7 @@ function AlertDescription({ className, ...props }: React.ComponentProps<'div'>) 
                 className,
             )}
             {...props}
+            data-oid="1bibps5"
         />
     );
 }

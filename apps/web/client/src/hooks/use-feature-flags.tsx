@@ -38,7 +38,7 @@ export const FeatureFlagsProvider = ({ children }: FeatureFlagsProviderProps) =>
     };
 
     return (
-        <FeatureFlagsContext.Provider value={{ isEnabled, flags }}>
+        <FeatureFlagsContext.Provider value={{ isEnabled, flags }} data-oid="0:pw3ph">
             {children}
         </FeatureFlagsContext.Provider>
     );

@@ -7,8 +7,9 @@ export const ImageBackground = () => {
         <Button
             variant="ghost"
             className="flex items-center justify-center px-2 flex-col gap-0.5 text-muted-foreground border border-border/0 cursor-pointer rounded-lg hover:bg-background-tertiary/20 hover:text-white hover:border hover:border-border focus-visible:ring-0 focus-visible:ring-offset-0 focus:outline-none focus-visible:outline-none active:bg-background-tertiary/20 active:text-white active:border active:border-border"
+            data-oid="njd0n.x"
         >
-            <div className="h-5 w-5 rounded-sm relative">
+            <div className="h-5 w-5 rounded-sm relative" data-oid="wtu.e2i">
                 <div
                     className="absolute inset-0 rounded-sm"
                     style={{
@@ -22,6 +23,7 @@ export const ImageBackground = () => {
                         backgroundPosition: '0 0, 0 3px, 3px -3px, -3px 0px',
                         backgroundColor: '#888888',
                     }}
+                    data-oid="m10spp3"
                 />
             </div>
         </Button>

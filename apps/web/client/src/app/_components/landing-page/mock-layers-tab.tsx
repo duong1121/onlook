@@ -19,8 +19,11 @@ export function MockLayersTab() {
     const [selectedId, setSelectedId] = React.useState<string>('1');
 
     return (
-        <div className="w-72 bg-background/80 rounded-lg shadow-lg p-2 overflow-hidden border border-border max-h-96 flex flex-col gap-1">
-            <div className="flex flex-col gap-1.5">
+        <div
+            className="w-72 bg-background/80 rounded-lg shadow-lg p-2 overflow-hidden border border-border max-h-96 flex flex-col gap-1"
+            data-oid="r33t7xl"
+        >
+            <div className="flex flex-col gap-1.5" data-oid="3_13cil">
                 {mockLayers.map((layer) => (
                     <div
                         key={layer.id}
@@ -29,19 +32,26 @@ export function MockLayersTab() {
                             selectedId === layer.id
                                 ? 'bg-red-500 text-foreground-primary'
                                 : hoveredId === layer.id
-                                ? 'bg-background-onlook text-foreground-primary'
-                                : 'text-foreground-secondary',
+                                  ? 'bg-background-onlook text-foreground-primary'
+                                  : 'text-foreground-secondary',
                         )}
                         onMouseEnter={() => setHoveredId(layer.id)}
                         onMouseLeave={() => setHoveredId(null)}
                         onClick={() => setSelectedId(layer.id)}
                         style={{ userSelect: 'none' }}
+                        data-oid="bcy1qr_"
                     >
-                        <NodeIcon iconClass="w-4 h-4 mr-2" tagName={layer.tagName} />
-                        <span className="truncate">{layer.name}</span>
+                        <NodeIcon
+                            iconClass="w-4 h-4 mr-2"
+                            tagName={layer.tagName}
+                            data-oid="d5tee:6"
+                        />
+                        <span className="truncate" data-oid="ha6ucr8">
+                            {layer.name}
+                        </span>
                     </div>
                 ))}
             </div>
         </div>
     );
-} 
+}

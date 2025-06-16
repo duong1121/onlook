@@ -19,15 +19,17 @@ export const SuggestedTeammates = ({ projectId }: SuggestedTeammateProps) => {
     });
 
     return (
-        <div className="flex flex-col gap-2 p-3">
-            <Separator />
-            <div className="space-y-0.5">
-                <div className="text-sm">Suggested Teammates</div>
-                <div className="text-xs text-muted-foreground">
+        <div className="flex flex-col gap-2 p-3" data-oid="lilf5n:">
+            <Separator data-oid="w:j.8t_" />
+            <div className="space-y-0.5" data-oid="3.ng_yi">
+                <div className="text-sm" data-oid="_cyc2zd">
+                    Suggested Teammates
+                </div>
+                <div className="text-xs text-muted-foreground" data-oid="hc.f2fe">
                     Invite relevant people to collaborate
                 </div>
             </div>
-            <div className="flex gap-0.5">
+            <div className="flex gap-0.5" data-oid="lq2:mr1">
                 {suggestedUsers?.map((email) => (
                     <Button
                         variant="secondary"
@@ -40,9 +42,10 @@ export const SuggestedTeammates = ({ projectId }: SuggestedTeammateProps) => {
                                 role: ProjectRole.ADMIN,
                             });
                         }}
+                        data-oid="527uqzk"
                     >
                         {email}
-                        <Icons.PlusCircled className="ml-1 size-4" />
+                        <Icons.PlusCircled className="ml-1 size-4" data-oid=".em7be_" />
                     </Button>
                 ))}
             </div>

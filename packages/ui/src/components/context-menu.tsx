@@ -7,31 +7,51 @@ import * as React from 'react';
 import { cn } from '../utils';
 
 function ContextMenu({ ...props }: React.ComponentProps<typeof ContextMenuPrimitive.Root>) {
-    return <ContextMenuPrimitive.Root data-slot="context-menu" {...props} />;
+    return <ContextMenuPrimitive.Root data-slot="context-menu" {...props} data-oid="oojyiy9" />;
 }
 
 function ContextMenuTrigger({
     ...props
 }: React.ComponentProps<typeof ContextMenuPrimitive.Trigger>) {
-    return <ContextMenuPrimitive.Trigger data-slot="context-menu-trigger" {...props} />;
+    return (
+        <ContextMenuPrimitive.Trigger
+            data-slot="context-menu-trigger"
+            {...props}
+            data-oid="-4wiyqx"
+        />
+    );
 }
 
 function ContextMenuGroup({ ...props }: React.ComponentProps<typeof ContextMenuPrimitive.Group>) {
-    return <ContextMenuPrimitive.Group data-slot="context-menu-group" {...props} />;
+    return (
+        <ContextMenuPrimitive.Group data-slot="context-menu-group" {...props} data-oid="9l35h0t" />
+    );
 }
 
 function ContextMenuPortal({ ...props }: React.ComponentProps<typeof ContextMenuPrimitive.Portal>) {
-    return <ContextMenuPrimitive.Portal data-slot="context-menu-portal" {...props} />;
+    return (
+        <ContextMenuPrimitive.Portal
+            data-slot="context-menu-portal"
+            {...props}
+            data-oid=".y.ac:o"
+        />
+    );
 }
 
 function ContextMenuSub({ ...props }: React.ComponentProps<typeof ContextMenuPrimitive.Sub>) {
-    return <ContextMenuPrimitive.Sub data-slot="context-menu-sub" {...props} />;
+    return <ContextMenuPrimitive.Sub data-slot="context-menu-sub" {...props} data-oid="_x_ewm6" />;
 }
 
 function ContextMenuRadioGroup({
     ...props
 }: React.ComponentProps<typeof ContextMenuPrimitive.RadioGroup>) {
-    return <ContextMenuPrimitive.RadioGroup data-slot="context-menu-radio-group" {...props} />;
+    return (
+        <ContextMenuPrimitive.RadioGroup
+            data-slot="context-menu-radio-group"
+            {...props}
+            data-oid="a0451r2"
+        />
+    );
 }
 
 function ContextMenuSubTrigger({
@@ -39,9 +59,7 @@ function ContextMenuSubTrigger({
     inset,
     children,
     ...props
-}: React.ComponentProps<typeof ContextMenuPrimitive.SubTrigger> & {
-    inset?: boolean;
-}) {
+}: React.ComponentProps<typeof ContextMenuPrimitive.SubTrigger> & { inset?: boolean }) {
     return (
         <ContextMenuPrimitive.SubTrigger
             data-slot="context-menu-sub-trigger"
@@ -51,9 +69,10 @@ function ContextMenuSubTrigger({
                 className,
             )}
             {...props}
+            data-oid="0-zebvj"
         >
             {children}
-            <ChevronRightIcon className="ml-auto" />
+            <ChevronRightIcon className="ml-auto" data-oid="o35pg.n" />
         </ContextMenuPrimitive.SubTrigger>
     );
 }
@@ -70,6 +89,7 @@ function ContextMenuSubContent({
                 className,
             )}
             {...props}
+            data-oid="j.fnwlo"
         />
     );
 }
@@ -79,7 +99,7 @@ function ContextMenuContent({
     ...props
 }: React.ComponentProps<typeof ContextMenuPrimitive.Content>) {
     return (
-        <ContextMenuPrimitive.Portal>
+        <ContextMenuPrimitive.Portal data-oid="5.fbo-p">
             <ContextMenuPrimitive.Content
                 data-slot="context-menu-content"
                 className={cn(
@@ -87,6 +107,7 @@ function ContextMenuContent({
                     className,
                 )}
                 {...props}
+                data-oid="._v:5nf"
             />
         </ContextMenuPrimitive.Portal>
     );
@@ -111,6 +132,7 @@ function ContextMenuItem({
                 className,
             )}
             {...props}
+            data-oid="_chq-g2"
         />
     );
 }
@@ -130,10 +152,14 @@ function ContextMenuCheckboxItem({
             )}
             checked={checked}
             {...props}
+            data-oid="mv2w2ot"
         >
-            <span className="pointer-events-none absolute left-2 flex size-3.5 items-center justify-center">
-                <ContextMenuPrimitive.ItemIndicator>
-                    <CheckIcon className="size-4" />
+            <span
+                className="pointer-events-none absolute left-2 flex size-3.5 items-center justify-center"
+                data-oid="fp8yyy1"
+            >
+                <ContextMenuPrimitive.ItemIndicator data-oid="1nek7m3">
+                    <CheckIcon className="size-4" data-oid="8w230bk" />
                 </ContextMenuPrimitive.ItemIndicator>
             </span>
             {children}
@@ -154,10 +180,14 @@ function ContextMenuRadioItem({
                 className,
             )}
             {...props}
+            data-oid="ntbfl9w"
         >
-            <span className="pointer-events-none absolute left-2 flex size-3.5 items-center justify-center">
-                <ContextMenuPrimitive.ItemIndicator>
-                    <CircleIcon className="size-2 fill-current" />
+            <span
+                className="pointer-events-none absolute left-2 flex size-3.5 items-center justify-center"
+                data-oid="93itu97"
+            >
+                <ContextMenuPrimitive.ItemIndicator data-oid="7yrt5h1">
+                    <CircleIcon className="size-2 fill-current" data-oid="79r48iq" />
                 </ContextMenuPrimitive.ItemIndicator>
             </span>
             {children}
@@ -169,9 +199,7 @@ function ContextMenuLabel({
     className,
     inset,
     ...props
-}: React.ComponentProps<typeof ContextMenuPrimitive.Label> & {
-    inset?: boolean;
-}) {
+}: React.ComponentProps<typeof ContextMenuPrimitive.Label> & { inset?: boolean }) {
     return (
         <ContextMenuPrimitive.Label
             data-slot="context-menu-label"
@@ -181,6 +209,7 @@ function ContextMenuLabel({
                 className,
             )}
             {...props}
+            data-oid="80w.wrg"
         />
     );
 }
@@ -194,6 +223,7 @@ function ContextMenuSeparator({
             data-slot="context-menu-separator"
             className={cn('bg-border -mx-1 my-1 h-px', className)}
             {...props}
+            data-oid="oo--d5:"
         />
     );
 }
@@ -204,6 +234,7 @@ function ContextMenuShortcut({ className, ...props }: React.ComponentProps<'span
             data-slot="context-menu-shortcut"
             className={cn('text-muted-foreground ml-auto text-xs tracking-widest', className)}
             {...props}
+            data-oid="_wc3w9r"
         />
     );
 }

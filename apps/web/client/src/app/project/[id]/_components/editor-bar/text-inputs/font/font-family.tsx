@@ -9,15 +9,20 @@ export const FontFamily = memo(
             <div
                 key={name}
                 onClick={onSetFont}
-                className={`text-muted-foreground data-[highlighted]:bg-background-tertiary/10 border-border/0 data-[highlighted]:border-border flex items-center justify-between rounded-md border px-2 py-1.5 text-sm data-[highlighted]:text-white cursor-pointer transition-colors duration-150 hover:bg-background-tertiary/20 hover:text-foreground ${isActive
-                    ? 'bg-background-tertiary/20 border-border border text-white'
-                    : ''
-                    }`}
+                className={`text-muted-foreground data-[highlighted]:bg-background-tertiary/10 border-border/0 data-[highlighted]:border-border flex items-center justify-between rounded-md border px-2 py-1.5 text-sm data-[highlighted]:text-white cursor-pointer transition-colors duration-150 hover:bg-background-tertiary/20 hover:text-foreground ${
+                    isActive ? 'bg-background-tertiary/20 border-border border text-white' : ''
+                }`}
+                data-oid="i9j.-bu"
             >
-                <span className="font-medium" style={{ fontFamily: name }}>
+                <span className="font-medium" style={{ fontFamily: name }} data-oid="r41w7ug">
                     {name}
                 </span>
-                {isActive && <Icons.Check className="ml-2 h-4 w-4 text-foreground-primary" />}
+                {isActive && (
+                    <Icons.Check
+                        className="ml-2 h-4 w-4 text-foreground-primary"
+                        data-oid="8tgiia2"
+                    />
+                )}
             </div>
         );
     },

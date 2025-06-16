@@ -21,7 +21,9 @@ export const DeviceSettings = observer(({ frameId }: { frameId: string }) => {
 
     if (!frameData) {
         return (
-            <p className="text-sm text-foreground-primary">Frame not found</p>
+            <p className="text-sm text-foreground-primary" data-oid="qfl14zb">
+                Frame not found
+            </p>
         );
     }
 
@@ -37,43 +39,56 @@ export const DeviceSettings = observer(({ frameId }: { frameId: string }) => {
     }
 
     return (
-        <div className="flex flex-col gap-2">
-            <p className="text-sm text-foreground-primary">Device Settings</p>
-            <div className="flex flex-row justify-between items-center">
-                <span className="text-xs text-foreground-secondary">Theme</span>
-                <div className="flex flex-row p-0.5 w-3/5 bg-background-secondary rounded">
+        <div className="flex flex-col gap-2" data-oid="_70:0wr">
+            <p className="text-sm text-foreground-primary" data-oid="7z.4:33">
+                Device Settings
+            </p>
+            <div className="flex flex-row justify-between items-center" data-oid="66owqfc">
+                <span className="text-xs text-foreground-secondary" data-oid="w5x26j-">
+                    Theme
+                </span>
+                <div
+                    className="flex flex-row p-0.5 w-3/5 bg-background-secondary rounded"
+                    data-oid="f.f4iua"
+                >
                     <Button
                         size={'icon'}
-                        className={`flex-1 h-full px-0.5 py-1.5 bg-background-secondary rounded-sm ${theme === SystemTheme.SYSTEM
-                            ? 'bg-background-tertiary hover:bg-background-tertiary'
-                            : 'hover:bg-background-tertiary/50 text-foreground-onlook'
-                            }`}
+                        className={`flex-1 h-full px-0.5 py-1.5 bg-background-secondary rounded-sm ${
+                            theme === SystemTheme.SYSTEM
+                                ? 'bg-background-tertiary hover:bg-background-tertiary'
+                                : 'hover:bg-background-tertiary/50 text-foreground-onlook'
+                        }`}
                         variant={'ghost'}
                         onClick={() => changeTheme(SystemTheme.SYSTEM)}
+                        data-oid="mow3:v2"
                     >
-                        <Icons.Laptop />
+                        <Icons.Laptop data-oid="maztmop" />
                     </Button>
                     <Button
                         size={'icon'}
-                        className={`flex-1 h-full px-0.5 py-1.5 bg-background-secondary rounded-sm ${theme === SystemTheme.DARK
-                            ? 'bg-background-tertiary hover:bg-background-tertiary'
-                            : 'hover:bg-background-tertiary/50 text-foreground-onlook'
-                            }`}
+                        className={`flex-1 h-full px-0.5 py-1.5 bg-background-secondary rounded-sm ${
+                            theme === SystemTheme.DARK
+                                ? 'bg-background-tertiary hover:bg-background-tertiary'
+                                : 'hover:bg-background-tertiary/50 text-foreground-onlook'
+                        }`}
                         variant={'ghost'}
                         onClick={() => changeTheme(SystemTheme.DARK)}
+                        data-oid="lr-eqs4"
                     >
-                        <Icons.Moon />
+                        <Icons.Moon data-oid="8v:w4_7" />
                     </Button>
                     <Button
                         size={'icon'}
-                        className={`flex-1 h-full px-0.5 py-1.5 bg-background-secondary rounded-sm ${theme === SystemTheme.LIGHT
-                            ? 'bg-background-tertiary hover:bg-background-tertiary'
-                            : 'hover:bg-background-tertiary/50 text-foreground-onlook'
-                            }`}
+                        className={`flex-1 h-full px-0.5 py-1.5 bg-background-secondary rounded-sm ${
+                            theme === SystemTheme.LIGHT
+                                ? 'bg-background-tertiary hover:bg-background-tertiary'
+                                : 'hover:bg-background-tertiary/50 text-foreground-onlook'
+                        }`}
                         variant={'ghost'}
                         onClick={() => changeTheme(SystemTheme.LIGHT)}
+                        data-oid="v12qp-f"
                     >
-                        <Icons.Sun />
+                        <Icons.Sun data-oid="n5.lkj9" />
                     </Button>
                 </div>
             </div>

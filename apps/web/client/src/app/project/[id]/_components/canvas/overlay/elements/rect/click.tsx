@@ -114,9 +114,22 @@ export const ClickRect = ({
 
         return (
             <>
-                <defs>
-                    <pattern id={patternId} patternUnits="userSpaceOnUse" width="20" height="20">
-                        <rect width="20" height="20" fill={colors.blue[500]} fillOpacity="0.1" />
+                <defs data-oid="axntbt5">
+                    <pattern
+                        id={patternId}
+                        patternUnits="userSpaceOnUse"
+                        width="20"
+                        height="20"
+                        data-oid="3sy-aed"
+                    >
+                        <rect
+                            width="20"
+                            height="20"
+                            fill={colors.blue[500]}
+                            fillOpacity="0.1"
+                            data-oid="qk36.hb"
+                        />
+
                         <line
                             x1="0"
                             y1="20"
@@ -125,17 +138,27 @@ export const ClickRect = ({
                             stroke={colors.blue[500]}
                             strokeWidth="0.3"
                             strokeLinecap="square"
+                            data-oid="pug.mie"
                         />
                     </pattern>
-                    <mask id={maskId}>
+                    <mask id={maskId} data-oid="y7virrn">
                         <rect
                             x={-adjusted.left}
                             y={-adjusted.top}
                             width={width + adjusted.left + adjusted.right}
                             height={height + adjusted.top + adjusted.bottom}
                             fill="white"
+                            data-oid="mhfonqf"
                         />
-                        <rect x="0" y="0" width={width} height={height} fill="black" />
+
+                        <rect
+                            x="0"
+                            y="0"
+                            width={width}
+                            height={height}
+                            fill="black"
+                            data-oid="do2zvn9"
+                        />
                     </mask>
                 </defs>
                 <rect
@@ -145,6 +168,7 @@ export const ClickRect = ({
                     height={height + adjusted.top + adjusted.bottom}
                     fill={`url(#${patternId})`}
                     mask={`url(#${maskId})`}
+                    data-oid="34118os"
                 />
 
                 {/* Keep existing margin labels */}
@@ -156,6 +180,7 @@ export const ClickRect = ({
                         fontSize="10"
                         textAnchor="middle"
                         dominantBaseline="middle"
+                        data-oid="o1-.2y1"
                     >
                         {original.top}
                     </text>
@@ -168,6 +193,7 @@ export const ClickRect = ({
                         fontSize="10"
                         textAnchor="middle"
                         dominantBaseline="middle"
+                        data-oid="qat:v-6"
                     >
                         {original.bottom}
                     </text>
@@ -180,6 +206,7 @@ export const ClickRect = ({
                         fontSize="10"
                         textAnchor="middle"
                         dominantBaseline="middle"
+                        data-oid="n7w5m4p"
                     >
                         {original.left}
                     </text>
@@ -192,6 +219,7 @@ export const ClickRect = ({
                         fontSize="10"
                         textAnchor="middle"
                         dominantBaseline="middle"
+                        data-oid="ormd93k"
                     >
                         {original.right}
                     </text>
@@ -213,9 +241,22 @@ export const ClickRect = ({
 
         return (
             <>
-                <defs>
-                    <pattern id={patternId} patternUnits="userSpaceOnUse" width="20" height="20">
-                        <rect width="20" height="20" fill={colors.green[500]} fillOpacity="0.1" />
+                <defs data-oid=":.v1io0">
+                    <pattern
+                        id={patternId}
+                        patternUnits="userSpaceOnUse"
+                        width="20"
+                        height="20"
+                        data-oid=".66awgv"
+                    >
+                        <rect
+                            width="20"
+                            height="20"
+                            fill={colors.green[500]}
+                            fillOpacity="0.1"
+                            data-oid="g8:dcdj"
+                        />
+
                         <line
                             x1="0"
                             y1="20"
@@ -224,16 +265,26 @@ export const ClickRect = ({
                             stroke={colors.green[500]}
                             strokeWidth="0.3"
                             strokeLinecap="square"
+                            data-oid="u6zuucw"
                         />
                     </pattern>
-                    <mask id={maskId}>
-                        <rect x="0" y="0" width={width} height={height} fill="white" />
+                    <mask id={maskId} data-oid="09ydcc4">
+                        <rect
+                            x="0"
+                            y="0"
+                            width={width}
+                            height={height}
+                            fill="white"
+                            data-oid="u3e8af9"
+                        />
+
                         <rect
                             x={adjusted.left}
                             y={adjusted.top}
                             width={pWidth}
                             height={pHeight}
                             fill="black"
+                            data-oid=":w7zb4q"
                         />
                     </mask>
                 </defs>
@@ -244,6 +295,7 @@ export const ClickRect = ({
                     height={height}
                     fill={`url(#${patternId})`}
                     mask={`url(#${maskId})`}
+                    data-oid="hvdkdns"
                 />
 
                 {/* Keep existing padding labels */}
@@ -255,6 +307,7 @@ export const ClickRect = ({
                         fontSize="10"
                         textAnchor="middle"
                         dominantBaseline="middle"
+                        data-oid="fxqic7w"
                     >
                         {original.top}
                     </text>
@@ -267,6 +320,7 @@ export const ClickRect = ({
                         fontSize="10"
                         textAnchor="middle"
                         dominantBaseline="middle"
+                        data-oid="w1a19sm"
                     >
                         {original.bottom}
                     </text>
@@ -279,6 +333,7 @@ export const ClickRect = ({
                         fontSize="10"
                         textAnchor="middle"
                         dominantBaseline="middle"
+                        data-oid="jkk07bl"
                     >
                         {original.left}
                     </text>
@@ -291,6 +346,7 @@ export const ClickRect = ({
                         fontSize="10"
                         textAnchor="middle"
                         dominantBaseline="middle"
+                        data-oid="gplbvid"
                     >
                         {original.right}
                     </text>
@@ -322,8 +378,8 @@ export const ClickRect = ({
                 : `M${rectX},${rectY} v${rectHeight - radius} q0,${radius} ${radius},${radius} h${rectWidth - 2 * radius} q${radius},0 ${radius},-${radius} v-${rectHeight - radius} z`;
 
         return (
-            <g>
-                <path d={path} fill={rectColor} />
+            <g data-oid="pnru0:k">
+                <path d={path} fill={rectColor} data-oid="4e805.t" />
                 <text
                     x={width / 2}
                     y={rectY + rectHeight / 2}
@@ -331,6 +387,7 @@ export const ClickRect = ({
                     fontSize="12"
                     textAnchor="middle"
                     dominantBaseline="middle"
+                    data-oid="_vs9j84"
                 >
                     {text}
                 </text>
@@ -346,6 +403,7 @@ export const ClickRect = ({
             left={left}
             isComponent={isComponent}
             strokeWidth={2}
+            data-oid="-susqxw"
         >
             {renderMarginLabels()}
             {renderPaddingLabels()}
@@ -358,6 +416,7 @@ export const ClickRect = ({
                     borderRadius={parseInt(styles?.computed.borderRadius ?? '0')}
                     isComponent={isComponent}
                     styles={styles?.computed ?? {}}
+                    data-oid="ru72.vk"
                 />
             )}
         </BaseRect>

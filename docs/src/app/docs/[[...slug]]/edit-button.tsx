@@ -18,8 +18,9 @@ export function EditButton({ href, className, children }: EditButtonProps) {
             variant="secondary"
             size="sm"
             className={className}
+            data-oid="2:we.5t"
         >
             {children}
         </Button>
     );
-} 
+}

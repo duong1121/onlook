@@ -48,29 +48,44 @@ export const ChatHistory = observer(({ isOpen, onOpenChange }: ChatHistoryProps)
     });
 
     return (
-        <Popover open={isOpen} onOpenChange={handlePopoverOpenChange}>
-            <PopoverAnchor className="absolute -left-2 top-0" />
-            <PopoverContent side="left" align="start" className="rounded-xl p-0">
-                <div className="flex flex-col select-none">
-                    <div className="border-b">
-                        <div className="flex flex-row justify-between items-center p-1 h-fit text-xs text-foreground-tertiary">
-                            <span className="px-2">Chat History</span>
+        <Popover open={isOpen} onOpenChange={handlePopoverOpenChange} data-oid="sj23nah">
+            <PopoverAnchor className="absolute -left-2 top-0" data-oid="ujqs7s9" />
+            <PopoverContent side="left" align="start" className="rounded-xl p-0" data-oid="5jqxh0x">
+                <div className="flex flex-col select-none" data-oid="kjqrpbi">
+                    <div className="border-b" data-oid="1u2.679">
+                        <div
+                            className="flex flex-row justify-between items-center p-1 h-fit text-xs text-foreground-tertiary"
+                            data-oid=".koxkpk"
+                        >
+                            <span className="px-2" data-oid="f2aticm">
+                                Chat History
+                            </span>
                             <Button
                                 variant={'ghost'}
                                 size={'icon'}
                                 className="p-2 w-fit hover:bg-transparent"
                                 onClick={() => onOpenChange(false)}
+                                data-oid="9efh70e"
                             >
-                                <Icons.CrossL />
+                                <Icons.CrossL data-oid="or50kk7" />
                             </Button>
                         </div>
                     </div>
-                    <div className="flex flex-col gap-2 p-2 text-foreground-tertiary">
-                        <div className="flex flex-col">
+                    <div
+                        className="flex flex-col gap-2 p-2 text-foreground-tertiary"
+                        data-oid="ydgby-o"
+                    >
+                        <div className="flex flex-col" data-oid="gftzi4.">
                             {groups.map((group) => (
-                                <div className="flex flex-col gap-1" key={group.name}>
-                                    <span className="text-[0.7rem] px-2">{group.name}</span>
-                                    <div className="flex flex-col">
+                                <div
+                                    className="flex flex-col gap-1"
+                                    key={group.name}
+                                    data-oid="s0dv32y"
+                                >
+                                    <span className="text-[0.7rem] px-2" data-oid="uk8ljgk">
+                                        {group.name}
+                                    </span>
+                                    <div className="flex flex-col" data-oid="7dq.ofx">
                                         {sortedConversations.map((conversation) => (
                                             <div
                                                 className={cn(
@@ -86,13 +101,20 @@ export const ChatHistory = observer(({ isOpen, onOpenChange }: ChatHistoryProps)
                                                         conversation.id,
                                                     )
                                                 }
+                                                data-oid="sjsea:0"
                                             >
-                                                <Icons.ChatBubble className="flex-none mx-2" />
-                                                <span className="text-xs truncate w-80 text-left">
+                                                <Icons.ChatBubble
+                                                    className="flex-none mx-2"
+                                                    data-oid="._mg:j-"
+                                                />
+                                                <span
+                                                    className="text-xs truncate w-80 text-left"
+                                                    data-oid="7ipy7x0"
+                                                >
                                                     {conversation.displayName ?? 'New Conversation'}
                                                 </span>
-                                                <Tooltip>
-                                                    <TooltipTrigger asChild>
+                                                <Tooltip data-oid="7p.iofw">
+                                                    <TooltipTrigger asChild data-oid="-2y0:nd">
                                                         <Button
                                                             variant={'ghost'}
                                                             size={'icon'}
@@ -104,15 +126,25 @@ export const ChatHistory = observer(({ isOpen, onOpenChange }: ChatHistoryProps)
                                                                 );
                                                                 setShowDeleteDialog(true);
                                                             }}
+                                                            data-oid="cc1tpo8"
                                                         >
-                                                            <Icons.Trash className="w-4 h-4" />
+                                                            <Icons.Trash
+                                                                className="w-4 h-4"
+                                                                data-oid="i4ez6om"
+                                                            />
                                                         </Button>
                                                     </TooltipTrigger>
-                                                    <TooltipContent side="right">
-                                                        <p className="font-normal">
+                                                    <TooltipContent side="right" data-oid="lrdoe6m">
+                                                        <p
+                                                            className="font-normal"
+                                                            data-oid="u53spcw"
+                                                        >
                                                             Delete Conversation
                                                         </p>
-                                                        <TooltipArrow className="fill-foreground" />
+                                                        <TooltipArrow
+                                                            className="fill-foreground"
+                                                            data-oid="s7h3xvc"
+                                                        />
                                                     </TooltipContent>
                                                 </Tooltip>
                                             </div>
@@ -124,25 +156,34 @@ export const ChatHistory = observer(({ isOpen, onOpenChange }: ChatHistoryProps)
                     </div>
                 </div>
             </PopoverContent>
-            <AlertDialog open={showDeleteDialog} onOpenChange={setShowDeleteDialog}>
-                <AlertDialogContent>
-                    <AlertDialogHeader>
-                        <AlertDialogTitle>
+            <AlertDialog
+                open={showDeleteDialog}
+                onOpenChange={setShowDeleteDialog}
+                data-oid="grj47b1"
+            >
+                <AlertDialogContent data-oid="k9vgmmw">
+                    <AlertDialogHeader data-oid="vwy8gg:">
+                        <AlertDialogTitle data-oid="ut9xvqs">
                             Are you sure you want to delete this conversation?
                         </AlertDialogTitle>
-                        <AlertDialogDescription>
+                        <AlertDialogDescription data-oid="vliz8w.">
                             This action cannot be undone. This will permanently delete your
                             conversation.
                         </AlertDialogDescription>
                     </AlertDialogHeader>
-                    <AlertDialogFooter>
-                        <Button variant={'ghost'} onClick={() => setShowDeleteDialog(false)}>
+                    <AlertDialogFooter data-oid="5zhsiru">
+                        <Button
+                            variant={'ghost'}
+                            onClick={() => setShowDeleteDialog(false)}
+                            data-oid="5.u906_"
+                        >
                             Cancel
                         </Button>
                         <Button
                             variant={'destructive'}
                             className="rounded-md text-sm"
                             onClick={handleDeleteConversation}
+                            data-oid="ancjplf"
                         >
                             Delete
                         </Button>

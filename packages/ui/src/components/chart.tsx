@@ -46,7 +46,7 @@ function ChartContainer({
     const chartId = `chart-${id || uniqueId.replace(/:/g, '')}`;
 
     return (
-        <ChartContext.Provider value={{ config }}>
+        <ChartContext.Provider value={{ config }} data-oid="gdau4mm">
             <div
                 data-slot="chart"
                 data-chart={chartId}
@@ -55,9 +55,10 @@ function ChartContainer({
                     className,
                 )}
                 {...props}
+                data-oid="a06mqrd"
             >
-                <ChartStyle id={chartId} config={config} />
-                <RechartsPrimitive.ResponsiveContainer>
+                <ChartStyle id={chartId} config={config} data-oid=".b0w7.1" />
+                <RechartsPrimitive.ResponsiveContainer data-oid="ow1s3ii">
                     {children}
                 </RechartsPrimitive.ResponsiveContainer>
             </div>
@@ -91,6 +92,7 @@ ${colorConfig
                     )
                     .join('\n'),
             }}
+            data-oid="mqx83oo"
         />
     );
 };
@@ -136,7 +138,7 @@ function ChartTooltipContent({
 
         if (labelFormatter) {
             return (
-                <div className={cn('font-medium', labelClassName)}>
+                <div className={cn('font-medium', labelClassName)} data-oid="we:1erw">
                     {labelFormatter(value, payload)}
                 </div>
             );
@@ -146,7 +148,11 @@ function ChartTooltipContent({
             return null;
         }
 
-        return <div className={cn('font-medium', labelClassName)}>{value}</div>;
+        return (
+            <div className={cn('font-medium', labelClassName)} data-oid="d945tfq">
+                {value}
+            </div>
+        );
     }, [label, labelFormatter, payload, hideLabel, labelClassName, config, labelKey]);
 
     if (!active || !payload?.length) {
@@ -161,9 +167,10 @@ function ChartTooltipContent({
                 'border-border/50 bg-background grid min-w-[8rem] items-start gap-1.5 rounded-lg border px-2.5 py-1.5 text-xs shadow-xl',
                 className,
             )}
+            data-oid="w2_ttk_"
         >
             {!nestLabel ? tooltipLabel : null}
-            <div className="grid gap-1.5">
+            <div className="grid gap-1.5" data-oid="rs8towd">
                 {payload.map((item, index) => {
                     const key = `${nameKey || item.name || item.dataKey || 'value'}`;
                     const itemConfig = getPayloadConfigFromPayload(config, item, key);
@@ -176,13 +183,14 @@ function ChartTooltipContent({
                                 '[&>svg]:text-muted-foreground flex w-full flex-wrap items-stretch gap-2 [&>svg]:h-2.5 [&>svg]:w-2.5',
                                 indicator === 'dot' && 'items-center',
                             )}
+                            data-oid="36-058v"
                         >
                             {formatter && item?.value !== undefined && item.name ? (
                                 formatter(item.value, item.name, item, index, item.payload)
                             ) : (
                                 <>
                                     {itemConfig?.icon ? (
-                                        <itemConfig.icon />
+                                        <itemConfig.icon data-oid="rucq51p" />
                                     ) : (
                                         !hideIndicator && (
                                             <div
@@ -203,6 +211,7 @@ function ChartTooltipContent({
                                                         '--color-border': indicatorColor,
                                                     } as React.CSSProperties
                                                 }
+                                                data-oid="auq6_.r"
                                             />
                                         )
                                     )}
@@ -211,15 +220,22 @@ function ChartTooltipContent({
                                             'flex flex-1 justify-between leading-none',
                                             nestLabel ? 'items-end' : 'items-center',
                                         )}
+                                        data-oid="rx-09a-"
                                     >
-                                        <div className="grid gap-1.5">
+                                        <div className="grid gap-1.5" data-oid="9vw29g2">
                                             {nestLabel ? tooltipLabel : null}
-                                            <span className="text-muted-foreground">
+                                            <span
+                                                className="text-muted-foreground"
+                                                data-oid="rmx1sae"
+                                            >
                                                 {itemConfig?.label || item.name}
                                             </span>
                                         </div>
                                         {item.value && (
-                                            <span className="text-foreground font-mono font-medium tabular-nums">
+                                            <span
+                                                className="text-foreground font-mono font-medium tabular-nums"
+                                                data-oid="2ob:9vv"
+                                            >
                                                 {item.value.toLocaleString()}
                                             </span>
                                         )}
@@ -260,6 +276,7 @@ function ChartLegendContent({
                 verticalAlign === 'top' ? 'pb-3' : 'pt-3',
                 className,
             )}
+            data-oid="jq-h3__"
         >
             {payload.map((item) => {
                 const key = `${nameKey || item.dataKey || 'value'}`;
@@ -271,15 +288,17 @@ function ChartLegendContent({
                         className={cn(
                             '[&>svg]:text-muted-foreground flex items-center gap-1.5 [&>svg]:h-3 [&>svg]:w-3',
                         )}
+                        data-oid=".1ss:wo"
                     >
                         {itemConfig?.icon && !hideIcon ? (
-                            <itemConfig.icon />
+                            <itemConfig.icon data-oid="je9gizm" />
                         ) : (
                             <div
                                 className="h-2 w-2 shrink-0 rounded-[2px]"
                                 style={{
                                     backgroundColor: item.color,
                                 }}
+                                data-oid="okuttlw"
                             />
                         )}
                         {itemConfig?.label}

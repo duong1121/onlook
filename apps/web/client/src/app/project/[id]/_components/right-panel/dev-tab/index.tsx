@@ -7,7 +7,7 @@ import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
-    DropdownMenuTrigger
+    DropdownMenuTrigger,
 } from '@onlook/ui/dropdown-menu';
 import { Icons } from '@onlook/ui/icons';
 import { toast } from '@onlook/ui/sonner';
@@ -38,7 +38,9 @@ export const DevTab = observer(() => {
 
     // Helper function to check if sandbox is connected and ready
     const isSandboxReady = useCallback((): boolean => {
-        return !!(editorEngine.sandbox.session.session && !editorEngine.sandbox.session.isConnecting);
+        return !!(
+            editorEngine.sandbox.session.session && !editorEngine.sandbox.session.isConnecting
+        );
     }, [editorEngine.sandbox.session.session, editorEngine.sandbox.session.isConnecting]);
 
     // Helper function to handle sandbox not ready scenarios
@@ -173,10 +175,11 @@ export const DevTab = observer(() => {
                 selection,
                 effects: [
                     EditorView.scrollIntoView(selection.main, {
-                        y: 'start'
-                    })
+                        y: 'start',
+                    }),
                 ],
-                userEvent: 'select.element'
+
+                userEvent: 'select.element',
             });
 
             // Force the editor to focus
@@ -273,19 +276,22 @@ export const DevTab = observer(() => {
         }
     }
 
-    const loadFile = useCallback(async (filePath: string): Promise<EditorFile | null> => {
-        if (!isSandboxReady()) {
-            handleSandboxNotReady('load file');
-            return null;
-        }
+    const loadFile = useCallback(
+        async (filePath: string): Promise<EditorFile | null> => {
+            if (!isSandboxReady()) {
+                handleSandboxNotReady('load file');
+                return null;
+            }
 
-        try {
-            return await ide.openFile(filePath);
-        } catch (error) {
-            console.error('Error loading file:', error);
-            return null;
-        }
-    }, [isSandboxReady]);
+            try {
+                return await ide.openFile(filePath);
+            } catch (error) {
+                console.error('Error loading file:', error);
+                return null;
+            }
+        },
+        [isSandboxReady],
+    );
 
     function handleFileSelect(file: EditorFile) {
         ide.setHighlightRange(null);
@@ -349,7 +355,7 @@ export const DevTab = observer(() => {
     };
 
     function closeFile(fileId: string) {
-        if (ide.openedFiles.find(f => f.id === fileId)?.isDirty) {
+        if (ide.openedFiles.find((f) => f.id === fileId)?.isDirty) {
             setShowUnsavedDialog(true);
             return;
         }
@@ -422,46 +428,70 @@ export const DevTab = observer(() => {
     }, []);
 
     return (
-        <div className="size-full flex flex-col">
-            <div className="flex items-center justify-between h-11 pl-4 pr-2 border-b-[0.5px]">
-                <div className="flex gap-1 items-center h-full">
-                    <Tooltip>
-                        <TooltipTrigger asChild>
-                            <Button variant="ghost" size="icon" onClick={() => setIsFilesVisible(!isFilesVisible)}>
-                                <Icons.CollapseSidebar />
+        <div className="size-full flex flex-col" data-oid="ka4.mpd">
+            <div
+                className="flex items-center justify-between h-11 pl-4 pr-2 border-b-[0.5px]"
+                data-oid="ii54.xy"
+            >
+                <div className="flex gap-1 items-center h-full" data-oid="j9e_66k">
+                    <Tooltip data-oid="mld78hp">
+                        <TooltipTrigger asChild data-oid="ugwbqoj">
+                            <Button
+                                variant="ghost"
+                                size="icon"
+                                onClick={() => setIsFilesVisible(!isFilesVisible)}
+                                data-oid="y30.mp7"
+                            >
+                                <Icons.CollapseSidebar data-oid="24ssuvf" />
                             </Button>
                         </TooltipTrigger>
-                        <TooltipContent side="bottom" hideArrow>
+                        <TooltipContent side="bottom" hideArrow data-oid="2w:zi1r">
                             {isFilesVisible ? 'Collapse sidebar' : 'Expand sidebar'}
                         </TooltipContent>
                     </Tooltip>
-                    <Tooltip>
-                        <TooltipTrigger>
-                            <Button variant="ghost" size="icon" onClick={() => setFileModalOpen(true)}>
-                                <Icons.FilePlus />
+                    <Tooltip data-oid="wlzgw29">
+                        <TooltipTrigger data-oid=".f1fjnl">
+                            <Button
+                                variant="ghost"
+                                size="icon"
+                                onClick={() => setFileModalOpen(true)}
+                                data-oid="ewm.82b"
+                            >
+                                <Icons.FilePlus data-oid="79z-3il" />
                             </Button>
                         </TooltipTrigger>
-                        <TooltipContent side="bottom" hideArrow>
+                        <TooltipContent side="bottom" hideArrow data-oid="zzz-zop">
                             New File
                         </TooltipContent>
                     </Tooltip>
-                    <Tooltip>
-                        <TooltipTrigger>
-                            <Button variant="ghost" size="icon" onClick={() => setFolderModalOpen(true)}>
-                                <Icons.DirectoryPlus />
+                    <Tooltip data-oid="x9dfvba">
+                        <TooltipTrigger data-oid="0luz1b1">
+                            <Button
+                                variant="ghost"
+                                size="icon"
+                                onClick={() => setFolderModalOpen(true)}
+                                data-oid="lyleqok"
+                            >
+                                <Icons.DirectoryPlus data-oid="ao7bdwe" />
                             </Button>
                         </TooltipTrigger>
-                        <TooltipContent side="bottom" hideArrow>
+                        <TooltipContent side="bottom" hideArrow data-oid="9gx83_s">
                             New Folder
                         </TooltipContent>
                     </Tooltip>
-                    <Tooltip>
-                        <TooltipTrigger>
-                            <Button variant="ghost" size="icon" onClick={saveFile} disabled={!isDirty}>
-                                <Icons.FloppyDisk />
+                    <Tooltip data-oid="fg712-q">
+                        <TooltipTrigger data-oid="-r_aofq">
+                            <Button
+                                variant="ghost"
+                                size="icon"
+                                onClick={saveFile}
+                                disabled={!isDirty}
+                                data-oid="o8aqo8s"
+                            >
+                                <Icons.FloppyDisk data-oid="gt1cobx" />
                             </Button>
                         </TooltipTrigger>
-                        <TooltipContent side="bottom" hideArrow>
+                        <TooltipContent side="bottom" hideArrow data-oid="xty9d-y">
                             Save changes
                         </TooltipContent>
                     </Tooltip>
@@ -470,10 +500,13 @@ export const DevTab = observer(() => {
 
             {/* Show connection status when sandbox is not ready */}
             {!isSandboxReady() && (
-                <div className="flex-1 flex items-center justify-center">
-                    <div className="flex flex-col items-center gap-3">
-                        <div className="animate-spin h-8 w-8 border-2 border-foreground-hover rounded-full border-t-transparent"></div>
-                        <span className="text-sm text-muted-foreground">
+                <div className="flex-1 flex items-center justify-center" data-oid="7gbitd_">
+                    <div className="flex flex-col items-center gap-3" data-oid="epm4fvg">
+                        <div
+                            className="animate-spin h-8 w-8 border-2 border-foreground-hover rounded-full border-t-transparent"
+                            data-oid="4ot_drm"
+                        ></div>
+                        <span className="text-sm text-muted-foreground" data-oid="pk.n4fy">
                             {editorEngine.sandbox.session.isConnecting
                                 ? 'Connecting to sandbox...'
                                 : 'Waiting for sandbox connection...'}
@@ -484,7 +517,7 @@ export const DevTab = observer(() => {
 
             {/* Main content - only show when sandbox is connected */}
             {isSandboxReady() && (
-                <div className="flex flex-1 min-h-0 overflow-hidden">
+                <div className="flex flex-1 min-h-0 overflow-hidden" data-oid="_x3xxqx">
                     {isFilesVisible && (
                         <FileTree
                             onFileSelect={loadFile}
@@ -492,14 +525,24 @@ export const DevTab = observer(() => {
                             isLoading={ide.isFilesLoading}
                             onRefresh={handleRefreshFiles}
                             activeFilePath={ide.activeFile?.path || null}
+                            data-oid="c84k4hd"
                         />
                     )}
 
                     {/* Editor section */}
-                    <div className="flex flex-col flex-1 min-w-0 overflow-hidden">
+                    <div
+                        className="flex flex-col flex-1 min-w-0 overflow-hidden"
+                        data-oid="zyprm5f"
+                    >
                         {/* File tabs */}
-                        <div className="flex items-center justify-between h-10 border-b-[0.5px] flex-shrink-0">
-                            <div className="flex items-center h-full overflow-x-auto">
+                        <div
+                            className="flex items-center justify-between h-10 border-b-[0.5px] flex-shrink-0"
+                            data-oid="tmz-.pd"
+                        >
+                            <div
+                                className="flex items-center h-full overflow-x-auto"
+                                data-oid="4q3k3e2"
+                            >
                                 {ide.openedFiles.map((file: EditorFile) => (
                                     <FileTab
                                         key={file.id}
@@ -508,25 +551,43 @@ export const DevTab = observer(() => {
                                         isDirty={file.isDirty}
                                         onClick={() => handleFileSelect(file)}
                                         onClose={() => closeFile(file.id)}
+                                        data-oid="f:awe34"
                                     />
                                 ))}
                             </div>
 
-                            <div className="border-l-[0.5px] h-full flex items-center p-1">
-                                <DropdownMenu>
-                                    <DropdownMenuTrigger className="text-foreground hover:text-foreground-hover hover:bg-foreground/5 p-1 rounded h-full w-full flex items-center justify-center px-3">
-                                        <Icons.DotsHorizontal className="h-4 w-4" />
+                            <div
+                                className="border-l-[0.5px] h-full flex items-center p-1"
+                                data-oid="0b0nsft"
+                            >
+                                <DropdownMenu data-oid="_1d51.:">
+                                    <DropdownMenuTrigger
+                                        className="text-foreground hover:text-foreground-hover hover:bg-foreground/5 p-1 rounded h-full w-full flex items-center justify-center px-3"
+                                        data-oid="kvg7o0:"
+                                    >
+                                        <Icons.DotsHorizontal
+                                            className="h-4 w-4"
+                                            data-oid="lu8tsec"
+                                        />
                                     </DropdownMenuTrigger>
-                                    <DropdownMenuContent align="end" className="-mt-1">
+                                    <DropdownMenuContent
+                                        align="end"
+                                        className="-mt-1"
+                                        data-oid="cv9ai3m"
+                                    >
                                         <DropdownMenuItem
-                                            onClick={() => ide.activeFile && closeFile(ide.activeFile.id)}
+                                            onClick={() =>
+                                                ide.activeFile && closeFile(ide.activeFile.id)
+                                            }
                                             disabled={!ide.activeFile}
+                                            data-oid="hx7uut3"
                                         >
                                             Close file
                                         </DropdownMenuItem>
                                         <DropdownMenuItem
                                             onClick={() => closeAllFiles()}
                                             disabled={ide.openedFiles.length === 0}
+                                            data-oid="y-m_nb1"
                                         >
                                             Close all
                                         </DropdownMenuItem>
@@ -536,29 +597,40 @@ export const DevTab = observer(() => {
                         </div>
 
                         {/* Code Editor Area */}
-                        <div className="flex-1 relative overflow-hidden">
+                        <div className="flex-1 relative overflow-hidden" data-oid="toane-m">
                             {ide.isLoading && (
-                                <div className="absolute inset-0 bg-background/50 flex items-center justify-center z-10">
-                                    <div className="flex flex-col items-center">
-                                        <div className="animate-spin h-8 w-8 border-2 border-foreground-hover rounded-full border-t-transparent"></div>
-                                        <span className="mt-2 text-sm">Loading file...</span>
+                                <div
+                                    className="absolute inset-0 bg-background/50 flex items-center justify-center z-10"
+                                    data-oid="r1kmi7b"
+                                >
+                                    <div className="flex flex-col items-center" data-oid="p1ll275">
+                                        <div
+                                            className="animate-spin h-8 w-8 border-2 border-foreground-hover rounded-full border-t-transparent"
+                                            data-oid="fzaxxwk"
+                                        ></div>
+                                        <span className="mt-2 text-sm" data-oid="glnd.wf">
+                                            Loading file...
+                                        </span>
                                     </div>
                                 </div>
                             )}
-                            <div ref={editorContainer} className="h-full">
+                            <div ref={editorContainer} className="h-full" data-oid="811.ia6">
                                 {ide.openedFiles.map((file) => (
                                     <div
                                         key={file.id}
                                         className="h-full"
                                         style={{
-                                            display: ide.activeFile?.id === file.id ? 'block' : 'none',
+                                            display:
+                                                ide.activeFile?.id === file.id ? 'block' : 'none',
                                         }}
+                                        data-oid="rwue5_k"
                                     >
                                         {file.isBinary ? (
                                             <img
                                                 src={getFileUrl(file)}
                                                 alt={file.filename}
                                                 className="w-full h-full object-contain p-5"
+                                                data-oid="5qfp_t5"
                                             />
                                         ) : (
                                             <CodeMirror
@@ -595,26 +667,39 @@ export const DevTab = observer(() => {
                                                     ) {
                                                         setTimeout(() => {
                                                             if (ide.highlightRange) {
-                                                                ide.setHighlightRange(ide.highlightRange);
+                                                                ide.setHighlightRange(
+                                                                    ide.highlightRange,
+                                                                );
                                                             }
                                                         }, 300);
                                                     }
                                                 }}
+                                                data-oid="09ifs_r"
                                             />
                                         )}
                                         {ide.activeFile?.isDirty && showUnsavedDialog && (
-                                            <div className="absolute top-4 left-1/2 z-50 -translate-x-1/2 bg-white dark:bg-zinc-800 border dark:border-zinc-700 shadow-lg rounded-lg p-4 w-[320px]">
-                                                <div className="text-sm text-gray-800 dark:text-gray-100 mb-4">
+                                            <div
+                                                className="absolute top-4 left-1/2 z-50 -translate-x-1/2 bg-white dark:bg-zinc-800 border dark:border-zinc-700 shadow-lg rounded-lg p-4 w-[320px]"
+                                                data-oid="fh26ww_"
+                                            >
+                                                <div
+                                                    className="text-sm text-gray-800 dark:text-gray-100 mb-4"
+                                                    data-oid="t3tje.2"
+                                                >
                                                     You have unsaved changes. Are you sure you want
                                                     to close this file?
                                                 </div>
-                                                <div className="flex justify-end gap-1">
+                                                <div
+                                                    className="flex justify-end gap-1"
+                                                    data-oid="hmu7hjh"
+                                                >
                                                     <Button
                                                         onClick={async () => {
                                                             await discardChanges(file.id);
                                                         }}
                                                         variant="ghost"
                                                         className="text-red hover:text-red"
+                                                        data-oid="l6tsjw-"
                                                     >
                                                         Discard
                                                     </Button>
@@ -624,6 +709,7 @@ export const DevTab = observer(() => {
                                                         }}
                                                         variant="ghost"
                                                         className="text-sm text-blue-500 hover:text-blue-500"
+                                                        data-oid=".6x9kud"
                                                     >
                                                         Save
                                                     </Button>
@@ -633,6 +719,7 @@ export const DevTab = observer(() => {
                                                             setShowUnsavedDialog(false);
                                                             setPendingCloseAll(false);
                                                         }}
+                                                        data-oid="o_iq0l:"
                                                     >
                                                         Cancel
                                                     </Button>
@@ -653,6 +740,7 @@ export const DevTab = observer(() => {
                     onOpenChange={setFileModalOpen}
                     basePath=""
                     files={ide.files}
+                    data-oid="qgtu:8h"
                 />
             )}
 
@@ -662,6 +750,7 @@ export const DevTab = observer(() => {
                     onOpenChange={setFolderModalOpen}
                     basePath=""
                     files={ide.files}
+                    data-oid=":bv389:"
                 />
             )}
         </div>

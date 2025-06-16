@@ -12,11 +12,7 @@ import { Input } from '@onlook/ui/input';
 import { toast } from '@onlook/ui/sonner';
 import { cn } from '@onlook/ui/utils';
 import { useEffect, useMemo, useState } from 'react';
-import {
-    createFileInSandbox,
-    doesFileExist,
-    validateFileName,
-} from './file-operations';
+import { createFileInSandbox, doesFileExist, validateFileName } from './file-operations';
 import { getFileTemplate } from './file-templates';
 import path from 'path';
 
@@ -28,13 +24,7 @@ interface FileModalProps {
     onSuccess?: () => void;
 }
 
-export function FileModal({
-    open,
-    onOpenChange,
-    basePath,
-    files,
-    onSuccess,
-}: FileModalProps) {
+export function FileModal({ open, onOpenChange, basePath, files, onSuccess }: FileModalProps) {
     const editorEngine = useEditorEngine();
     const [name, setName] = useState('');
     const [warning, setWarning] = useState('');
@@ -110,20 +100,23 @@ export function FileModal({
     const displayPath = basePath === '' ? '/' : `/${basePath}`;
 
     return (
-        <Dialog open={open} onOpenChange={onOpenChange}>
-            <DialogContent>
-                <DialogHeader>
-                    <DialogTitle>{title}</DialogTitle>
-                    <DialogDescription>
+        <Dialog open={open} onOpenChange={onOpenChange} data-oid="sy3u651">
+            <DialogContent data-oid=":opkcnf">
+                <DialogHeader data-oid="bt4y_yh">
+                    <DialogTitle data-oid="dx.t8cc">{title}</DialogTitle>
+                    <DialogDescription data-oid="2iwued-">
                         Create a new file in{' '}
-                        <code className="bg-background-secondary px-1 py-0.5 rounded text-xs">
+                        <code
+                            className="bg-background-secondary px-1 py-0.5 rounded text-xs"
+                            data-oid=".xg1tqk"
+                        >
                             {displayPath}
                         </code>
                     </DialogDescription>
                 </DialogHeader>
 
-                <div className="grid gap-4 py-4">
-                    <div className="space-y-2">
+                <div className="grid gap-4 py-4" data-oid="dgbk0u5">
+                    <div className="space-y-2" data-oid="733pmed">
                         <Input
                             id="name"
                             value={name}
@@ -140,25 +133,37 @@ export function FileModal({
                             }}
                             onCompositionStart={() => setIsComposing(true)}
                             onCompositionEnd={() => setIsComposing(false)}
+                            data-oid="h6p7w0-"
                         />
+
                         {warning && (
-                            <p className="text-sm text-yellow-300 flex items-center gap-2">
+                            <p
+                                className="text-sm text-yellow-300 flex items-center gap-2"
+                                data-oid="sowuyez"
+                            >
                                 {warning}
                             </p>
                         )}
                         {fullPath && !warning && (
-                            <p className="text-sm text-muted-foreground">
-                                Full path: <code className="bg-background-secondary px-1 py-0.5 rounded text-xs">{fullPath}</code>
+                            <p className="text-sm text-muted-foreground" data-oid="-x53rub">
+                                Full path:{' '}
+                                <code
+                                    className="bg-background-secondary px-1 py-0.5 rounded text-xs"
+                                    data-oid="w.po252"
+                                >
+                                    {fullPath}
+                                </code>
                             </p>
                         )}
                     </div>
                 </div>
 
-                <DialogFooter>
+                <DialogFooter data-oid="2nn82hc">
                     <Button
                         variant="ghost"
                         onClick={() => onOpenChange(false)}
                         disabled={isLoading}
+                        data-oid="x_drw7p"
                     >
                         Cancel
                     </Button>
@@ -166,6 +171,7 @@ export function FileModal({
                         variant="outline"
                         onClick={handleSubmit}
                         disabled={isLoading || !!warning || !name}
+                        data-oid="x29l.wm"
                     >
                         {isLoading ? loadingText : buttonText}
                     </Button>
@@ -173,4 +179,4 @@ export function FileModal({
             </DialogContent>
         </Dialog>
     );
-} 
+}

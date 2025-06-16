@@ -28,21 +28,34 @@ export const CodeModal = ({
     const [selectedTab, setSelectedTab] = useState(TabValue.DIFF);
 
     return (
-        <Dialog open={isOpen} onOpenChange={setIsOpen}>
-            <DialogTrigger asChild>{children}</DialogTrigger>
-            <DialogContent className="h-[80vh] min-w-[90vw]">
-                <DialogTitle className="sr-only">{fileName}</DialogTitle>
-                <Tabs value={selectedTab} onValueChange={(val) => setSelectedTab(val as TabValue)}>
-                    <TabsList className="w-full justify-start gap-2 bg-transparent">
+        <Dialog open={isOpen} onOpenChange={setIsOpen} data-oid="-406lau">
+            <DialogTrigger asChild data-oid="1o3vwne">
+                {children}
+            </DialogTrigger>
+            <DialogContent className="h-[80vh] min-w-[90vw]" data-oid="dr.3_ag">
+                <DialogTitle className="sr-only" data-oid="p8uis03">
+                    {fileName}
+                </DialogTitle>
+                <Tabs
+                    value={selectedTab}
+                    onValueChange={(val) => setSelectedTab(val as TabValue)}
+                    data-oid="rz2reop"
+                >
+                    <TabsList
+                        className="w-full justify-start gap-2 bg-transparent"
+                        data-oid="15yqdzp"
+                    >
                         <TabsTrigger
                             value={TabValue.DIFF}
                             className="hover:text-foreground-hover bg-transparent px-1 py-2"
+                            data-oid="umgqwuw"
                         >
                             Diffs
                         </TabsTrigger>
                         <TabsTrigger
                             value={TabValue.BLOCK}
                             className="hover:text-foreground-hover bg-transparent px-1 py-2"
+                            data-oid="xwj3kkc"
                         >
                             Full Code
                         </TabsTrigger>
@@ -50,18 +63,29 @@ export const CodeModal = ({
                             className="ml-auto gap-2"
                             variant={'ghost'}
                             onClick={() => editorEngine.code.viewSourceFile(fileName)}
+                            data-oid="e7t4h35"
                         >
-                            {'View source'} <Icons.ExternalLink />
+                            {'View source'} <Icons.ExternalLink data-oid="80-_11g" />
                         </Button>
                     </TabsList>
-                    <TabsContent value={TabValue.DIFF}>
-                        <div className="flex h-[70vh] flex-col space-y-6 overflow-auto rounded border">
-                            <CodeDiff originalCode={original} modifiedCode={value} />
+                    <TabsContent value={TabValue.DIFF} data-oid="z:0pvbe">
+                        <div
+                            className="flex h-[70vh] flex-col space-y-6 overflow-auto rounded border"
+                            data-oid="pjzsp1l"
+                        >
+                            <CodeDiff
+                                originalCode={original}
+                                modifiedCode={value}
+                                data-oid="ff:5_cl"
+                            />
                         </div>
                     </TabsContent>
-                    <TabsContent value={TabValue.BLOCK}>
-                        <div className="flex h-[70vh] flex-col space-y-6 overflow-auto rounded border">
-                            <CodeBlock className="h-full" code={value} />
+                    <TabsContent value={TabValue.BLOCK} data-oid="sx_z_0x">
+                        <div
+                            className="flex h-[70vh] flex-col space-y-6 overflow-auto rounded border"
+                            data-oid="r7.u-i8"
+                        >
+                            <CodeBlock className="h-full" code={value} data-oid="lk15sgp" />
                         </div>
                     </TabsContent>
                 </Tabs>

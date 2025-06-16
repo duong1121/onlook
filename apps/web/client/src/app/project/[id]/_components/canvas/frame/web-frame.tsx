@@ -215,6 +215,7 @@ export const WebFrameComponent = observer(
                 onLoad={setupPenpalConnection}
                 onError={debouncedReloadIframe}
                 {...props}
+                data-oid="4.b88-x"
             />
         );
     }),

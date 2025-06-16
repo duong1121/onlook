@@ -35,12 +35,14 @@ export const BaseRect: React.FC<RectProps> = ({
             className={className}
             data-onlook-ignore="true"
             id={EditorAttributes.ONLOOK_RECT_ID}
+            data-oid="l3df.34"
         >
             <svg
                 overflow="visible"
                 width={width}
                 height={height}
                 viewBox={`0 0 ${width} ${height}`}
+                data-oid="u0fbl3-"
             >
                 <rect
                     width={width}
@@ -50,7 +52,9 @@ export const BaseRect: React.FC<RectProps> = ({
                     strokeWidth={strokeWidth}
                     strokeLinecap="round"
                     strokeLinejoin="round"
+                    data-oid="c0n87-t"
                 />
+
                 {children}
             </svg>
         </div>

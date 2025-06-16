@@ -44,10 +44,20 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         setTimeout(() => {
             setIsPending(false);
         }, 5000);
-    }
+    };
 
     return (
-        <AuthContext.Provider value={{ isPending, lastSignInMethod, handleLogin, handleDevLogin, isAuthModalOpen, setIsAuthModalOpen }}>
+        <AuthContext.Provider
+            value={{
+                isPending,
+                lastSignInMethod,
+                handleLogin,
+                handleDevLogin,
+                isAuthModalOpen,
+                setIsAuthModalOpen,
+            }}
+            data-oid="-iwxk5x"
+        >
             {children}
         </AuthContext.Provider>
     );
@@ -59,4 +69,4 @@ export const useAuthContext = () => {
         throw new Error('useAuthContext must be used within a AuthProvider');
     }
     return context;
-}; 
+};

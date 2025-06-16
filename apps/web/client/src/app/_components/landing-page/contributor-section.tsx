@@ -30,7 +30,9 @@ const FloatingRings = () => {
     useEffect(() => {
         const fetchContributors = async () => {
             try {
-                const response = await fetch('https://api.github.com/repos/onlook-dev/onlook/contributors?per_page=100');
+                const response = await fetch(
+                    'https://api.github.com/repos/onlook-dev/onlook/contributors?per_page=100',
+                );
                 if (!response.ok) {
                     throw new Error('Failed to fetch contributors');
                 }
@@ -67,14 +69,18 @@ const FloatingRings = () => {
         <div
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 aspect-square pointer-events-none"
             style={{ width: size, height: size }}
+            data-oid="g01x9qy"
         >
             {/* Inner ring (clockwise) */}
-            <div className="absolute left-1/2 top-1/2 w-full h-full spin-normal">
+            <div className="absolute left-1/2 top-1/2 w-full h-full spin-normal" data-oid="7e1o-1f">
                 {Array.from({ length: innerRingCount }).map((_, i) => {
                     const angle = (i / innerRingCount) * 2 * Math.PI;
                     const x = center + Math.cos(angle) * innerRadius;
                     const y = center + Math.sin(angle) * innerRadius;
-                    const contributor = !isLoading && contributors.length > 0 ? contributors[i % contributors.length] : null;
+                    const contributor =
+                        !isLoading && contributors.length > 0
+                            ? contributors[i % contributors.length]
+                            : null;
                     return (
                         <div
                             key={`inner-${i}`}
@@ -84,8 +90,9 @@ const FloatingRings = () => {
                                 height: '56px',
                                 left: `${x - 28}px`,
                                 top: `${y - 28}px`,
-                                transformOrigin: 'center center'
+                                transformOrigin: 'center center',
                             }}
+                            data-oid=":8341ha"
                         >
                             {contributor && (
                                 <img
@@ -93,6 +100,7 @@ const FloatingRings = () => {
                                     alt={`${contributor.login}'s avatar`}
                                     className="w-full h-full object-cover"
                                     loading="lazy"
+                                    data-oid="fedmxqc"
                                 />
                             )}
                         </div>
@@ -100,13 +108,19 @@ const FloatingRings = () => {
                 })}
             </div>
             {/* Outer ring */}
-            <div className="absolute left-1/2 top-1/2 w-full h-full spin-reverse">
+            <div
+                className="absolute left-1/2 top-1/2 w-full h-full spin-reverse"
+                data-oid="9k19eb1"
+            >
                 {Array.from({ length: outerRingCount }).map((_, i) => {
                     const angle = (i / outerRingCount) * 2 * Math.PI;
                     const x = center + Math.cos(angle) * outerRadius;
                     const y = center + Math.sin(angle) * outerRadius;
                     const contributorIndex = (i + innerRingCount) % (contributors.length || 1);
-                    const contributor = !isLoading && contributors.length > 0 ? contributors[contributorIndex] : null;
+                    const contributor =
+                        !isLoading && contributors.length > 0
+                            ? contributors[contributorIndex]
+                            : null;
                     return (
                         <div
                             key={`outer-${i}`}
@@ -116,8 +130,9 @@ const FloatingRings = () => {
                                 height: '56px',
                                 left: `${x - 28}px`,
                                 top: `${y - 28}px`,
-                                transformOrigin: 'center center'
+                                transformOrigin: 'center center',
                             }}
+                            data-oid="fj.fjk:"
                         >
                             {contributor && (
                                 <img
@@ -125,6 +140,7 @@ const FloatingRings = () => {
                                     alt={`${contributor.login}'s avatar`}
                                     className="w-full h-full object-cover"
                                     loading="lazy"
+                                    data-oid="j26.uo7"
                                 />
                             )}
                         </div>
@@ -143,10 +159,10 @@ interface ContributorSectionProps {
 
 export function ContributorSection({
     contributorCount = 9412,
-    githubLink = "https://github.com/onlook-dev/onlook",
-    discordLink = "https://discord.gg/ZZzadNQtns"
+    githubLink = 'https://github.com/onlook-dev/onlook',
+    discordLink = 'https://discord.gg/ZZzadNQtns',
 }: ContributorSectionProps) {
-    const [starCount, setStarCount] = useState<string>("0");
+    const [starCount, setStarCount] = useState<string>('0');
     const [isLoading, setIsLoading] = useState(true);
 
     const formatStarCount = (count: number): string => {
@@ -171,33 +187,55 @@ export function ContributorSection({
     }, [contributorCount]);
 
     return (
-        <div className="relative w-full flex items-center justify-center py-32 mt-8 overflow-hidden">
+        <div
+            className="relative w-full flex items-center justify-center py-32 mt-8 overflow-hidden"
+            data-oid="ea.kxa2"
+        >
             {/* Main Contributors Content */}
-            <div className="w-full max-w-6xl mx-auto relative z-10 flex flex-col items-center justify-center bg-background-onlook rounded-3xl px-12 py-32 shadow-xl overflow-hidden md:[--md-scale:1] [--md-scale:0]" style={{ minWidth: 420 }}>
+            <div
+                className="w-full max-w-6xl mx-auto relative z-10 flex flex-col items-center justify-center bg-background-onlook rounded-3xl px-12 py-32 shadow-xl overflow-hidden md:[--md-scale:1] [--md-scale:0]"
+                style={{ minWidth: 420 }}
+                data-oid="mhi0qbr"
+            >
                 {/* Floating Circles: two concentric rings */}
-                <FloatingRings />
-                <h2 className="text-foreground-primary text-3xl md:text-4xl font-light text-center mb-2">
-                    Supported by You &<br />
+                <FloatingRings data-oid="x28.yd7" />
+                <h2
+                    className="text-foreground-primary text-3xl md:text-4xl font-light text-center mb-2"
+                    data-oid="a8_0rn:"
+                >
+                    Supported by You &<br data-oid="fw8-gbb" />
                     {isLoading ? '...' : starCount} other builders
                 </h2>
-                <p className="text-foreground-secondary text-regular text-center mb-8 max-w-xl">Join our mission and be a part of changing<br />the way people craft software</p>
-                <div className="flex gap-4 flex-col md:flex-row w-full justify-center items-center">
+                <p
+                    className="text-foreground-secondary text-regular text-center mb-8 max-w-xl"
+                    data-oid="ejpy-vm"
+                >
+                    Join our mission and be a part of changing
+                    <br data-oid="iv6_va." />
+                    the way people craft software
+                </p>
+                <div
+                    className="flex gap-4 flex-col md:flex-row w-full justify-center items-center"
+                    data-oid="h:r7aas"
+                >
                     <button
                         onClick={() => window.open(githubLink, '_blank')}
                         className="bg-foreground-primary text-background-primary text-regularPlus rounded-lg px-6 py-3 flex items-center gap-2 shadow hover:bg-foreground-primary/80 transition cursor-pointer"
+                        data-oid="hmu--cc"
                     >
                         Contribute to Onlook
-                        <Icons.GitHubLogo className="w-4.5 h-4.5" />
+                        <Icons.GitHubLogo className="w-4.5 h-4.5" data-oid="siblw7i" />
                     </button>
                     <button
                         onClick={() => window.open(discordLink, '_blank')}
                         className="border border-foreground-primary/50 text-foreground-primary text-regularPlus rounded-lg px-6 py-3 flex items-center gap-2 hover:bg-foreground-primary/10 transition cursor-pointer"
+                        data-oid="u:8zqlh"
                     >
                         Join the Discord
-                        <Icons.DiscordLogo className="w-4.5 h-4.5" />
+                        <Icons.DiscordLogo className="w-4.5 h-4.5" data-oid="v:an-61" />
                     </button>
                 </div>
             </div>
         </div>
     );
-} 
+}

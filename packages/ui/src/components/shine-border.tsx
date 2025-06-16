@@ -56,6 +56,7 @@ export function ShineBorder({
                 'min-h-[60px] w-fit min-w-[300px] place-items-center rounded-(--border-radius) bg-white p-3 text-black dark:bg-black dark:text-white',
                 className,
             )}
+            data-oid="73er017"
         >
             <div
                 style={
@@ -71,6 +72,7 @@ export function ShineBorder({
                     `before:bg-shine-size before:absolute before:inset-0 before:aspect-square before:size-full before:rounded-(--border-radius) before:p-(--border-width) before:will-change-[background-position] before:content-[""] before:[-webkit-mask-composite:xor]! before:[mask-composite:exclude]! before:[background-image:var(--background-radial-gradient)] before:[background-size:300%_300%] before:[mask:var(--mask-linear-gradient)] before:opacity-0 before:transition-opacity before:duration-1000 motion-safe:before:animate-shine`,
                     isShining && 'before:opacity-100',
                 )}
+                data-oid="aza858-"
             ></div>
             {children}
         </div>

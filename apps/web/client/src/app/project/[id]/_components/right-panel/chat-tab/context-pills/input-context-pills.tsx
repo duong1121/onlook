@@ -24,8 +24,9 @@ export const InputContextPills = observer(() => {
                 'flex flex-row flex-wrap w-full gap-1.5 text-micro mb-1 text-foreground-secondary',
                 editorEngine.chat.context.context.length > 0 ? 'min-h-6' : 'h-0',
             )}
+            data-oid="9jbk13t"
         >
-            <AnimatePresence mode="popLayout">
+            <AnimatePresence mode="popLayout" data-oid=":_1b3tj">
                 {editorEngine.chat.context.context.map(
                     (context: ChatMessageContext, index: number) => {
                         if (context.type === MessageContextType.IMAGE) {
@@ -34,6 +35,7 @@ export const InputContextPills = observer(() => {
                                     key={`image-${context.content}`}
                                     context={context}
                                     onRemove={() => handleRemoveContext(context)}
+                                    data-oid="_6dylx8"
                                 />
                             );
                         }
@@ -42,6 +44,7 @@ export const InputContextPills = observer(() => {
                                 key={`${context.type}-${context.content}`}
                                 context={context}
                                 onRemove={() => handleRemoveContext(context)}
+                                data-oid="6mm1wnf"
                             />
                         );
                     },

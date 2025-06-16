@@ -21,7 +21,11 @@ interface FontVariantProps {
 const FontVariant = ({ name }: FontVariantProps) => {
     const fontVariant = `font-${camelCase(name).toLowerCase()}`;
 
-    return <div className={cn('text-sm text-muted-foreground', fontVariant)}>{name}</div>;
+    return (
+        <div className={cn('text-sm text-muted-foreground', fontVariant)} data-oid="tkt85.r">
+            {name}
+        </div>
+    );
 };
 
 export interface FontFamilyProps {
@@ -52,76 +56,102 @@ export const FontFamily = ({
     };
 
     return (
-        <div className="w-full group">
-            <div className="flex justify-between items-center py-3">
+        <div className="w-full group" data-oid="w.::d9a">
+            <div className="flex justify-between items-center py-3" data-oid="ks-p._0">
                 <div
                     className="flex flex-1 items-center cursor-pointer max-w-52"
                     onClick={() => setExpanded(!expanded)}
+                    data-oid="kab03l_"
                 >
                     <Icons.ChevronRight
                         className={`h-4 w-4 mr-2 transition-transform ${expanded ? 'rotate-90' : ''}`}
+                        data-oid="s6sqwyt"
                     />
-                    <Tooltip>
-                        <TooltipTrigger asChild>
+
+                    <Tooltip data-oid="yg_b9t8">
+                        <TooltipTrigger asChild data-oid="regxzhm">
                             <span
                                 className={`text-sm truncate transition-opacity duration-200`}
                                 style={{ fontFamily: name }}
+                                data-oid="vwaid:l"
                             >
                                 {name}
                             </span>
                         </TooltipTrigger>
-                        <TooltipPortal container={document.getElementById('style-panel')}>
+                        <TooltipPortal
+                            container={document.getElementById('style-panel')}
+                            data-oid="tkfklzj"
+                        >
                             <TooltipContent
                                 side="right"
                                 align="center"
                                 sideOffset={10}
                                 className="animation-none max-w-[200px] shadow"
+                                data-oid="h3g.m4p"
                             >
-                                <TooltipArrow className="fill-foreground" />
-                                <p className="break-words">{name}</p>
+                                <TooltipArrow className="fill-foreground" data-oid="fj:y2pa" />
+                                <p className="break-words" data-oid="yc14dw_">
+                                    {name}
+                                </p>
                             </TooltipContent>
                         </TooltipPortal>
                     </Tooltip>
                     {isDefault && (
-                        <span className="ml-2 text-xs text-muted-foreground">(Default)</span>
+                        <span className="ml-2 text-xs text-muted-foreground" data-oid="hce2r8g">
+                            (Default)
+                        </span>
                     )}
                 </div>
-                <div className="flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-100">
+                <div
+                    className="flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-100"
+                    data-oid=":t6eaig"
+                >
                     {showAddButton && onAddFont && (
                         <Button
                             variant="secondary"
                             size="sm"
                             className="h-7 pl-2 pr-1.5 rounded-md bg-background-secondary"
                             onClick={() => onAddFont()}
+                            data-oid="elnch.4"
                         >
-                            Add <Icons.Plus className="ml-1 h-3 w-3" />
+                            Add <Icons.Plus className="ml-1 h-3 w-3" data-oid="rl-q2zp" />
                         </Button>
                     )}
                     {showDropdown && (
-                        <DropdownMenu>
-                            <DropdownMenuTrigger asChild>
+                        <DropdownMenu data-oid="plrg3t2">
+                            <DropdownMenuTrigger asChild data-oid="8rdb6gm">
                                 <Button
                                     variant="ghost"
                                     size="icon"
                                     className="h-7 w-7 rounded-md hover:bg-background-secondary"
+                                    data-oid=":9gj10r"
                                 >
-                                    <Icons.DotsHorizontal className="h-4 w-4 text-muted-foreground hover:text-foreground" />
+                                    <Icons.DotsHorizontal
+                                        className="h-4 w-4 text-muted-foreground hover:text-foreground"
+                                        data-oid="nyk8vlb"
+                                    />
                                 </Button>
                             </DropdownMenuTrigger>
-                            <DropdownMenuContent align="end" className="min-w-fit">
+                            <DropdownMenuContent
+                                align="end"
+                                className="min-w-fit"
+                                data-oid="1293e.r"
+                            >
                                 <DropdownMenuCheckboxItem
                                     checked={isDefault}
                                     onCheckedChange={handleToggleDefault}
                                     className="flex items-center pr-2 cursor-pointer"
+                                    data-oid="a5g7ikm"
                                 >
-                                    <span>Set as default font</span>
+                                    <span data-oid="b3rrbp_">Set as default font</span>
                                 </DropdownMenuCheckboxItem>
                                 <DropdownMenuItem
                                     className="flex items-center"
                                     onClick={() => onRemoveFont?.()}
+                                    data-oid=".6dxtio"
                                 >
-                                    <Icons.Trash className="h-4 w-4 mr-2" />
-                                    <span>Remove</span>
+                                    <Icons.Trash className="h-4 w-4 mr-2" data-oid="otw.7jt" />
+                                    <span data-oid="l6gp97y">Remove</span>
                                 </DropdownMenuItem>
                             </DropdownMenuContent>
                         </DropdownMenu>
@@ -135,9 +165,10 @@ export const FontFamily = ({
                     style={{
                         fontFamily: name,
                     }}
+                    data-oid="rq789--"
                 >
                     {variants.map((variant) => (
-                        <FontVariant key={`${name}-${variant}`} name={variant} />
+                        <FontVariant key={`${name}-${variant}`} name={variant} data-oid="l8874wn" />
                     ))}
                 </div>
             )}

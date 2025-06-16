@@ -12,7 +12,7 @@ export const InputGroup = ({ className, children }: InputGroupProps) => {
     const totalInputs = childrenArray.length;
 
     return (
-        <div className={cn('flex w-fit min-w-0', className)}>
+        <div className={cn('flex w-fit min-w-0', className)} data-oid="l5v6sn5">
             {childrenArray.map((child, index) => {
                 const isFirst = index === 0;
                 const isLast = index === totalInputs - 1;

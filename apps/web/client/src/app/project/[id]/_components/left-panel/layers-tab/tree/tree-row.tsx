@@ -11,7 +11,7 @@ interface TreeRowProps {
 
 export const TreeRow = ({ innerRef, attrs, children }: TreeRowProps) => {
     return (
-        <div ref={innerRef} {...attrs} className="outline-none">
+        <div ref={innerRef} {...attrs} className="outline-none" data-oid="a5t32o7">
             {children}
         </div>
     );

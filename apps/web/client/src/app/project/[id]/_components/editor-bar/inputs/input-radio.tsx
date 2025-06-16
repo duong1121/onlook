@@ -26,22 +26,25 @@ export const InputRadio = ({ options, value, onChange, className }: InputRadioPr
     };
 
     return (
-        <div className={cn('flex flex-1', className)}>
+        <div className={cn('flex flex-1', className)} data-oid="u7xndrg">
             {options.map((option, index) => (
                 <button
                     key={option.value}
                     className={cn(
-                        "px-1 h-9 text-sm flex-1 cursor-pointer transition-colors",
+                        'px-1 h-9 text-sm flex-1 cursor-pointer transition-colors',
                         value === option.value
-                            ? "bg-background-tertiary text-white"
-                            : "bg-background-tertiary/50 text-muted-foreground hover:bg-background-tertiary/70 hover:text-white",
-                        index === 0 && "rounded-l-md",
-                        index === options.length - 1 && "rounded-r-md"
+                            ? 'bg-background-tertiary text-white'
+                            : 'bg-background-tertiary/50 text-muted-foreground hover:bg-background-tertiary/70 hover:text-white',
+                        index === 0 && 'rounded-l-md',
+                        index === options.length - 1 && 'rounded-r-md',
                     )}
                     onClick={() => onChange(option.value)}
+                    data-oid="h7hkz75"
                 >
                     {isIconOption(option) ? (
-                        <div className="mx-auto w-fit">{option.icon}</div>
+                        <div className="mx-auto w-fit" data-oid="4ahqwow">
+                            {option.icon}
+                        </div>
                     ) : (
                         option.label
                     )}

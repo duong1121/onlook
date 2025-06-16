@@ -44,6 +44,7 @@ export const PanOverlay = observer(({ clampPosition }: PanOverlayProps) => {
             onMouseMove={pan}
             onMouseUp={endPan}
             onMouseLeave={endPan}
+            data-oid="_yz0.lh"
         ></div>
     );
 });

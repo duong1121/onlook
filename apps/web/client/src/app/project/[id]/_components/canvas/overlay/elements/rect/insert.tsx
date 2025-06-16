@@ -10,5 +10,5 @@ export const InsertRect: React.FC<InsertRectProps> = ({ rect }) => {
     if (!rect) {
         return null;
     }
-    return <BaseRect {...rect} />;
+    return <BaseRect {...rect} data-oid=":5.6a0r" />;
 };

@@ -15,6 +15,7 @@ const ColorSquare = ({ color }: ColorSquareProps) => (
     <div
         className="w-full aspect-square rounded-lg cursor-pointer hover:ring-2 hover:ring-border-primary border border-white/10"
         style={{ backgroundColor: color }}
+        data-oid=":8udvxt"
     />
 );
 
@@ -45,26 +46,38 @@ export const BrandTab = observer(() => {
 
     // If color panel is visible, show it instead of the main content
     if (editorEngine.state.brandTab === BrandTabValue.COLORS) {
-        return <ColorPanel />;
+        return <ColorPanel data-oid="6p1_-ve" />;
     }
 
     // If font panel is visible, show it instead of the main content
     if (editorEngine.state.brandTab === BrandTabValue.FONTS) {
-        return <FontPanel />;
+        return <FontPanel data-oid="8b7w297" />;
     }
 
     return (
-        <div className="flex flex-col h-full text-xs text-active flex-grow w-full p-0">
+        <div
+            className="flex flex-col h-full text-xs text-active flex-grow w-full p-0"
+            data-oid="be0v-.m"
+        >
             {/* Brand Palette Section */}
-            <div className="flex flex-col gap-3 px-4 pt-4 pb-6 border-b border-border">
-                <div className="flex flex-col gap-2">
-                    <div className="flex justify-between items-center">
-                        <span className="text-sm">Brand Colors</span>
+            <div
+                className="flex flex-col gap-3 px-4 pt-4 pb-6 border-b border-border"
+                data-oid="fl-mv28"
+            >
+                <div className="flex flex-col gap-2" data-oid="fbkzo3w">
+                    <div className="flex justify-between items-center" data-oid="mlxura9">
+                        <span className="text-sm" data-oid="wkeghdr">
+                            Brand Colors
+                        </span>
                     </div>
 
-                    <div className="grid grid-cols-6 gap-1">
+                    <div className="grid grid-cols-6 gap-1" data-oid="uqniusn">
                         {brandColors.map((color, index) => (
-                            <ColorSquare key={`brand-color-${index}`} color={color} />
+                            <ColorSquare
+                                key={`brand-color-${index}`}
+                                color={color}
+                                data-oid="9-7xf6e"
+                            />
                         ))}
                     </div>
                 </div>
@@ -73,23 +86,27 @@ export const BrandTab = observer(() => {
                     variant="ghost"
                     className="w-full h-10 text-sm text-muted-foreground hover:text-foreground bg-background-secondary hover:bg-background-secondary/70 rounded-lg border border-white/5"
                     onClick={() => (editorEngine.state.brandTab = BrandTabValue.COLORS)}
+                    data-oid="xk8.p52"
                 >
                     Manage brand colors
                 </Button>
             </div>
 
             {/* Site Fonts Section */}
-            <div className="flex flex-col gap-1.5 px-4 pt-5 pb-6">
-                <div className="flex flex-col">
-                    <div className="flex justify-between items-center">
-                        <span className="text-sm">Site Fonts</span>
+            <div className="flex flex-col gap-1.5 px-4 pt-5 pb-6" data-oid="01r-d4a">
+                <div className="flex flex-col" data-oid="c7y7h:o">
+                    <div className="flex justify-between items-center" data-oid="8:zagic">
+                        <span className="text-sm" data-oid="vjxkh0w">
+                            Site Fonts
+                        </span>
                     </div>
-                    <SystemFont />
+                    <SystemFont data-oid="f6d_vzm" />
                 </div>
                 <Button
                     variant="ghost"
                     className="w-full h-10 text-sm text-muted-foreground hover:text-foreground bg-background-secondary hover:bg-background-secondary/70 rounded-lg border border-white/5"
                     onClick={() => (editorEngine.state.brandTab = BrandTabValue.FONTS)}
+                    data-oid="rbia6n2"
                 >
                     Manage site fonts
                 </Button>

@@ -11,6 +11,7 @@ function Tabs({ className, ...props }: React.ComponentProps<typeof TabsPrimitive
             data-slot="tabs"
             className={cn('flex flex-col gap-2', className)}
             {...props}
+            data-oid="g:d:9n8"
         />
     );
 }
@@ -24,6 +25,7 @@ function TabsList({ className, ...props }: React.ComponentProps<typeof TabsPrimi
                 className,
             )}
             {...props}
+            data-oid="3t8q5we"
         />
     );
 }
@@ -37,6 +39,7 @@ function TabsTrigger({ className, ...props }: React.ComponentProps<typeof TabsPr
                 className,
             )}
             {...props}
+            data-oid="wzi184p"
         />
     );
 }
@@ -47,6 +50,7 @@ function TabsContent({ className, ...props }: React.ComponentProps<typeof TabsPr
             data-slot="tabs-content"
             className={cn('flex-1 outline-none', className)}
             {...props}
+            data-oid="xhcrsg4"
         />
     );
 }

@@ -113,6 +113,7 @@ function Carousel({
                 canScrollPrev,
                 canScrollNext,
             }}
+            data-oid="ah.-7qy"
         >
             <div
                 onKeyDownCapture={handleKeyDown}
@@ -121,6 +122,7 @@ function Carousel({
                 aria-roledescription="carousel"
                 data-slot="carousel"
                 {...props}
+                data-oid="utvbx:4"
             >
                 {children}
             </div>
@@ -132,7 +134,12 @@ function CarouselContent({ className, ...props }: React.ComponentProps<'div'>) {
     const { carouselRef, orientation } = useCarousel();
 
     return (
-        <div ref={carouselRef} className="overflow-hidden" data-slot="carousel-content">
+        <div
+            ref={carouselRef}
+            className="overflow-hidden"
+            data-slot="carousel-content"
+            data-oid="h1g-juj"
+        >
             <div
                 className={cn(
                     'flex',
@@ -140,6 +147,7 @@ function CarouselContent({ className, ...props }: React.ComponentProps<'div'>) {
                     className,
                 )}
                 {...props}
+                data-oid="c4_ig64"
             />
         </div>
     );
@@ -159,6 +167,7 @@ function CarouselItem({ className, ...props }: React.ComponentProps<'div'>) {
                 className,
             )}
             {...props}
+            data-oid="jgiz-rh"
         />
     );
 }
@@ -186,9 +195,12 @@ function CarouselPrevious({
             disabled={!canScrollPrev}
             onClick={scrollPrev}
             {...props}
+            data-oid="7juwgz:"
         >
-            <ArrowLeftIcon />
-            <span className="sr-only">Previous slide</span>
+            <ArrowLeftIcon data-oid="mm:jbd9" />
+            <span className="sr-only" data-oid="ow::lgx">
+                Previous slide
+            </span>
         </Button>
     );
 }
@@ -216,9 +228,12 @@ function CarouselNext({
             disabled={!canScrollNext}
             onClick={scrollNext}
             {...props}
+            data-oid="wl1.yog"
         >
-            <ArrowRightIcon />
-            <span className="sr-only">Next slide</span>
+            <ArrowRightIcon data-oid="-y.x7.s" />
+            <span className="sr-only" data-oid="ejt0e4m">
+                Next slide
+            </span>
         </Button>
     );
 }

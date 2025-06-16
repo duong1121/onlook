@@ -8,8 +8,9 @@ export function useDraftValue<T>(
 ): [
     T, // draft
     (value: T) => void, // on change draft value
-    () => void, // on change done
+    () => void,
 ] {
+    // on change done
     const [draft, setDraft] = React.useState(value);
 
     React.useEffect(() => {
@@ -57,6 +58,7 @@ const DraftableInput = React.forwardRef<HTMLInputElement, DraftableInputProps>(
                 placeholder={placeholder}
                 onChange={(e) => onDraftChange(e.currentTarget.value)}
                 ref={mergeRefs([inputRef, ref])}
+                data-oid="_mnw_au"
             />
         );
     },

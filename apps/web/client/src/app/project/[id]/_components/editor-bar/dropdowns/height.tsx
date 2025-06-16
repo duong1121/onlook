@@ -14,21 +14,29 @@ export const Height = observer(() => {
     const { dimensionState, handleDimensionChange, handleUnitChange, handleLayoutChange } =
         useDimensionControl('height');
 
-    const { isOpen, onOpenChange } = useDropdownControl({ 
-        id: 'height-dropdown' 
+    const { isOpen, onOpenChange } = useDropdownControl({
+        id: 'height-dropdown',
     });
 
     return (
-        <DropdownMenu open={isOpen} onOpenChange={onOpenChange}>
-            <HoverOnlyTooltip content="Height" side="bottom" className="mt-1" hideArrow disabled={isOpen}>
-                <DropdownMenuTrigger asChild>
+        <DropdownMenu open={isOpen} onOpenChange={onOpenChange} data-oid="u4uc1f6">
+            <HoverOnlyTooltip
+                content="Height"
+                side="bottom"
+                className="mt-1"
+                hideArrow
+                disabled={isOpen}
+                data-oid="xuq.n1k"
+            >
+                <DropdownMenuTrigger asChild data-oid="8bhrmas">
                     <Button
                         variant="ghost"
                         size="toolbar"
                         className="text-muted-foreground border-border/0 hover:bg-background-tertiary/20 hover:border-border data-[state=open]:bg-background-tertiary/20 data-[state=open]:border-border flex cursor-pointer items-center gap-1 border hover:border hover:text-white focus:outline-none focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:outline-none active:border-0 data-[state=open]:border data-[state=open]:text-white"
+                        data-oid="pla5ep-"
                     >
-                        <Icons.Height className="h-4 min-h-4 w-4 min-w-4" />
-                        <span className="text-small">
+                        <Icons.Height className="h-4 min-h-4 w-4 min-w-4" data-oid="tpz8t6b" />
+                        <span className="text-small" data-oid="8mz26e5">
                             {dimensionState.height.value}
                         </span>
                     </Button>
@@ -37,10 +45,13 @@ export const Height = observer(() => {
             <DropdownMenuContent
                 align="start"
                 className="mt-1 w-[280px] space-y-3 rounded-lg p-3"
+                data-oid="6fnex.f"
             >
-                <div className="space-y-1.5">
-                    <div className="flex items-center justify-between">
-                        <span className="text-muted-white text-sm">Height</span>
+                <div className="space-y-1.5" data-oid="v0.yab9">
+                    <div className="flex items-center justify-between" data-oid="bnxqqn4">
+                        <span className="text-muted-white text-sm" data-oid="cvcvmdv">
+                            Height
+                        </span>
                         <InputDropdown
                             value={dimensionState.height.num ?? 0}
                             unit={dimensionState.height.unit}
@@ -49,10 +60,13 @@ export const Height = observer(() => {
                             onChange={(value) => handleDimensionChange('height', value)}
                             onUnitChange={(value) => handleUnitChange('height', value)}
                             onDropdownChange={(value) => handleLayoutChange('height', value)}
+                            data-oid="tl98h2w"
                         />
                     </div>
-                    <div className="flex items-center justify-between">
-                        <span className="text-muted-foreground text-sm">Min</span>
+                    <div className="flex items-center justify-between" data-oid="ulppdvb">
+                        <span className="text-muted-foreground text-sm" data-oid="69e.xe.">
+                            Min
+                        </span>
                         <InputDropdown
                             value={dimensionState.minHeight.num ?? 0}
                             unit={dimensionState.minHeight.unit}
@@ -61,10 +75,13 @@ export const Height = observer(() => {
                             onChange={(value) => handleDimensionChange('minHeight', value)}
                             onUnitChange={(value) => handleUnitChange('minHeight', value)}
                             onDropdownChange={(value) => handleLayoutChange('minHeight', value)}
+                            data-oid="inhm3-8"
                         />
                     </div>
-                    <div className="flex items-center justify-between">
-                        <span className="text-muted-foreground text-sm">Max</span>
+                    <div className="flex items-center justify-between" data-oid="unto_20">
+                        <span className="text-muted-foreground text-sm" data-oid="jxxs.xo">
+                            Max
+                        </span>
                         <InputDropdown
                             value={dimensionState.maxHeight.num ?? 0}
                             unit={dimensionState.maxHeight.unit}
@@ -73,6 +90,7 @@ export const Height = observer(() => {
                             onChange={(value) => handleDimensionChange('maxHeight', value)}
                             onUnitChange={(value) => handleUnitChange('maxHeight', value)}
                             onDropdownChange={(value) => handleLayoutChange('maxHeight', value)}
+                            data-oid="ujs8m1e"
                         />
                     </div>
                 </div>

@@ -7,7 +7,10 @@ export const metadata: Metadata = {
 
 export default async function Layout({ children }: Readonly<{ children: React.ReactNode }>) {
     return (
-        <div className="w-screen h-screen flex flex-col items-center justify-center">
+        <div
+            className="w-screen h-screen flex flex-col items-center justify-center"
+            data-oid="91zuejb"
+        >
             {children}
         </div>
     );

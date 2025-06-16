@@ -19,7 +19,13 @@ interface FileTreeProps {
     activeFilePath?: string | null;
 }
 
-function UnmemoizedFileTree({ onFileSelect, files, isLoading = false, onRefresh, activeFilePath }: FileTreeProps) {
+function UnmemoizedFileTree({
+    onFileSelect,
+    files,
+    isLoading = false,
+    onRefresh,
+    activeFilePath,
+}: FileTreeProps) {
     const editorEngine = useEditorEngine();
     const [searchQuery, setSearchQuery] = useState('');
     const [highlightedIndex, setHighlightedIndex] = useState<number | null>(null);
@@ -31,7 +37,7 @@ function UnmemoizedFileTree({ onFileSelect, files, isLoading = false, onRefresh,
 
     useEffect(() => {
         if (!containerRef.current) return;
-        const resizeObserver = new ResizeObserver(entries => {
+        const resizeObserver = new ResizeObserver((entries) => {
             for (const entry of entries) {
                 setFilesWidth(entry.contentRect.width);
             }
@@ -41,43 +47,47 @@ function UnmemoizedFileTree({ onFileSelect, files, isLoading = false, onRefresh,
     }, []);
 
     // Convert flat file paths to tree structure
-    const buildFileTree = useMemo(() => (files: string[]): FileNode[] => {
-        const root: FileNode = {
-            id: 'root',
-            name: 'root',
-            path: '',
-            isDirectory: true,
-            children: [],
-        };
+    const buildFileTree = useMemo(
+        () =>
+            (files: string[]): FileNode[] => {
+                const root: FileNode = {
+                    id: 'root',
+                    name: 'root',
+                    path: '',
+                    isDirectory: true,
+                    children: [],
+                };
 
-        files.forEach((filePath) => {
-            const parts = filePath.split('/').filter(Boolean);
-            let current = root;
+                files.forEach((filePath) => {
+                    const parts = filePath.split('/').filter(Boolean);
+                    let current = root;
 
-            parts.forEach((part, index) => {
-                const isLast = index === parts.length - 1;
-                const filePath = parts.slice(0, index + 1).join('/');
-                const existingNode = current.children?.find((child) => child.name === part);
+                    parts.forEach((part, index) => {
+                        const isLast = index === parts.length - 1;
+                        const filePath = parts.slice(0, index + 1).join('/');
+                        const existingNode = current.children?.find((child) => child.name === part);
 
-                if (existingNode) {
-                    current = existingNode;
-                } else {
-                    const newNode: FileNode = {
-                        id: nanoid(),
-                        name: part,
-                        path: filePath,
-                        isDirectory: !isLast,
-                        children: !isLast ? [] : undefined,
-                        extension: isLast ? path.extname(filePath) : undefined,
-                    };
-                    current.children?.push(newNode);
-                    current = newNode;
-                }
-            });
-        });
+                        if (existingNode) {
+                            current = existingNode;
+                        } else {
+                            const newNode: FileNode = {
+                                id: nanoid(),
+                                name: part,
+                                path: filePath,
+                                isDirectory: !isLast,
+                                children: !isLast ? [] : undefined,
+                                extension: isLast ? path.extname(filePath) : undefined,
+                            };
+                            current.children?.push(newNode);
+                            current = newNode;
+                        }
+                    });
+                });
 
-        return root.children || [];
-    }, []);
+                return root.children || [];
+            },
+        [],
+    );
 
     // Update tree data only when files change
     useEffect(() => {
@@ -103,7 +113,7 @@ function UnmemoizedFileTree({ onFileSelect, files, isLoading = false, onRefresh,
         if (!activeFilePath || !treeRef.current || !treeData.length) {
             return;
         }
-        // Find the exact node that matches the file 
+        // Find the exact node that matches the file
         const targetNode = findNodeByPath(treeData, activeFilePath);
         if (targetNode) {
             setTimeout(() => {
@@ -214,17 +224,21 @@ function UnmemoizedFileTree({ onFileSelect, files, isLoading = false, onRefresh,
                 console.error('Error refreshing files:', error);
             }
         }
-    }
+    };
 
     return (
         <div
             ref={containerRef}
             className="w-64 h-full border-r-[0.5px] flex-shrink-0 overflow-hidden flex flex-col"
+            data-oid="1djjcc7"
         >
-            <div className="flex flex-col h-full overflow-hidden">
-                <div className="p-3 flex-shrink-0">
-                    <div className="flex flex-row justify-between items-center gap-2 mb-2">
-                        <div className="relative flex-grow">
+            <div className="flex flex-col h-full overflow-hidden" data-oid="wr7.yr1">
+                <div className="p-3 flex-shrink-0" data-oid="-kx47x-">
+                    <div
+                        className="flex flex-row justify-between items-center gap-2 mb-2"
+                        data-oid="g-1:td9"
+                    >
+                        <div className="relative flex-grow" data-oid="s5ic-bq">
                             <Input
                                 ref={inputRef}
                                 className="h-8 text-xs pr-8"
@@ -233,35 +247,47 @@ function UnmemoizedFileTree({ onFileSelect, files, isLoading = false, onRefresh,
                                 disabled={isLoading}
                                 onChange={(e) => setSearchQuery(e.target.value)}
                                 onKeyDown={handleKeyDown}
+                                data-oid="b8-fgyd"
                             />
+
                             {searchQuery && (
                                 <button
                                     className="absolute right-[1px] top-[1px] bottom-[1px] aspect-square hover:bg-background-onlook active:bg-transparent flex items-center justify-center rounded-r-[calc(theme(borderRadius.md)-1px)] group"
                                     onClick={() => setSearchQuery('')}
+                                    data-oid="62zq6ua"
                                 >
-                                    <Icons.CrossS className="h-3 w-3 text-foreground-primary/50 group-hover:text-foreground-primary" />
+                                    <Icons.CrossS
+                                        className="h-3 w-3 text-foreground-primary/50 group-hover:text-foreground-primary"
+                                        data-oid="4j2uui1"
+                                    />
                                 </button>
                             )}
                         </div>
-                        <Tooltip>
-                            <TooltipTrigger asChild>
+                        <Tooltip data-oid="jqijpm3">
+                            <TooltipTrigger asChild data-oid="0q14:c8">
                                 <Button
                                     variant={'default'}
                                     size={'icon'}
                                     className="p-2 w-fit h-fit text-foreground-primary border-border-primary hover:border-border-onlook bg-background-secondary hover:bg-background-onlook border"
                                     disabled={isLoading}
                                     onClick={handleRefresh}
+                                    data-oid="2mc.hua"
                                 >
                                     {isLoading ? (
-                                        <div className="animate-spin h-4 w-4 border-2 border-foreground-primary rounded-full border-t-transparent"></div>
+                                        <div
+                                            className="animate-spin h-4 w-4 border-2 border-foreground-primary rounded-full border-t-transparent"
+                                            data-oid="z8sxb6w"
+                                        ></div>
                                     ) : (
-                                        <Icons.Reload />
+                                        <Icons.Reload data-oid="v99:m6t" />
                                     )}
                                 </Button>
                             </TooltipTrigger>
-                            <TooltipPortal>
-                                <TooltipContent>
-                                    <p>{isLoading ? 'Loading files...' : 'Refresh files'}</p>
+                            <TooltipPortal data-oid="9aw2rgu">
+                                <TooltipContent data-oid="krq9j95">
+                                    <p data-oid="h644:ss">
+                                        {isLoading ? 'Loading files...' : 'Refresh files'}
+                                    </p>
                                 </TooltipContent>
                             </TooltipPortal>
                         </Tooltip>
@@ -271,26 +297,34 @@ function UnmemoizedFileTree({ onFileSelect, files, isLoading = false, onRefresh,
                 <div
                     className="flex-1 overflow-auto px-3 text-xs"
                     style={{ height: 'calc(100% - 56px)' }}
+                    data-oid="c-kdvqy"
                 >
                     {isLoading ? (
-                        <div className="flex flex-col justify-center items-center h-full text-sm text-foreground/50">
-                            <div className="animate-spin h-6 w-6 border-2 border-foreground-hover rounded-full border-t-transparent mb-2"></div>
-                            <span>Loading files...</span>
+                        <div
+                            className="flex flex-col justify-center items-center h-full text-sm text-foreground/50"
+                            data-oid="m.5wltg"
+                        >
+                            <div
+                                className="animate-spin h-6 w-6 border-2 border-foreground-hover rounded-full border-t-transparent mb-2"
+                                data-oid="6dtiwtf"
+                            ></div>
+                            <span data-oid="com4tau">Loading files...</span>
                         </div>
                     ) : filteredFiles.length === 0 ? (
-                        <div className="flex justify-center items-center h-full text-sm text-foreground/50">
+                        <div
+                            className="flex justify-center items-center h-full text-sm text-foreground/50"
+                            data-oid="ptm1z1p"
+                        >
                             {files.length === 0 ? 'No files found' : 'No files match your search'}
                         </div>
                     ) : (
-                        <div className="h-full">
+                        <div className="h-full" data-oid="-vyn40v">
                             <Tree
                                 ref={treeRef}
                                 data={filteredFiles}
                                 idAccessor={(node: FileNode) => node.id}
                                 childrenAccessor={(node: FileNode) =>
-                                    node.children && node.children.length > 0
-                                        ? node.children
-                                        : null
+                                    node.children && node.children.length > 0 ? node.children : null
                                 }
                                 onSelect={handleFileTreeSelect}
                                 height={filesTreeDimensions.height}
@@ -304,12 +338,16 @@ function UnmemoizedFileTree({ onFileSelect, files, isLoading = false, onRefresh,
                                         isHighlighted={
                                             highlightedIndex !== null &&
                                             treeRef.current?.visibleNodes[highlightedIndex]?.id ===
-                                            props.node.id
+                                                props.node.id
                                         }
+                                        data-oid="-5lp3at"
                                     />
                                 )}
+                                data-oid="k1e-1--"
                             >
-                                {(props) => <FileTreeNode {...props} files={files} />}
+                                {(props) => (
+                                    <FileTreeNode {...props} files={files} data-oid=":p1_397" />
+                                )}
                             </Tree>
                         </div>
                     )}

@@ -111,6 +111,7 @@ export const OverlayChat = observer(
                 onClick={(e) => e.stopPropagation()}
                 className={animationClass}
                 data-element-id={elementId}
+                data-oid="ukau_01"
             >
                 <div
                     className={cn(
@@ -121,21 +122,26 @@ export const OverlayChat = observer(
                             : 'bg-background-secondary/85 dark:bg-background/85 border-foreground-secondary/20 hover:border-foreground-secondary/50 p-0.5',
                         'border flex relative',
                     )}
+                    data-oid="aon.8_i"
                 >
                     {!inputState.isVisible ? (
                         // Chat Button
                         <button
                             onClick={() => setInputState((prev) => ({ ...prev, isVisible: true }))}
                             className="rounded-lg hover:text-foreground-primary transition-colors px-2.5 py-1.5 flex flex-row items-center gap-2 w-full"
+                            data-oid="qoevgyy"
                         >
-                            <Icons.Sparkles className="w-4 h-4" />
-                            <span className="text-miniPlus whitespace-nowrap">
+                            <Icons.Sparkles className="w-4 h-4" data-oid="jdih1w2" />
+                            <span className="text-miniPlus whitespace-nowrap" data-oid="ievdrz-">
                                 {t(transKeys.editor.panels.edit.tabs.chat.miniChat.button)}
                             </span>
                         </button>
                     ) : (
                         // Input Field
-                        <div className="flex flex-row items-top gap-1 w-full min-w-[280px] relative">
+                        <div
+                            className="flex flex-row items-top gap-1 w-full min-w-[280px] relative"
+                            data-oid="k2lr5e8"
+                        >
                             <Button
                                 size="icon"
                                 onClick={() =>
@@ -153,8 +159,12 @@ export const OverlayChat = observer(
                                         : 'opacity-100 translate-x-0 scale-100 pointer-events-auto',
                                 )}
                                 disabled={inputState.isSubmitting}
+                                data-oid="ukkqhly"
                             >
-                                <Icons.CrossS className="h-4 w-4 text-foreground-secondary group-hover:text-foreground transition-colors" />
+                                <Icons.CrossS
+                                    className="h-4 w-4 text-foreground-secondary group-hover:text-foreground transition-colors"
+                                    data-oid="22r7ma3"
+                                />
                             </Button>
                             <Textarea
                                 aria-label="Chat message input"
@@ -181,7 +191,9 @@ export const OverlayChat = observer(
                                             textareaRef.current.scrollHeight;
                                     }
                                 }}
-                                placeholder={t(transKeys.editor.panels.edit.tabs.chat.input.placeholder)}
+                                placeholder={t(
+                                    transKeys.editor.panels.edit.tabs.chat.input.placeholder,
+                                )}
                                 style={{
                                     resize: 'none',
                                     minHeight: DIMENSIONS.singleLineHeight,
@@ -214,7 +226,9 @@ export const OverlayChat = observer(
                                 onCompositionEnd={(e) => {
                                     setIsComposing(false);
                                 }}
+                                data-oid="5l3e-.0"
                             />
+
                             {inputState.value.trim().length >= DIMENSIONS.minCharsToSubmit && (
                                 <Button
                                     size="icon"
@@ -225,8 +239,12 @@ export const OverlayChat = observer(
                                         'bg-foreground-primary text-white hover:bg-foreground-hover',
                                     )}
                                     disabled={inputState.isSubmitting}
+                                    data-oid="-76z755"
                                 >
-                                    <Icons.ArrowRight className="h-4 w-4 text-background" />
+                                    <Icons.ArrowRight
+                                        className="h-4 w-4 text-background"
+                                        data-oid="x0eu5yn"
+                                    />
                                 </Button>
                             )}
                         </div>

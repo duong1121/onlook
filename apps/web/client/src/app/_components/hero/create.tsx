@@ -57,7 +57,6 @@ export function Create({ cardKey }: { cardKey: number }) {
         }
     }, []);
 
-
     const handleSubmit = async () => {
         if (isInputInvalid) {
             console.warn('Input is too short');
@@ -74,11 +73,14 @@ export function Create({ cardKey }: { cardKey: number }) {
             console.error('No user ID found');
 
             // Store the current input and images in localStorage
-            localStorage.setItem('createProjectDraft', JSON.stringify({
-                prompt,
-                images,
-                timestamp: Date.now()
-            }));
+            localStorage.setItem(
+                'createProjectDraft',
+                JSON.stringify({
+                    prompt,
+                    images,
+                    timestamp: Date.now(),
+                }),
+            );
             // Store the return URL
             localStorage.setItem('returnUrl', window.location.pathname);
             // Open the auth modal
@@ -237,9 +239,10 @@ export function Create({ cardKey }: { cardKey: number }) {
                 'w-[600px] overflow-hidden gap-4 backdrop-blur-md bg-background/20',
                 isDragging && 'bg-background/40',
             )}
+            data-oid="mvmhfw1"
         >
-            <CardHeader className="text-start">{`Let's design a...`}</CardHeader>
-            <CardContent>
+            <CardHeader className="text-start" data-oid="tiqqaps">{`Let's design a...`}</CardHeader>
+            <CardContent data-oid="zk5i:x6">
                 <div
                     className={cn(
                         'flex flex-col gap-3 rounded p-0 transition-colors duration-200 cursor-text',
@@ -251,27 +254,31 @@ export function Create({ cardKey }: { cardKey: number }) {
                     onDragOver={handleDragOver}
                     onDragLeave={handleDragLeave}
                     onDrop={handleDrop}
+                    data-oid="9qamkbv"
                 >
                     <div
                         className={`flex flex-col w-full ${selectedImages.length > 0 ? 'p-4' : 'px-2 pt-1'}`}
+                        data-oid="luj1tw4"
                     >
                         <div
                             className={cn(
                                 'flex flex-row flex-wrap w-full gap-1.5 text-micro text-foreground-secondary',
                                 selectedImages.length > 0 ? 'min-h-6' : 'h-0',
                             )}
+                            data-oid="6i6tj82"
                         >
-                            <AnimatePresence mode="popLayout">
+                            <AnimatePresence mode="popLayout" data-oid="hz19ldn">
                                 {selectedImages.map((imageContext) => (
                                     <DraftImagePill
                                         key={imageContext.content}
                                         context={imageContext}
                                         onRemove={() => handleRemoveImage(imageContext)}
+                                        data-oid="49ks.e0"
                                     />
                                 ))}
                             </AnimatePresence>
                         </div>
-                        <div className="relative flex items-center w-full mt-1">
+                        <div className="relative flex items-center w-full mt-1" data-oid="o5kgrpy">
                             <Textarea
                                 ref={textareaRef}
                                 className={cn(
@@ -321,17 +328,22 @@ export function Create({ cardKey }: { cardKey: number }) {
                                 }}
                                 rows={3}
                                 style={{ resize: 'none' }}
+                                data-oid="zvz2ldn"
                             />
                         </div>
-                        <div className="flex flex-row w-full justify-between items-center pt-2 pb-2 px-0">
-                            <div className="flex flex-row justify-start gap-1.5">
+                        <div
+                            className="flex flex-row w-full justify-between items-center pt-2 pb-2 px-0"
+                            data-oid="tv8n0vi"
+                        >
+                            <div className="flex flex-row justify-start gap-1.5" data-oid="lomqwnd">
                                 <Tooltip
                                     open={imageTooltipOpen && !isHandlingFile}
                                     onOpenChange={(open) =>
                                         !isHandlingFile && setImageTooltipOpen(open)
                                     }
+                                    data-oid=":exyavs"
                                 >
-                                    <TooltipTrigger asChild>
+                                    <TooltipTrigger asChild data-oid=":f41_27">
                                         <Button
                                             variant="ghost"
                                             size="icon"
@@ -339,6 +351,7 @@ export function Create({ cardKey }: { cardKey: number }) {
                                             onClick={() =>
                                                 document.getElementById('image-input')?.click()
                                             }
+                                            data-oid="ay_t2ov"
                                         >
                                             <input
                                                 id="image-input"
@@ -348,17 +361,24 @@ export function Create({ cardKey }: { cardKey: number }) {
                                                 multiple
                                                 className="hidden"
                                                 onChange={handleFileSelect}
+                                                data-oid="qmfvpeq"
                                             />
+
                                             <Icons.Image
                                                 className={cn(
                                                     'w-5 h-5',
                                                     'group-hover:text-foreground',
                                                 )}
+                                                data-oid="-gwd89s"
                                             />
                                         </Button>
                                     </TooltipTrigger>
-                                    <TooltipPortal>
-                                        <TooltipContent side="top" sideOffset={5}>
+                                    <TooltipPortal data-oid="5wxsqbd">
+                                        <TooltipContent
+                                            side="top"
+                                            sideOffset={5}
+                                            data-oid="ar59idz"
+                                        >
                                             Upload image
                                         </TooltipContent>
                                     </TooltipPortal>
@@ -375,9 +395,13 @@ export function Create({ cardKey }: { cardKey: number }) {
                                 )}
                                 disabled={isInputInvalid || isLoading}
                                 onClick={handleSubmit}
+                                data-oid="kqgo1_5"
                             >
                                 {isLoading ? (
-                                    <Icons.Shadow className="w-5 h-5 animate-pulse text-background" />
+                                    <Icons.Shadow
+                                        className="w-5 h-5 animate-pulse text-background"
+                                        data-oid="pykginv"
+                                    />
                                 ) : (
                                     <Icons.ArrowRight
                                         className={cn(
@@ -386,6 +410,7 @@ export function Create({ cardKey }: { cardKey: number }) {
                                                 ? 'text-background'
                                                 : 'text-foreground-primary',
                                         )}
+                                        data-oid="y91fbfd"
                                     />
                                 )}
                             </Button>

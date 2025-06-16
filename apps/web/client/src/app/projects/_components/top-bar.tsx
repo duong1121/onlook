@@ -12,22 +12,27 @@ export const TopBar = () => {
     const router = useRouter();
 
     return (
-        <div className="flex flex-row h-12 px-12 items-center">
-            <Link href={Routes.HOME} className="flex-1 flex items-center justify-start mt-3">
-                <Icons.OnlookTextLogo className="w-24" viewBox="0 0 139 17" />
+        <div className="flex flex-row h-12 px-12 items-center" data-oid="e5dv0wr">
+            <Link
+                href={Routes.HOME}
+                className="flex-1 flex items-center justify-start mt-3"
+                data-oid="-bu06zv"
+            >
+                <Icons.OnlookTextLogo className="w-24" viewBox="0 0 139 17" data-oid="m6:y6em" />
             </Link>
-            <div className="flex-1 flex justify-end space-x-2 mt-4 items-center">
+            <div className="flex-1 flex justify-end space-x-2 mt-4 items-center" data-oid="0vptbfd">
                 <Button
                     className="text-sm text-foreground-onlook focus:outline-none hover:bg-background-onlook cursor-pointer"
                     variant="ghost"
                     onClick={() => {
                         router.push(Routes.HOME);
                     }}
+                    data-oid="0wm2o5g"
                 >
-                    <Icons.Plus className="w-5 h-5 mr-2" />
+                    <Icons.Plus className="w-5 h-5 mr-2" data-oid="wh3:1:5" />
                     {t(transKeys.projects.actions.newProject)}
                 </Button>
-                <CurrentUserAvatar className="w-8 h-8" />
+                <CurrentUserAvatar className="w-8 h-8" data-oid="8:.zejg" />
             </div>
         </div>
     );

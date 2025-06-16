@@ -19,7 +19,7 @@ const isProd = process.env.NODE_ENV === 'production';
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
     return (
         <html lang="en" data-oid="si2j4vl">
-            <head>
+            <head data-oid="zux6h-4">
                 {/* Don't use preload in production */}
                 {!isProd && (
                     <Script
@@ -27,6 +27,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                         src={preloadSrc}
                         crossOrigin="anonymous"
                         strategy="beforeInteractive"
+                        data-oid="c:331zr"
                     />
                 )}
             </head>

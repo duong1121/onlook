@@ -54,13 +54,14 @@ export const SpacingInputs = ({ type, values, onChange }: SpacingInputsProps) =>
             : ['left', 'top', 'right', 'bottom'];
 
     return (
-        <div className="grid grid-cols-2 gap-2">
+        <div className="grid grid-cols-2 gap-2" data-oid="d.yqg1q">
             {positions.map((pos) => (
                 <InputIcon
                     key={pos}
                     icon={icons[pos]}
                     value={values[pos as keyof typeof values] ?? 0}
                     onChange={(value) => onChange(value, pos)}
+                    data-oid="i5ofjrn"
                 />
             ))}
         </div>

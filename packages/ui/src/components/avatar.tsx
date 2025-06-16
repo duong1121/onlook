@@ -11,6 +11,7 @@ function Avatar({ className, ...props }: React.ComponentProps<typeof AvatarPrimi
             data-slot="avatar"
             className={cn('relative flex size-8 shrink-0 overflow-hidden rounded-full', className)}
             {...props}
+            data-oid="skwm4iq"
         />
     );
 }
@@ -21,6 +22,7 @@ function AvatarImage({ className, ...props }: React.ComponentProps<typeof Avatar
             data-slot="avatar-image"
             className={cn('aspect-square size-full', className)}
             {...props}
+            data-oid="iudde66"
         />
     );
 }
@@ -37,6 +39,7 @@ function AvatarFallback({
                 className,
             )}
             {...props}
+            data-oid="z99c2jc"
         />
     );
 }

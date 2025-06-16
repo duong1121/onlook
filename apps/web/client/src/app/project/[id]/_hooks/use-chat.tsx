@@ -15,7 +15,9 @@ import type { Message, ToolCall } from 'ai';
 import { createContext, useContext } from 'react';
 import { z } from 'zod';
 
-type ExtendedUseChatHelpers = UseChatHelpers & { sendMessages: (messages: Message[], type: ChatType) => Promise<string | null | undefined> };
+type ExtendedUseChatHelpers = UseChatHelpers & {
+    sendMessages: (messages: Message[], type: ChatType) => Promise<string | null | undefined>;
+};
 const ChatContext = createContext<ExtendedUseChatHelpers | null>(null);
 
 export function ChatProvider({ children }: { children: React.ReactNode }) {
@@ -44,7 +46,11 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
         });
     };
 
-    return <ChatContext.Provider value={{ ...chat, sendMessages }}>{children}</ChatContext.Provider>;
+    return (
+        <ChatContext.Provider value={{ ...chat, sendMessages }} data-oid="cww1ek3">
+            {children}
+        </ChatContext.Provider>
+    );
 }
 
 export function useChatContext() {

@@ -100,16 +100,16 @@ export function PageModal({
     };
 
     return (
-        <Dialog open={open} onOpenChange={onOpenChange}>
-            <DialogContent>
-                <DialogHeader>
-                    <DialogTitle>{title}</DialogTitle>
-                    <DialogDescription>
+        <Dialog open={open} onOpenChange={onOpenChange} data-oid="6sz.4z6">
+            <DialogContent data-oid="vxklrl1">
+                <DialogHeader data-oid="ra-6fhi">
+                    <DialogTitle data-oid="rfjnki8">{title}</DialogTitle>
+                    <DialogDescription data-oid="b9y0bug">
                         This page will be /{fullPath} on your site
                     </DialogDescription>
                 </DialogHeader>
-                <div className="grid gap-4 py-4">
-                    <div className="col-span-3 space-y-2">
+                <div className="grid gap-4 py-4" data-oid="2o:8l59">
+                    <div className="col-span-3 space-y-2" data-oid="lf:ansc">
                         <Input
                             id="pageName"
                             value={pageName}
@@ -128,20 +128,26 @@ export function PageModal({
                             }}
                             onCompositionStart={() => setIsComposing(true)}
                             onCompositionEnd={() => setIsComposing(false)}
+                            data-oid="1nhlq_o"
                         />
+
                         {warning && (
-                            <p className="text-sm text-yellow-300 flex items-center gap-2">
+                            <p
+                                className="text-sm text-yellow-300 flex items-center gap-2"
+                                data-oid="fdyl12b"
+                            >
                                 {warning}
                             </p>
                         )}
                     </div>
                 </div>
 
-                <DialogFooter>
+                <DialogFooter data-oid="i-:j_fz">
                     <Button
                         variant="ghost"
                         onClick={() => onOpenChange(false)}
                         disabled={isLoading}
+                        data-oid="p8.j7hd"
                     >
                         Cancel
                     </Button>
@@ -149,6 +155,7 @@ export function PageModal({
                         variant="outline"
                         onClick={handleSubmit}
                         disabled={isLoading || !!warning || !pageName}
+                        data-oid="swm:zr1"
                     >
                         {isLoading ? <>{loadingText}</> : buttonText}
                     </Button>

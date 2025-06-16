@@ -93,24 +93,24 @@ export const PageTreeNode: React.FC<PageTreeNodeProps> = observer(({ node, style
         {
             label: 'Create New Page',
             action: handleCreate,
-            icon: <Icons.File className="mr-2 h-4 w-4" />,
+            icon: <Icons.File className="mr-2 h-4 w-4" data-oid=".si8vmk" />,
         },
         {
             label: 'Duplicate Page',
             action: handleDuplicate,
-            icon: <Icons.Copy className="mr-2 h-4 w-4" />,
+            icon: <Icons.Copy className="mr-2 h-4 w-4" data-oid="zwz6-2r" />,
             disabled: node.data.isRoot,
         },
         {
             label: 'Rename',
             action: handleRename,
-            icon: <Icons.Pencil className="mr-2 h-4 w-4" />,
+            icon: <Icons.Pencil className="mr-2 h-4 w-4" data-oid="j6a3s07" />,
             disabled: node.data.isRoot,
         },
         {
             label: 'Delete',
             action: handleDelete,
-            icon: <Icons.Trash className="mr-2 h-4 w-4" />,
+            icon: <Icons.Trash className="mr-2 h-4 w-4" data-oid="vu_z_g8" />,
             destructive: true,
             disabled: node.data.isRoot,
         },
@@ -118,8 +118,8 @@ export const PageTreeNode: React.FC<PageTreeNodeProps> = observer(({ node, style
 
     return (
         <>
-            <ContextMenu>
-                <ContextMenuTrigger>
+            <ContextMenu data-oid="i1g44tk">
+                <ContextMenuTrigger data-oid="na_w-js">
                     <div
                         style={style}
                         className={cn(
@@ -128,41 +128,51 @@ export const PageTreeNode: React.FC<PageTreeNodeProps> = observer(({ node, style
                             isActive && 'hover:bg-red-500',
                         )}
                         onClick={handleClick}
+                        data-oid="xxr2hbe"
                     >
-                        <span className="w-4 h-4 flex-none relative">
+                        <span className="w-4 h-4 flex-none relative" data-oid=":i1pupo">
                             {hasChildren && (
-                                <div className="w-4 h-4 flex items-center justify-center absolute z-50">
+                                <div
+                                    className="w-4 h-4 flex items-center justify-center absolute z-50"
+                                    data-oid="s5se33p"
+                                >
                                     <motion.div
                                         initial={false}
                                         animate={{ rotate: node.isOpen ? 90 : 0 }}
+                                        data-oid="rnaebn5"
                                     >
-                                        <Icons.ChevronRight className="h-2.5 w-2.5" />
+                                        <Icons.ChevronRight
+                                            className="h-2.5 w-2.5"
+                                            data-oid="45hqnyg"
+                                        />
                                     </motion.div>
                                 </div>
                             )}
                         </span>
                         {!node.data.isRoot &&
                             (hasChildren ? (
-                                <Icons.Directory className="w-4 h-4 mr-2" />
+                                <Icons.Directory className="w-4 h-4 mr-2" data-oid="ypj0pbj" />
                             ) : (
-                                <Icons.File className="w-4 h-4 mr-2" />
+                                <Icons.File className="w-4 h-4 mr-2" data-oid="7yg9bjv" />
                             ))}
-                        <span>{node.data.name}</span>
+                        <span data-oid="aemnxya">{node.data.name}</span>
                     </div>
                 </ContextMenuTrigger>
-                <ContextMenuContent>
+                <ContextMenuContent data-oid="j4011pm">
                     {menuItems.map((item) => (
                         <ContextMenuItem
                             key={item.label}
                             onClick={item.action}
                             className="cursor-pointer"
                             disabled={item.disabled}
+                            data-oid="akf9so8"
                         >
                             <span
                                 className={cn(
                                     'flex w-full items-center gap-1',
                                     item.destructive && 'text-red',
                                 )}
+                                data-oid="5nj7vvc"
                             >
                                 {item.icon}
 
@@ -179,6 +189,7 @@ export const PageTreeNode: React.FC<PageTreeNodeProps> = observer(({ node, style
                 mode={modalMode}
                 baseRoute={node.data.path}
                 initialName={modalMode === 'rename' ? getBaseName(node.data.path) : ''}
+                data-oid="3n4s9lp"
             />
         </>
     );

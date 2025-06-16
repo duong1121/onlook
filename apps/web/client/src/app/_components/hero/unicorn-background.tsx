@@ -33,7 +33,7 @@ const useUnicornStudio = () => {
 
         // Check if script already exists
         const existingScript = document.querySelector(
-            `script[src="${scriptUrl}"]`
+            `script[src="${scriptUrl}"]`,
         ) as HTMLScriptElement | null;
 
         if (existingScript) {
@@ -63,14 +63,19 @@ const useUnicornStudio = () => {
     }, []);
 
     // Only access window if it's defined
-    const unicornStudio = typeof window !== 'undefined'
-        ? (window as any).UnicornStudio as UnicornStudio | undefined
-        : undefined;
+    const unicornStudio =
+        typeof window !== 'undefined'
+            ? ((window as any).UnicornStudio as UnicornStudio | undefined)
+            : undefined;
 
     return { isLoaded, UnicornStudio: unicornStudio };
 };
 
-export function UnicornBackground({ setIsMounted }: { setIsMounted: (isMounted: boolean) => void }) {
+export function UnicornBackground({
+    setIsMounted,
+}: {
+    setIsMounted: (isMounted: boolean) => void;
+}) {
     const [isBackgroundVisible, setIsBackgroundVisible] = useState(false);
     const sceneRef = useRef<UnicornStudioScene | null>(null);
     const { isLoaded, UnicornStudio } = useUnicornStudio();
@@ -97,9 +102,7 @@ export function UnicornBackground({ setIsMounted }: { setIsMounted: (isMounted: 
 
                 if (scenes) {
                     const ourScene = scenes.find(
-                        (scene) =>
-                            scene.element === container ||
-                            scene.element.contains(container)
+                        (scene) => scene.element === container || scene.element.contains(container),
                     );
                     if (ourScene) {
                         sceneRef.current = ourScene;
@@ -129,18 +132,19 @@ export function UnicornBackground({ setIsMounted }: { setIsMounted: (isMounted: 
     }, [isLoaded, setIsMounted]);
 
     return (
-        <div className="absolute inset-0 w-full h-screen overflow-hidden">
+        <div className="absolute inset-0 w-full h-screen overflow-hidden" data-oid="-89kli3">
             <motion.div
                 data-us-project="Gr1LmwbKSeJOXhpYEdit"
                 className="absolute inset-0 w-full h-[calc(100vh+80px)] z-0"
                 style={{
                     pointerEvents: 'none',
-                    willChange: "opacity",
-                    transform: "translateZ(0)"
+                    willChange: 'opacity',
+                    transform: 'translateZ(0)',
                 }}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: isBackgroundVisible ? 1 : 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
+                transition={{ duration: 0.8, ease: 'easeOut' }}
+                data-oid="9kv916:"
             />
         </div>
     );

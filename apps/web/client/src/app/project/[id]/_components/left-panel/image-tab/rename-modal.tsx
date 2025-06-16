@@ -22,19 +22,23 @@ const RenameImageModal = observer(
         newName: string;
     }) => {
         return (
-            <AlertDialog open={isOpen} onOpenChange={toggleOpen}>
-                <AlertDialogContent>
-                    <AlertDialogHeader>
-                        <AlertDialogTitle>Rename Image</AlertDialogTitle>
-                        <AlertDialogDescription>
+            <AlertDialog open={isOpen} onOpenChange={toggleOpen} data-oid="pkxz6mr">
+                <AlertDialogContent data-oid="96q4m2m">
+                    <AlertDialogHeader data-oid="stwx:9v">
+                        <AlertDialogTitle data-oid="-1bji4h">Rename Image</AlertDialogTitle>
+                        <AlertDialogDescription data-oid="wxgwc2u">
                             {`Rename image to "${newName}"`}
                         </AlertDialogDescription>
                     </AlertDialogHeader>
-                    <AlertDialogFooter>
-                        <Button variant={'ghost'} onClick={toggleOpen}>
+                    <AlertDialogFooter data-oid="_70fgyv">
+                        <Button variant={'ghost'} onClick={toggleOpen} data-oid="4ir7eom">
                             Cancel
                         </Button>
-                        <Button variant={'default'} onClick={() => onRename(newName)}>
+                        <Button
+                            variant={'default'}
+                            onClick={() => onRename(newName)}
+                            data-oid="kfhms:t"
+                        >
                             Rename
                         </Button>
                     </AlertDialogFooter>

@@ -22,9 +22,10 @@ export const CodeDiff = ({ originalCode, modifiedCode }: CodeDiffProps) => {
         <CodeMirrorMerge
             orientation="a-b"
             theme={theme === SystemTheme.DARK ? SystemTheme.DARK : SystemTheme.LIGHT}
+            data-oid="aofcz.g"
         >
-            <Original value={originalCode} extensions={extensions} readOnly />
-            <Modified value={modifiedCode} extensions={extensions} readOnly />
+            <Original value={originalCode} extensions={extensions} readOnly data-oid="v5b61-z" />
+            <Modified value={modifiedCode} extensions={extensions} readOnly data-oid="-0fmcxt" />
         </CodeMirrorMerge>
     );
 };

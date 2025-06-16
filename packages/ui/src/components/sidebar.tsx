@@ -113,8 +113,8 @@ function SidebarProvider({
     );
 
     return (
-        <SidebarContext.Provider value={contextValue}>
-            <TooltipProvider delayDuration={0}>
+        <SidebarContext.Provider value={contextValue} data-oid="lv5tz-l">
+            <TooltipProvider delayDuration={0} data-oid="oqg6_nl">
                 <div
                     data-slot="sidebar-wrapper"
                     style={
@@ -129,6 +129,7 @@ function SidebarProvider({
                         className,
                     )}
                     {...props}
+                    data-oid="q2axymq"
                 >
                     {children}
                 </div>
@@ -160,6 +161,7 @@ function Sidebar({
                     className,
                 )}
                 {...props}
+                data-oid="xuo_oc5"
             >
                 {children}
             </div>
@@ -168,7 +170,7 @@ function Sidebar({
 
     if (isMobile) {
         return (
-            <Sheet open={openMobile} onOpenChange={setOpenMobile} {...props}>
+            <Sheet open={openMobile} onOpenChange={setOpenMobile} {...props} data-oid=":bmsf8y">
                 <SheetContent
                     data-sidebar="sidebar"
                     data-slot="sidebar"
@@ -180,12 +182,17 @@ function Sidebar({
                         } as React.CSSProperties
                     }
                     side={side}
+                    data-oid="ggfi4tc"
                 >
-                    <SheetHeader className="sr-only">
-                        <SheetTitle>Sidebar</SheetTitle>
-                        <SheetDescription>Displays the mobile sidebar.</SheetDescription>
+                    <SheetHeader className="sr-only" data-oid=":vvx4rs">
+                        <SheetTitle data-oid="csw2e8k">Sidebar</SheetTitle>
+                        <SheetDescription data-oid="7sbdxso">
+                            Displays the mobile sidebar.
+                        </SheetDescription>
                     </SheetHeader>
-                    <div className="flex h-full w-full flex-col">{children}</div>
+                    <div className="flex h-full w-full flex-col" data-oid="vfbbmn4">
+                        {children}
+                    </div>
                 </SheetContent>
             </Sheet>
         );
@@ -199,6 +206,7 @@ function Sidebar({
             data-variant={variant}
             data-side={side}
             data-slot="sidebar"
+            data-oid="uqjwaai"
         >
             {/* This is what handles the sidebar gap on desktop */}
             <div
@@ -211,7 +219,9 @@ function Sidebar({
                         ? 'group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)+(--spacing(4)))]'
                         : 'group-data-[collapsible=icon]:w-(--sidebar-width-icon)',
                 )}
+                data-oid="e6u_kxk"
             />
+
             <div
                 data-slot="sidebar-container"
                 className={cn(
@@ -226,11 +236,13 @@ function Sidebar({
                     className,
                 )}
                 {...props}
+                data-oid="_9c23g5"
             >
                 <div
                     data-sidebar="sidebar"
                     data-slot="sidebar-inner"
                     className="bg-sidebar group-data-[variant=floating]:border-sidebar-border flex h-full w-full flex-col group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:shadow-sm"
+                    data-oid="tmq9cht"
                 >
                     {children}
                 </div>
@@ -254,9 +266,12 @@ function SidebarTrigger({ className, onClick, ...props }: React.ComponentProps<t
                 toggleSidebar();
             }}
             {...props}
+            data-oid="s0k4t-t"
         >
-            <PanelLeftIcon />
-            <span className="sr-only">Toggle Sidebar</span>
+            <PanelLeftIcon data-oid="e.np8o5" />
+            <span className="sr-only" data-oid="nygmsa_">
+                Toggle Sidebar
+            </span>
         </Button>
     );
 }
@@ -282,6 +297,7 @@ function SidebarRail({ className, ...props }: React.ComponentProps<'button'>) {
                 className,
             )}
             {...props}
+            data-oid="jl95a7s"
         />
     );
 }
@@ -296,6 +312,7 @@ function SidebarInset({ className, ...props }: React.ComponentProps<'main'>) {
                 className,
             )}
             {...props}
+            data-oid="576z3_d"
         />
     );
 }
@@ -307,6 +324,7 @@ function SidebarInput({ className, ...props }: React.ComponentProps<typeof Input
             data-sidebar="input"
             className={cn('bg-background h-8 w-full shadow-none', className)}
             {...props}
+            data-oid="gl88iue"
         />
     );
 }
@@ -318,6 +336,7 @@ function SidebarHeader({ className, ...props }: React.ComponentProps<'div'>) {
             data-sidebar="header"
             className={cn('flex flex-col gap-2 p-2', className)}
             {...props}
+            data-oid="6pi-ui0"
         />
     );
 }
@@ -329,6 +348,7 @@ function SidebarFooter({ className, ...props }: React.ComponentProps<'div'>) {
             data-sidebar="footer"
             className={cn('flex flex-col gap-2 p-2', className)}
             {...props}
+            data-oid="cwq9cij"
         />
     );
 }
@@ -340,6 +360,7 @@ function SidebarSeparator({ className, ...props }: React.ComponentProps<typeof S
             data-sidebar="separator"
             className={cn('bg-sidebar-border mx-2 w-auto', className)}
             {...props}
+            data-oid="ckof-8d"
         />
     );
 }
@@ -354,6 +375,7 @@ function SidebarContent({ className, ...props }: React.ComponentProps<'div'>) {
                 className,
             )}
             {...props}
+            data-oid="4g81w31"
         />
     );
 }
@@ -365,6 +387,7 @@ function SidebarGroup({ className, ...props }: React.ComponentProps<'div'>) {
             data-sidebar="group"
             className={cn('relative flex w-full min-w-0 flex-col p-2', className)}
             {...props}
+            data-oid="g_d.xf8"
         />
     );
 }
@@ -386,6 +409,7 @@ function SidebarGroupLabel({
                 className,
             )}
             {...props}
+            data-oid="bn85:n2"
         />
     );
 }
@@ -409,6 +433,7 @@ function SidebarGroupAction({
                 className,
             )}
             {...props}
+            data-oid="7ihd9cz"
         />
     );
 }
@@ -420,6 +445,7 @@ function SidebarGroupContent({ className, ...props }: React.ComponentProps<'div'
             data-sidebar="group-content"
             className={cn('w-full text-sm', className)}
             {...props}
+            data-oid="0.s50sb"
         />
     );
 }
@@ -431,6 +457,7 @@ function SidebarMenu({ className, ...props }: React.ComponentProps<'ul'>) {
             data-sidebar="menu"
             className={cn('flex w-full min-w-0 flex-col gap-1', className)}
             {...props}
+            data-oid="xk-61cv"
         />
     );
 }
@@ -442,6 +469,7 @@ function SidebarMenuItem({ className, ...props }: React.ComponentProps<'li'>) {
             data-sidebar="menu-item"
             className={cn('group/menu-item relative', className)}
             {...props}
+            data-oid="1jx55-e"
         />
     );
 }
@@ -492,6 +520,7 @@ function SidebarMenuButton({
             data-active={isActive}
             className={cn(sidebarMenuButtonVariants({ variant, size }), className)}
             {...props}
+            data-oid="9fdjy5n"
         />
     );
 
@@ -506,13 +535,16 @@ function SidebarMenuButton({
     }
 
     return (
-        <Tooltip>
-            <TooltipTrigger asChild>{button}</TooltipTrigger>
+        <Tooltip data-oid="u:yt.r7">
+            <TooltipTrigger asChild data-oid="uvlunuy">
+                {button}
+            </TooltipTrigger>
             <TooltipContent
                 side="right"
                 align="center"
                 hidden={state !== 'collapsed' || isMobile}
                 {...tooltip}
+                data-oid="bm:5rvz"
             />
         </Tooltip>
     );
@@ -523,10 +555,7 @@ function SidebarMenuAction({
     asChild = false,
     showOnHover = false,
     ...props
-}: React.ComponentProps<'button'> & {
-    asChild?: boolean;
-    showOnHover?: boolean;
-}) {
+}: React.ComponentProps<'button'> & { asChild?: boolean; showOnHover?: boolean }) {
     const Comp = asChild ? Slot : 'button';
 
     return (
@@ -546,6 +575,7 @@ function SidebarMenuAction({
                 className,
             )}
             {...props}
+            data-oid="pmx08go"
         />
     );
 }
@@ -565,6 +595,7 @@ function SidebarMenuBadge({ className, ...props }: React.ComponentProps<'div'>) 
                 className,
             )}
             {...props}
+            data-oid="zn11:4l"
         />
     );
 }
@@ -573,9 +604,7 @@ function SidebarMenuSkeleton({
     className,
     showIcon = false,
     ...props
-}: React.ComponentProps<'div'> & {
-    showIcon?: boolean;
-}) {
+}: React.ComponentProps<'div'> & { showIcon?: boolean }) {
     // Random width between 50 to 90%.
     const width = React.useMemo(() => {
         return `${Math.floor(Math.random() * 40) + 50}%`;
@@ -587,9 +616,14 @@ function SidebarMenuSkeleton({
             data-sidebar="menu-skeleton"
             className={cn('flex h-8 items-center gap-2 rounded-md px-2', className)}
             {...props}
+            data-oid="jw9fbfd"
         >
             {showIcon && (
-                <Skeleton className="size-4 rounded-md" data-sidebar="menu-skeleton-icon" />
+                <Skeleton
+                    className="size-4 rounded-md"
+                    data-sidebar="menu-skeleton-icon"
+                    data-oid="s0efg_a"
+                />
             )}
             <Skeleton
                 className="h-4 max-w-(--skeleton-width) flex-1"
@@ -599,6 +633,7 @@ function SidebarMenuSkeleton({
                         '--skeleton-width': width,
                     } as React.CSSProperties
                 }
+                data-oid="sh3biwd"
             />
         </div>
     );
@@ -615,6 +650,7 @@ function SidebarMenuSub({ className, ...props }: React.ComponentProps<'ul'>) {
                 className,
             )}
             {...props}
+            data-oid="h.-dc9s"
         />
     );
 }
@@ -626,6 +662,7 @@ function SidebarMenuSubItem({ className, ...props }: React.ComponentProps<'li'>)
             data-sidebar="menu-sub-item"
             className={cn('group/menu-sub-item relative', className)}
             {...props}
+            data-oid="14t252o"
         />
     );
 }
@@ -636,11 +673,7 @@ function SidebarMenuSubButton({
     isActive = false,
     className,
     ...props
-}: React.ComponentProps<'a'> & {
-    asChild?: boolean;
-    size?: 'sm' | 'md';
-    isActive?: boolean;
-}) {
+}: React.ComponentProps<'a'> & { asChild?: boolean; size?: 'sm' | 'md'; isActive?: boolean }) {
     const Comp = asChild ? Slot : 'a';
 
     return (
@@ -658,6 +691,7 @@ function SidebarMenuSubButton({
                 className,
             )}
             {...props}
+            data-oid="0gtib8d"
         />
     );
 }

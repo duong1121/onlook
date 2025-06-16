@@ -16,22 +16,26 @@ export const ChatControls = observer(() => {
     };
 
     return (
-        <div className="flex flex-row opacity-50 transition-opacity duration-200 group-hover/panel:opacity-100">
-            <Tooltip>
-                <TooltipTrigger asChild>
+        <div
+            className="flex flex-row opacity-50 transition-opacity duration-200 group-hover/panel:opacity-100"
+            data-oid="v62xqhp"
+        >
+            <Tooltip data-oid="4r-57.a">
+                <TooltipTrigger asChild data-oid="my1k6s_">
                     <Button
                         variant={'ghost'}
                         size={'icon'}
                         className="p-2 w-fit h-fit hover:bg-background-onlook cursor-pointer"
                         onClick={handleNewChat}
                         disabled={isWaiting}
+                        data-oid="pljwyaz"
                     >
-                        <Icons.Edit className='h-4 w-4' />
+                        <Icons.Edit className="h-4 w-4" data-oid=".l9dcbc" />
                     </Button>
                 </TooltipTrigger>
-                <TooltipContent side="bottom">
-                    <p>New Chat</p>
-                    <TooltipArrow className="fill-foreground" />
+                <TooltipContent side="bottom" data-oid="qxa_:c_">
+                    <p data-oid="l_e.88b">New Chat</p>
+                    <TooltipArrow className="fill-foreground" data-oid="5jn229o" />
                 </TooltipContent>
             </Tooltip>
         </div>

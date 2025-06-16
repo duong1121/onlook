@@ -1,4 +1,4 @@
 'use client';
 export default function ErrorPage() {
-    return <p>Sorry, something went wrong</p>;
+    return <p data-oid="vmvn34g">Sorry, something went wrong</p>;
 }

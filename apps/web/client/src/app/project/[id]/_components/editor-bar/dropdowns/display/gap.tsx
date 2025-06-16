@@ -20,8 +20,10 @@ export const GapInput = () => {
     }, [editorEngine.style.selectedStyle?.styles.computed.gap]);
 
     return (
-        <div className="flex items-center gap-3">
-            <span className="text-sm text-muted-foreground w-24">Gap</span>
+        <div className="flex items-center gap-3" data-oid="7ubn-kr">
+            <span className="text-sm text-muted-foreground w-24" data-oid="q0-drcd">
+                Gap
+            </span>
             <InputIcon
                 value={numValue}
                 unit={unitValue}
@@ -33,6 +35,7 @@ export const GapInput = () => {
                     setUnitValue(newUnit);
                     editorEngine.style.update('gap', `${numValue}${newUnit}`);
                 }}
+                data-oid=":.o8qiu"
             />
         </div>
     );

@@ -39,6 +39,7 @@ export const MarkdownRenderer = ({
                             {...props}
                         />
                     ),
+
                     code({ node, className, children, ...props }) {
                         const match = /language-(\w+)(:?.+)?/.exec(className || '');
                         const language = match?.[1];

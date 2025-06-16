@@ -51,8 +51,13 @@ const VisibilityButton = memo(
             onClick={onClick}
             style={{ position: 'absolute', right: '4px' }}
             className="w-4 h-4"
+            data-oid="cc2-ga7"
         >
-            {isVisible ? <Icons.EyeOpen /> : <Icons.EyeClosed />}
+            {isVisible ? (
+                <Icons.EyeOpen data-oid="9mrs-fj" />
+            ) : (
+                <Icons.EyeClosed data-oid="tx2f6qj" />
+            )}
         </button>
     ),
 );
@@ -247,27 +252,28 @@ export const TreeNode = memo(
                     (node.data.component
                         ? node.data.component
                         : ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p'].includes(
-                            node.data.tagName.toLowerCase(),
-                        )
-                            ? ''
-                            : node.data.tagName.toLowerCase()) +
+                                node.data.tagName.toLowerCase(),
+                            )
+                          ? ''
+                          : node.data.tagName.toLowerCase()) +
                     ' ' +
                     node.data.textContent
                 );
             }
 
             return (
-                <Tooltip>
-                    <TooltipTrigger asChild>
-                        <div ref={nodeRef}>
+                <Tooltip data-oid="dqrl_pe">
+                    <TooltipTrigger asChild data-oid="2uzwn13">
+                        <div ref={nodeRef} data-oid="0lm34-s">
                             <div
                                 ref={dragHandle}
                                 style={style}
                                 onMouseDown={(e) => handleSelectNode(e)}
                                 onMouseOver={(e) => handleHoverNode(e)}
                                 className={nodeClassName}
+                                data-oid="iqrzhz4"
                             >
-                                <span className="w-4 h-4 flex-none relative">
+                                <span className="w-4 h-4 flex-none relative" data-oid="tp58-az">
                                     {!node.isLeaf && (
                                         <div
                                             className="w-4 h-4 flex items-center justify-center absolute z-50"
@@ -280,13 +286,18 @@ export const TreeNode = memo(
                                                 );
                                                 node.toggle();
                                             }}
+                                            data-oid="4a76j0:"
                                         >
                                             {hovered && (
                                                 <motion.div
                                                     initial={false}
                                                     animate={{ rotate: node.isOpen ? 90 : 0 }}
+                                                    data-oid="5qtospk"
                                                 >
-                                                    <Icons.ChevronRight className="h-2.5 w-2.5" />
+                                                    <Icons.ChevronRight
+                                                        className="h-2.5 w-2.5"
+                                                        data-oid="wew5gbx"
+                                                    />
                                                 </motion.div>
                                             )}
                                         </div>
@@ -299,9 +310,10 @@ export const TreeNode = memo(
                                             hovered && !selected
                                                 ? 'text-purple-600 dark:text-purple-200 '
                                                 : selected
-                                                    ? 'text-purple-100 dark:text-purple-100'
-                                                    : 'text-purple-500 dark:text-purple-300',
+                                                  ? 'text-purple-100 dark:text-purple-100'
+                                                  : 'text-purple-500 dark:text-purple-300',
                                         )}
+                                        data-oid="yzg8lme"
                                     />
                                 ) : (
                                     <NodeIcon
@@ -338,6 +350,7 @@ export const TreeNode = memo(
                                                 isText,
                                         })}
                                         tagName={node.data.tagName}
+                                        data-oid="vdrx52l"
                                     />
                                 )}
                                 <span
@@ -347,12 +360,13 @@ export const TreeNode = memo(
                                             ? selected
                                                 ? 'text-purple-100 dark:text-purple-100'
                                                 : hovered
-                                                    ? 'text-purple-600 dark:text-purple-200'
-                                                    : 'text-purple-500 dark:text-purple-300'
+                                                  ? 'text-purple-600 dark:text-purple-200'
+                                                  : 'text-purple-500 dark:text-purple-300'
                                             : '',
                                         !node.data.isVisible && 'opacity-80',
                                         selected && 'mr-5',
                                     )}
+                                    data-oid="ciyfw5x"
                                 >
                                     {getNodeName()}
                                 </span>
@@ -360,21 +374,26 @@ export const TreeNode = memo(
                                     <VisibilityButton
                                         isVisible={node.data.isVisible}
                                         onClick={toggleVisibility}
+                                        data-oid="j0g10mz"
                                     />
                                 )}
                             </div>
                         </div>
                     </TooltipTrigger>
                     {node.data.textContent !== '' && (
-                        <TooltipPortal container={document.getElementById('style-panel')}>
+                        <TooltipPortal
+                            container={document.getElementById('style-panel')}
+                            data-oid="g93wq-i"
+                        >
                             <TooltipContent
                                 side="right"
                                 align="center"
                                 sideOffset={sideOffset()}
                                 className="animation-none max-w-[200px] shadow"
+                                data-oid="q6sk9za"
                             >
-                                <TooltipArrow className="fill-foreground" />
-                                <p>{node.data.textContent}</p>
+                                <TooltipArrow className="fill-foreground" data-oid="ragx72-" />
+                                <p data-oid="9wev:dy">{node.data.textContent}</p>
                             </TooltipContent>
                         </TooltipPortal>
                     )}

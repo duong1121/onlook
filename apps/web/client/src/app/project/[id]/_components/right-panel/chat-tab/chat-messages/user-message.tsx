@@ -91,6 +91,7 @@ export const UserMessage = ({ message }: UserMessageProps) => {
                     onCompositionStart={() => setIsComposing(true)}
                     onCompositionEnd={() => setIsComposing(false)}
                 />
+
                 <div className="flex justify-end gap-2">
                     <Button size="sm" variant={'ghost'} onClick={handleCancel}>
                         Cancel

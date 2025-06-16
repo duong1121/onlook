@@ -144,8 +144,10 @@ export const PagesTab = observer(() => {
                         highlightedIndex !== null &&
                         treeRef.current?.visibleNodes[highlightedIndex]?.id === props.node.id
                     }
+                    data-oid="ri9det1"
                 />
             ),
+
             animationDuration: 200,
         }),
         [filteredPages, dimensions.height, dimensions.width, highlightedIndex, editorEngine.pages],
@@ -155,9 +157,13 @@ export const PagesTab = observer(() => {
         <div
             ref={ref}
             className="text-active flex h-full w-full flex-grow flex-col gap-2 overflow-hidden p-3 text-xs"
+            data-oid="fp1llky"
         >
-            <div className="m-0 flex flex-row items-center justify-between gap-2">
-                <div className="relative flex-grow">
+            <div
+                className="m-0 flex flex-row items-center justify-between gap-2"
+                data-oid="tbycnai"
+            >
+                <div className="relative flex-grow" data-oid="muq5q07">
                     <Input
                         ref={inputRef}
                         className="h-8 pr-8 text-xs"
@@ -165,30 +171,37 @@ export const PagesTab = observer(() => {
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                         onKeyDown={handleKeyDown}
+                        data-oid="6nyxd9a"
                     />
+
                     {searchQuery && (
                         <button
                             className="hover:bg-background-onlook group absolute top-[1px] right-[1px] bottom-[1px] flex aspect-square items-center justify-center rounded-r-[calc(theme(borderRadius.md)-1px)] active:bg-transparent"
                             onClick={() => setSearchQuery('')}
+                            data-oid="cje:bx1"
                         >
-                            <Icons.CrossS className="text-foreground-primary/50 group-hover:text-foreground-primary h-3 w-3" />
+                            <Icons.CrossS
+                                className="text-foreground-primary/50 group-hover:text-foreground-primary h-3 w-3"
+                                data-oid="1-77fn6"
+                            />
                         </button>
                     )}
                 </div>
-                <Tooltip>
-                    <TooltipTrigger asChild>
+                <Tooltip data-oid="t2gqex6">
+                    <TooltipTrigger asChild data-oid="xf0b0b-">
                         <Button
                             variant={'default'}
                             size={'icon'}
                             className="text-foreground-primary border-border-primary hover:border-border-onlook bg-background-secondary hover:bg-background-onlook h-fit w-fit border p-2"
                             onClick={() => setShowCreateModal(true)}
+                            data-oid="amw54gq"
                         >
-                            <Icons.Plus />
+                            <Icons.Plus data-oid="1kgg4v-" />
                         </Button>
                     </TooltipTrigger>
-                    <TooltipPortal>
-                        <TooltipContent>
-                            <p>Create a new page</p>
+                    <TooltipPortal data-oid="a92tw6g">
+                        <TooltipContent data-oid="5er18nk">
+                            <p data-oid="lch4qjf">Create a new page</p>
                         </TooltipContent>
                     </TooltipPortal>
                 </Tooltip>
@@ -198,15 +211,21 @@ export const PagesTab = observer(() => {
                 <div
                     style={{ width: dimensions.width }}
                     className="text-foreground-primary/50 flex h-32 items-center justify-center"
+                    data-oid="zk8t5ls"
                 >
                     No pages found
                 </div>
             ) : (
-                <Tree ref={treeRef} {...pageTreeProps}>
-                    {(props) => <PageTreeNode {...props} />}
+                <Tree ref={treeRef} {...pageTreeProps} data-oid="tb3qgdb">
+                    {(props) => <PageTreeNode {...props} data-oid="v7c.ef7" />}
                 </Tree>
             )}
-            <PageModal mode="create" open={showCreateModal} onOpenChange={setShowCreateModal} />
+            <PageModal
+                mode="create"
+                open={showCreateModal}
+                onOpenChange={setShowCreateModal}
+                data-oid="of1o28v"
+            />
         </div>
     );
 });

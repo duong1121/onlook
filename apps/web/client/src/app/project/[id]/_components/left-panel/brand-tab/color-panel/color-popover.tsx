@@ -47,17 +47,24 @@ export const ColorPopover = ({
     }, [brandColor]);
 
     return (
-        <Popover onOpenChange={(open) => !open && handleNameChange(editedName)} open={true}>
-            <PopoverTrigger asChild>
+        <Popover
+            onOpenChange={(open) => !open && handleNameChange(editedName)}
+            open={true}
+            data-oid="x4u:s_1"
+        >
+            <PopoverTrigger asChild data-oid="570zqi:">
                 <div
                     className="w-full aspect-square rounded-lg cursor-pointer hover:ring-2 hover:ring-border-primary border border-white/10"
                     style={{ backgroundColor: editedColor.toHex() }}
+                    data-oid="zctcjf2"
                 />
             </PopoverTrigger>
-            <PopoverContent className="p-0 w-56" side="right" align="start">
-                <div className="flex flex-col gap-0 p-0">
-                    <div className="flex flex-col gap-1 p-2 pb-1">
-                        <label className="text-xs text-muted-foreground">Color Name</label>
+            <PopoverContent className="p-0 w-56" side="right" align="start" data-oid="gpq36di">
+                <div className="flex flex-col gap-0 p-0" data-oid="3x9ng-k">
+                    <div className="flex flex-col gap-1 p-2 pb-1" data-oid="o5tnzfa">
+                        <label className="text-xs text-muted-foreground" data-oid="nbas8b:">
+                            Color Name
+                        </label>
                         <ColorNameInput
                             initialName={editedName}
                             onSubmit={handleNameChange}
@@ -69,12 +76,14 @@ export const ColorPopover = ({
                             }}
                             existingNames={existedName}
                             disabled={isDefaultPalette || brandColor === DEFAULT_COLOR_NAME}
+                            data-oid="39k7awy"
                         />
                     </div>
                     <ColorPickerContent
                         color={editedColor}
                         onChange={handleColorChange}
                         onChangeEnd={handleColorChange}
+                        data-oid="a1f-lao"
                     />
                 </div>
             </PopoverContent>

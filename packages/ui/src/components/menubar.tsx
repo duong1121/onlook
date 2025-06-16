@@ -13,24 +13,31 @@ function Menubar({ className, ...props }: React.ComponentProps<typeof MenubarPri
                 className,
             )}
             {...props}
+            data-oid="12d5tro"
         />
     );
 }
 
 function MenubarMenu({ ...props }: React.ComponentProps<typeof MenubarPrimitive.Menu>) {
-    return <MenubarPrimitive.Menu data-slot="menubar-menu" {...props} />;
+    return <MenubarPrimitive.Menu data-slot="menubar-menu" {...props} data-oid="kzbmkul" />;
 }
 
 function MenubarGroup({ ...props }: React.ComponentProps<typeof MenubarPrimitive.Group>) {
-    return <MenubarPrimitive.Group data-slot="menubar-group" {...props} />;
+    return <MenubarPrimitive.Group data-slot="menubar-group" {...props} data-oid="f6:a63z" />;
 }
 
 function MenubarPortal({ ...props }: React.ComponentProps<typeof MenubarPrimitive.Portal>) {
-    return <MenubarPrimitive.Portal data-slot="menubar-portal" {...props} />;
+    return <MenubarPrimitive.Portal data-slot="menubar-portal" {...props} data-oid="zjslq2d" />;
 }
 
 function MenubarRadioGroup({ ...props }: React.ComponentProps<typeof MenubarPrimitive.RadioGroup>) {
-    return <MenubarPrimitive.RadioGroup data-slot="menubar-radio-group" {...props} />;
+    return (
+        <MenubarPrimitive.RadioGroup
+            data-slot="menubar-radio-group"
+            {...props}
+            data-oid="8mol9vg"
+        />
+    );
 }
 
 function MenubarTrigger({
@@ -45,6 +52,7 @@ function MenubarTrigger({
                 className,
             )}
             {...props}
+            data-oid="-wqsx92"
         />
     );
 }
@@ -57,7 +65,7 @@ function MenubarContent({
     ...props
 }: React.ComponentProps<typeof MenubarPrimitive.Content>) {
     return (
-        <MenubarPortal>
+        <MenubarPortal data-oid="l_uym3s">
             <MenubarPrimitive.Content
                 data-slot="menubar-content"
                 align={align}
@@ -68,6 +76,7 @@ function MenubarContent({
                     className,
                 )}
                 {...props}
+                data-oid="u94o4b."
             />
         </MenubarPortal>
     );
@@ -92,6 +101,7 @@ function MenubarItem({
                 className,
             )}
             {...props}
+            data-oid="6tnhwo2"
         />
     );
 }
@@ -111,10 +121,14 @@ function MenubarCheckboxItem({
             )}
             checked={checked}
             {...props}
+            data-oid="7ixjzb9"
         >
-            <span className="pointer-events-none absolute left-2 flex size-3.5 items-center justify-center">
-                <MenubarPrimitive.ItemIndicator>
-                    <CheckIcon className="size-4" />
+            <span
+                className="pointer-events-none absolute left-2 flex size-3.5 items-center justify-center"
+                data-oid="7ho-fcb"
+            >
+                <MenubarPrimitive.ItemIndicator data-oid="8str.nw">
+                    <CheckIcon className="size-4" data-oid="1e:oklf" />
                 </MenubarPrimitive.ItemIndicator>
             </span>
             {children}
@@ -135,10 +149,14 @@ function MenubarRadioItem({
                 className,
             )}
             {...props}
+            data-oid="5t_bc5k"
         >
-            <span className="pointer-events-none absolute left-2 flex size-3.5 items-center justify-center">
-                <MenubarPrimitive.ItemIndicator>
-                    <CircleIcon className="size-2 fill-current" />
+            <span
+                className="pointer-events-none absolute left-2 flex size-3.5 items-center justify-center"
+                data-oid="btaerp5"
+            >
+                <MenubarPrimitive.ItemIndicator data-oid="so-bv1v">
+                    <CircleIcon className="size-2 fill-current" data-oid="lqm_0h0" />
                 </MenubarPrimitive.ItemIndicator>
             </span>
             {children}
@@ -150,15 +168,14 @@ function MenubarLabel({
     className,
     inset,
     ...props
-}: React.ComponentProps<typeof MenubarPrimitive.Label> & {
-    inset?: boolean;
-}) {
+}: React.ComponentProps<typeof MenubarPrimitive.Label> & { inset?: boolean }) {
     return (
         <MenubarPrimitive.Label
             data-slot="menubar-label"
             data-inset={inset}
             className={cn('px-2 py-1.5 text-sm font-medium data-[inset]:pl-8', className)}
             {...props}
+            data-oid="j9b6h9q"
         />
     );
 }
@@ -172,6 +189,7 @@ function MenubarSeparator({
             data-slot="menubar-separator"
             className={cn('bg-border -mx-1 my-1 h-px', className)}
             {...props}
+            data-oid="a23-2tj"
         />
     );
 }
@@ -182,12 +200,13 @@ function MenubarShortcut({ className, ...props }: React.ComponentProps<'span'>) 
             data-slot="menubar-shortcut"
             className={cn('text-muted-foreground ml-auto text-xs tracking-widest', className)}
             {...props}
+            data-oid="mou77yg"
         />
     );
 }
 
 function MenubarSub({ ...props }: React.ComponentProps<typeof MenubarPrimitive.Sub>) {
-    return <MenubarPrimitive.Sub data-slot="menubar-sub" {...props} />;
+    return <MenubarPrimitive.Sub data-slot="menubar-sub" {...props} data-oid="am5kbr7" />;
 }
 
 function MenubarSubTrigger({
@@ -195,9 +214,7 @@ function MenubarSubTrigger({
     inset,
     children,
     ...props
-}: React.ComponentProps<typeof MenubarPrimitive.SubTrigger> & {
-    inset?: boolean;
-}) {
+}: React.ComponentProps<typeof MenubarPrimitive.SubTrigger> & { inset?: boolean }) {
     return (
         <MenubarPrimitive.SubTrigger
             data-slot="menubar-sub-trigger"
@@ -207,9 +224,10 @@ function MenubarSubTrigger({
                 className,
             )}
             {...props}
+            data-oid="wrhvk48"
         >
             {children}
-            <ChevronRightIcon className="ml-auto h-4 w-4" />
+            <ChevronRightIcon className="ml-auto h-4 w-4" data-oid="sli.bed" />
         </MenubarPrimitive.SubTrigger>
     );
 }
@@ -226,6 +244,7 @@ function MenubarSubContent({
                 className,
             )}
             {...props}
+            data-oid="o_uabau"
         />
     );
 }

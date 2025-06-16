@@ -50,25 +50,31 @@ export const FontFamilySelector = observer(() => {
     };
 
     return (
-        <DropdownMenu open={isOpen} onOpenChange={(v) => {
-            onOpenChange(v);
-            if (!v) editorEngine.state.brandTab = null;
-        }}>
+        <DropdownMenu
+            open={isOpen}
+            onOpenChange={(v) => {
+                onOpenChange(v);
+                if (!v) editorEngine.state.brandTab = null;
+            }}
+            data-oid="2rgjql_"
+        >
             <HoverOnlyTooltip
                 content="Font Family"
                 side="bottom"
                 className="mt-1"
                 hideArrow
                 disabled={isOpen}
+                data-oid="gj40lp1"
             >
-                <DropdownMenuTrigger asChild>
+                <DropdownMenuTrigger asChild data-oid="swn3rdm">
                     <Button
                         variant="ghost"
                         size="toolbar"
                         className="text-muted-foreground border-border/0 hover:bg-background-tertiary/20 hover:border-border data-[state=open]:bg-background-tertiary/20 data-[state=open]:border-border flex cursor-pointer items-center gap-2 rounded-lg border px-3 hover:border hover:text-white focus:outline-none focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:outline-none active:border-0 data-[state=open]:border data-[state=open]:text-white"
                         aria-label="Font Family Selector"
+                        data-oid="_qa78ur"
                     >
-                        <span className="truncate text-sm">
+                        <span className="truncate text-sm" data-oid="c4om6-n">
                             {toNormalCase(textState.fontFamily) || 'Sans Serif'}
                         </span>
                     </Button>
@@ -78,19 +84,26 @@ export const FontFamilySelector = observer(() => {
                 side="bottom"
                 align="start"
                 className="mt-1 min-w-[300px] max-h-[400px] overflow-y-auto rounded-xl p-0 bg-background shadow-lg border border-border flex flex-col"
+                data-oid="z.xea1l"
             >
-                <div className="flex justify-between items-center pl-4 pr-2.5 py-1.5 border-b border-border">
-                    <h2 className="text-sm font-normal text-foreground">Fonts</h2>
+                <div
+                    className="flex justify-between items-center pl-4 pr-2.5 py-1.5 border-b border-border"
+                    data-oid="-_lsl.p"
+                >
+                    <h2 className="text-sm font-normal text-foreground" data-oid="b.4i9un">
+                        Fonts
+                    </h2>
                     <Button
                         variant="ghost"
                         size="icon"
                         className="h-7 w-7 rounded-md hover:bg-background-secondary"
                         onClick={handleClose}
+                        data-oid="b:srf3c"
                     >
-                        <Icons.CrossS className="h-4 w-4" />
+                        <Icons.CrossS className="h-4 w-4" data-oid="lv-9917" />
                     </Button>
                 </div>
-                <div className="px-4 py-2">
+                <div className="px-4 py-2" data-oid="sqx9oi9">
                     <input
                         type="text"
                         value={search}
@@ -99,27 +112,42 @@ export const FontFamilySelector = observer(() => {
                         className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
                         aria-label="Search fonts"
                         tabIndex={0}
+                        data-oid="sk6:65b"
                     />
-                    <div className="text-sm text-muted-foreground mb-1 mt-2">Brand fonts</div>
+
+                    <div className="text-sm text-muted-foreground mb-1 mt-2" data-oid="cthnih2">
+                        Brand fonts
+                    </div>
                 </div>
-                <div className="flex-1 overflow-y-auto px-2 pb-2 divide-y divide-border">
+                <div
+                    className="flex-1 overflow-y-auto px-2 pb-2 divide-y divide-border"
+                    data-oid="drj3-47"
+                >
                     {filteredFonts.length === 0 ? (
-                        <div className="flex justify-center items-center h-20">
-                            <span className="text-sm text-muted-foreground">No fonts found</span>
+                        <div className="flex justify-center items-center h-20" data-oid="idi7sb5">
+                            <span className="text-sm text-muted-foreground" data-oid="llb:6n.">
+                                No fonts found
+                            </span>
                         </div>
                     ) : (
                         filteredFonts.map((font) => (
-                            <div key={font.id} className="py-1">
+                            <div key={font.id} className="py-1" data-oid="o53rvne">
                                 <FontFamily
                                     name={font.family}
                                     onSetFont={() => handleFontFamilyChange(font)}
-                                    isActive={textState.fontFamily.toLowerCase() === font.id.toLowerCase()}
+                                    isActive={
+                                        textState.fontFamily.toLowerCase() === font.id.toLowerCase()
+                                    }
+                                    data-oid="i5vjbzb"
                                 />
                             </div>
                         ))
                     )}
                 </div>
-                <div className="p-4 border-t border-border bg-background sticky bottom-0">
+                <div
+                    className="p-4 border-t border-border bg-background sticky bottom-0"
+                    data-oid="jxco-k0"
+                >
                     <Button
                         variant="secondary"
                         size="lg"
@@ -131,6 +159,7 @@ export const FontFamilySelector = observer(() => {
                             editorEngine.state.leftPanelTab = LeftPanelTabValue.BRAND;
                             onOpenChange(false);
                         }}
+                        data-oid="sygtzsv"
                     >
                         Manage Brand fonts
                     </Button>

@@ -32,9 +32,15 @@ export function GitHubButton() {
     }, []);
 
     return (
-        <Link href="https://github.com/onlook-dev/onlook" className="flex items-center gap-1.5 text-small hover:opacity-80">
-            <Icons.GitHubLogo className="h-5 w-5" />
-            <span className="transition-all duration-300">{starCount}</span>
+        <Link
+            href="https://github.com/onlook-dev/onlook"
+            className="flex items-center gap-1.5 text-small hover:opacity-80"
+            data-oid="1bjp9n6"
+        >
+            <Icons.GitHubLogo className="h-5 w-5" data-oid="-ex4kub" />
+            <span className="transition-all duration-300" data-oid="172u30y">
+                {starCount}
+            </span>
         </Link>
     );
 }

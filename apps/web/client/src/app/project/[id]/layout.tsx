@@ -1,8 +1,8 @@
 'use client';
 
-import { useEditorEngine } from "@/components/store/editor";
-import { useProjectManager } from "@/components/store/project";
-import { useEffect } from "react";
+import { useEditorEngine } from '@/components/store/editor';
+import { useProjectManager } from '@/components/store/project';
+import { useEffect } from 'react';
 import { ChatProvider } from './_hooks/use-chat';
 
 export default function ProjectLayout({ children }: { children: React.ReactNode }) {
@@ -11,10 +11,10 @@ export default function ProjectLayout({ children }: { children: React.ReactNode 
 
     useEffect(() => {
         return () => {
-            projectManager.clear()
+            projectManager.clear();
             editorEngine.clear();
         };
     }, []);
 
-    return <ChatProvider>{children}</ChatProvider>;
+    return <ChatProvider data-oid=":p8fog3">{children}</ChatProvider>;
 }

@@ -22,17 +22,25 @@ export const MembersContent = ({ projectId }: { projectId: string }) => {
 
     return (
         <>
-            <div className="border-b border-b-[0.5px] p-3 text-muted-foreground text-sm">
+            <div
+                className="border-b border-b-[0.5px] p-3 text-muted-foreground text-sm"
+                data-oid="b55203w"
+            >
                 Invite Others
             </div>
-            <InviteMemberInput projectId={projectId} />
+            <InviteMemberInput projectId={projectId} data-oid="auc2:e5" />
             {members?.map((member) => (
-                <MemberRow key={member.userId} user={member.user} role={member.role} />
+                <MemberRow
+                    key={member.userId}
+                    user={member.user}
+                    role={member.role}
+                    data-oid="ogkfmgl"
+                />
             ))}
             {invitations?.map((invitation) => (
-                <InvitationRow key={invitation.id} invitation={invitation} />
+                <InvitationRow key={invitation.id} invitation={invitation} data-oid="npa15og" />
             ))}
-            <SuggestedTeammates projectId={projectId} />
+            <SuggestedTeammates projectId={projectId} data-oid="yloq-6w" />
         </>
     );
 };

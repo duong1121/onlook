@@ -10,9 +10,9 @@ export const Frames = observer(() => {
     const frames = editorEngine.frames.frames;
 
     return (
-        <div className="grid grid-flow-col gap-72">
+        <div className="grid grid-flow-col gap-72" data-oid="paxpyfz">
             {frames.map((frame: FrameImpl) => (
-                <FrameView key={frame.id} frame={frame} />
+                <FrameView key={frame.id} frame={frame} data-oid="5f80mfq" />
             ))}
         </div>
     );

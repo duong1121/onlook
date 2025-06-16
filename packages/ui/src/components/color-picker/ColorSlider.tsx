@@ -136,6 +136,7 @@ export const ColorSlider: React.FC<{
                     : { height: `${length}px`, width: `${handleSize}px` }
             }
             {...pointerProps}
+            data-oid="dwjk95w"
         >
             <ColorSliderBar
                 style={{
@@ -150,11 +151,13 @@ export const ColorSlider: React.FC<{
                               width: railWidth,
                           }),
                 }}
+                data-oid="kiccwkt"
             >
                 <ColorSliderGradient
                     style={{
                         background: gradient,
                     }}
+                    data-oid="tc0:3jl"
                 />
             </ColorSliderBar>
             <ColorHandle
@@ -173,6 +176,7 @@ export const ColorSlider: React.FC<{
                               top: `${range * (1 - value)}px`,
                           }),
                 }}
+                data-oid="r2o8gg6"
             />
         </ColorSliderWrap>
     );

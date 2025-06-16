@@ -6,9 +6,12 @@ export function SentContextPill({ context }: { context: ChatMessageContext }) {
         <span
             className="flex flex-row gap-0.5 text-xs items-center select-none"
             key={context.displayName}
+            data-oid="h65__9g"
         >
             {getContextIcon(context)}
-            <span className="truncate">{getTruncatedName(context)}</span>
+            <span className="truncate" data-oid="a-gv404">
+                {getTruncatedName(context)}
+            </span>
         </span>
     );
 }

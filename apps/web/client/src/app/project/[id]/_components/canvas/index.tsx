@@ -155,20 +155,26 @@ export const Canvas = observer(() => {
     }, [handleWheel, middleMouseButtonDown, middleMouseButtonUp]);
 
     return (
-        <HotkeysArea>
+        <HotkeysArea data-oid="y04q3f3">
             <div
                 ref={containerRef}
                 className="overflow-hidden bg-background-onlook flex flex-grow relative"
                 onMouseDown={handleCanvasMouseDown}
+                data-oid="..9lik_"
             >
-                <div id={EditorAttributes.CANVAS_CONTAINER_ID} style={transformStyle}>
-                    <Frames />
+                <div
+                    id={EditorAttributes.CANVAS_CONTAINER_ID}
+                    style={transformStyle}
+                    data-oid="e.88:-4"
+                >
+                    <Frames data-oid="5f.ik7u" />
                 </div>
-                <Overlay />
+                <Overlay data-oid="v4eiaee" />
                 <PanOverlay
                     clampPosition={(position: { x: number; y: number }) =>
                         clampPosition(position, scale)
                     }
+                    data-oid="afw8o9a"
                 />
             </div>
         </HotkeysArea>

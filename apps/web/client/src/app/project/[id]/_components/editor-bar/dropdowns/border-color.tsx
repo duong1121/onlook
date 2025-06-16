@@ -33,24 +33,27 @@ export const BorderColor = observer(() => {
     }
 
     return (
-        <DropdownMenu open={isOpen} onOpenChange={onOpenChange}>
+        <DropdownMenu open={isOpen} onOpenChange={onOpenChange} data-oid="bwi:8ua">
             <HoverOnlyTooltip
                 content="Border Color"
                 side="bottom"
                 className="mt-1"
                 hideArrow
                 disabled={isOpen}
+                data-oid="o0lt4lu"
             >
-                <DropdownMenuTrigger asChild>
+                <DropdownMenuTrigger asChild data-oid="r-rb556">
                     <Button
                         variant="ghost"
                         size="toolbar"
                         className="flex h-9 w-9 cursor-pointer flex-col items-center justify-center gap-1 text-muted-foreground hover:text-foreground border border-border/0 rounded-lg hover:bg-background-tertiary/20 hover:text-white hover:border hover:border-border data-[state=open]:bg-background-tertiary/20 data-[state=open]:text-white data-[state=open]:border data-[state=open]:border-border focus-visible:ring-0 focus-visible:ring-offset-0 focus:outline-none focus-visible:outline-none active:border-0 data-[state=open]:border data-[state=open]:text-white"
+                        data-oid="y0nefia"
                     >
-                        <Icons.PencilIcon className="h-4 w-4 min-h-4 min-w-4" />
+                        <Icons.PencilIcon className="h-4 w-4 min-h-4 min-w-4" data-oid="a30x7s8" />
                         <div
                             className="h-[4px] w-6 rounded-full bg-current"
                             style={{ backgroundColor: colorHex }}
+                            data-oid="4y2h4pl"
                         />
                     </Button>
                 </DropdownMenuTrigger>
@@ -59,11 +62,13 @@ export const BorderColor = observer(() => {
                 align="start"
                 side="bottom"
                 className="w-[220px] mt-1 p-0 rounded-lg overflow-hidden shadow-xl backdrop-blur-lg"
+                data-oid="nw1m05r"
             >
                 <ColorPickerContent
                     color={tempColor}
                     onChange={handleColorUpdate}
                     onChangeEnd={handleColorUpdateEnd}
+                    data-oid="3ra0exa"
                 />
             </DropdownMenuContent>
         </DropdownMenu>

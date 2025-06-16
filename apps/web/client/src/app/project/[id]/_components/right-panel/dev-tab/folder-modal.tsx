@@ -12,11 +12,7 @@ import { Input } from '@onlook/ui/input';
 import { toast } from '@onlook/ui/sonner';
 import { cn } from '@onlook/ui/utils';
 import { useEffect, useMemo, useState } from 'react';
-import {
-    createFolderInSandbox,
-    doesFolderExist,
-    validateFolderName,
-} from './file-operations';
+import { createFolderInSandbox, doesFolderExist, validateFolderName } from './file-operations';
 import path from 'path';
 
 interface FolderModalProps {
@@ -27,13 +23,7 @@ interface FolderModalProps {
     onSuccess?: () => void;
 }
 
-export function FolderModal({
-    open,
-    onOpenChange,
-    basePath,
-    files,
-    onSuccess,
-}: FolderModalProps) {
+export function FolderModal({ open, onOpenChange, basePath, files, onSuccess }: FolderModalProps) {
     const editorEngine = useEditorEngine();
     const [name, setName] = useState('');
     const [warning, setWarning] = useState('');
@@ -103,20 +93,23 @@ export function FolderModal({
     const displayPath = basePath === '' ? '/' : `/${basePath}`;
 
     return (
-        <Dialog open={open} onOpenChange={onOpenChange}>
-            <DialogContent>
-                <DialogHeader>
-                    <DialogTitle>Create New Folder</DialogTitle>
-                    <DialogDescription>
+        <Dialog open={open} onOpenChange={onOpenChange} data-oid="z0z34ip">
+            <DialogContent data-oid="dncxfhz">
+                <DialogHeader data-oid="ham6l:j">
+                    <DialogTitle data-oid="j4rbpge">Create New Folder</DialogTitle>
+                    <DialogDescription data-oid="6shlur9">
                         Create a new folder in{' '}
-                        <code className="bg-background-secondary px-1 py-0.5 rounded text-xs">
+                        <code
+                            className="bg-background-secondary px-1 py-0.5 rounded text-xs"
+                            data-oid="dqib.ge"
+                        >
                             {displayPath}
                         </code>
                     </DialogDescription>
                 </DialogHeader>
 
-                <div className="grid gap-4 py-4">
-                    <div className="space-y-2">
+                <div className="grid gap-4 py-4" data-oid="tfuhfwe">
+                    <div className="space-y-2" data-oid="jwsok.m">
                         <Input
                             id="name"
                             value={name}
@@ -133,25 +126,37 @@ export function FolderModal({
                             }}
                             onCompositionStart={() => setIsComposing(true)}
                             onCompositionEnd={() => setIsComposing(false)}
+                            data-oid="5u8gwa9"
                         />
+
                         {warning && (
-                            <p className="text-sm text-yellow-300 flex items-center gap-2">
+                            <p
+                                className="text-sm text-yellow-300 flex items-center gap-2"
+                                data-oid="b0sp:e0"
+                            >
                                 {warning}
                             </p>
                         )}
                         {fullPath && !warning && (
-                            <p className="text-sm text-muted-foreground">
-                                Full path: <code className="bg-background-secondary px-1 py-0.5 rounded text-xs">{fullPath}</code>
+                            <p className="text-sm text-muted-foreground" data-oid="811m:es">
+                                Full path:{' '}
+                                <code
+                                    className="bg-background-secondary px-1 py-0.5 rounded text-xs"
+                                    data-oid="ju3-ibz"
+                                >
+                                    {fullPath}
+                                </code>
                             </p>
                         )}
                     </div>
                 </div>
 
-                <DialogFooter>
+                <DialogFooter data-oid="q77sz.k">
                     <Button
                         variant="ghost"
                         onClick={() => onOpenChange(false)}
                         disabled={isLoading}
+                        data-oid="cb52prv"
                     >
                         Cancel
                     </Button>
@@ -159,6 +164,7 @@ export function FolderModal({
                         variant="outline"
                         onClick={handleSubmit}
                         disabled={isLoading || !!warning || !name}
+                        data-oid="5vjmy22"
                     >
                         {isLoading ? 'Creating folder...' : 'Create Folder'}
                     </Button>
@@ -166,4 +172,4 @@ export function FolderModal({
             </DialogContent>
         </Dialog>
     );
-} 
+}

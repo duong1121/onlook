@@ -82,6 +82,7 @@ export const Suggestions = observer(
                 animate={{ height: shouldHideSuggestions ? 0 : 'auto' }}
                 initial={false}
                 transition={{ duration: 0.3, ease: 'easeOut' }}
+                data-oid="07vht2v"
             >
                 <motion.div
                     tabIndex={-1}
@@ -89,6 +90,7 @@ export const Suggestions = observer(
                     animate={{ opacity: shouldHideSuggestions ? 0 : 1 }}
                     initial={false}
                     transition={{ duration: 0.2 }}
+                    data-oid="pw1p8-m"
                 >
                     {suggestions.map((suggestion, index) => (
                         <motion.button
@@ -124,8 +126,9 @@ export const Suggestions = observer(
                                     onSuggestionFocus?.(false);
                                 }
                             }}
+                            data-oid="o8s-9t3"
                         >
-                            <Icons.Lightbulb className="w-4 h-4" />
+                            <Icons.Lightbulb className="w-4 h-4" data-oid="3evn00k" />
                             {suggestion.title}
                         </motion.button>
                     ))}

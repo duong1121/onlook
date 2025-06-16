@@ -25,22 +25,31 @@ export const ChatMessages = observer(() => {
         let messageNode;
         switch (message.role) {
             case ChatMessageRole.ASSISTANT:
-                messageNode = <AssistantMessage message={message} />;
+                messageNode = <AssistantMessage message={message} data-oid=".5zl0rw" />;
                 break;
             case ChatMessageRole.USER:
-                messageNode = <UserMessage message={message} />;
+                messageNode = <UserMessage message={message} data-oid="qszusr2" />;
                 break;
             default:
                 assertNever(message);
         }
-        return <div key={`message-${message.id}`}>{messageNode}</div>;
+        return (
+            <div key={`message-${message.id}`} data-oid="li7uhyx">
+                {messageNode}
+            </div>
+        );
     };
 
     if (!conversation) {
         return (
-            <div className="flex-1 flex flex-row items-center justify-center text-foreground-tertiary/80 h-full gap-2">
-                <Icons.Shadow className="animate-spin" />
-                <p className="text-regularPlus">Loading conversation...</p>
+            <div
+                className="flex-1 flex flex-row items-center justify-center text-foreground-tertiary/80 h-full gap-2"
+                data-oid="u.ltq4o"
+            >
+                <Icons.Shadow className="animate-spin" data-oid="pg80k-h" />
+                <p className="text-regularPlus" data-oid="y2refdr">
+                    Loading conversation...
+                </p>
             </div>
         );
     }
@@ -48,9 +57,15 @@ export const ChatMessages = observer(() => {
     if (!messages || messages.length === 0) {
         return (
             !editorEngine.elements.selected.length && (
-                <div className="flex-1 flex flex-col items-center justify-center text-foreground-tertiary/80 h-full">
-                    <Icons.EmptyState className="size-32" />
-                    <p className="text-center text-regularPlus text-balance max-w-[300px]">
+                <div
+                    className="flex-1 flex flex-col items-center justify-center text-foreground-tertiary/80 h-full"
+                    data-oid="t2q.oh_"
+                >
+                    <Icons.EmptyState className="size-32" data-oid="38-frf5" />
+                    <p
+                        className="text-center text-regularPlus text-balance max-w-[300px]"
+                        data-oid="vluh7qe"
+                    >
                         {t(transKeys.editor.panels.edit.tabs.chat.emptyState)}
                     </p>
                 </div>
@@ -59,10 +74,13 @@ export const ChatMessages = observer(() => {
     }
 
     return (
-        <ChatMessageList contentKey={uiMessages?.map((message) => message.content).join('|') ?? ''}>
+        <ChatMessageList
+            contentKey={uiMessages?.map((message) => message.content).join('|') ?? ''}
+            data-oid=":xeu17m"
+        >
             {messages?.map((message) => renderMessage(message))}
-            <StreamMessage />
-            <ErrorMessage />
+            <StreamMessage data-oid="uenx6ia" />
+            <ErrorMessage data-oid=".jkex-8" />
         </ChatMessageList>
     );
 });

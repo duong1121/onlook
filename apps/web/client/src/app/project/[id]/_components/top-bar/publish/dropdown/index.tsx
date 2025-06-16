@@ -4,15 +4,15 @@ import { DomainSection } from './domain-section';
 
 export const PublishDropdown = () => {
     return (
-        <div className="rounded-md flex flex-col text-foreground-secondary">
-            <DomainSection type={DomainType.PREVIEW} />
-            <Separator />
+        <div className="rounded-md flex flex-col text-foreground-secondary" data-oid="lmj6yt:">
+            <DomainSection type={DomainType.PREVIEW} data-oid="2xtub1u" />
+            <Separator data-oid=".00edb6" />
             {/* <DomainSection
-                domain={customDomain}
-                type={DomainType.CUSTOM}
-            />
-            <Separator />
-            <AdvancedSettingsSection /> */}
+           domain={customDomain}
+           type={DomainType.CUSTOM}
+        />
+        <Separator />
+        <AdvancedSettingsSection /> */}
         </div>
     );
 };

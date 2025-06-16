@@ -21,23 +21,25 @@ export const Border = observer(() => {
     });
 
     return (
-        <DropdownMenu open={isOpen} onOpenChange={onOpenChange}>
+        <DropdownMenu open={isOpen} onOpenChange={onOpenChange} data-oid="po3yj-a">
             <HoverOnlyTooltip
                 content="Border"
                 side="bottom"
                 className="mt-1"
                 hideArrow
                 disabled={isOpen}
+                data-oid="jxyskag"
             >
-                <DropdownMenuTrigger asChild>
+                <DropdownMenuTrigger asChild data-oid="gwmdr45">
                     <Button
                         variant="ghost"
                         size="toolbar"
                         className="flex items-center gap-1 text-muted-foreground hover:text-foreground border border-border/0 cursor-pointer rounded-lg hover:bg-background-tertiary/20 hover:text-white hover:border hover:border-border data-[state=open]:bg-background-tertiary/20 data-[state=open]:text-white data-[state=open]:border data-[state=open]:border-border focus-visible:ring-0 focus-visible:ring-offset-0 focus:outline-none focus-visible:outline-none active:border-0 data-[state=open]:border data-[state=open]:text-white"
+                        data-oid=".r5.5z6"
                     >
-                        <Icons.BorderEdit className="h-4 w-4 min-h-4 min-w-4" />
+                        <Icons.BorderEdit className="h-4 w-4 min-h-4 min-w-4" data-oid="47-y.pb" />
                         {borderExists && (
-                            <span className="text-xs">
+                            <span className="text-xs" data-oid="bflk4zx">
                                 {boxState.borderWidth.unit === 'px'
                                     ? boxState.borderWidth.num
                                     : boxState.borderWidth.value}
@@ -50,23 +52,28 @@ export const Border = observer(() => {
                 align="center"
                 side="bottom"
                 className="w-[280px] mt-1 p-3 rounded-lg"
+                data-oid="ve7nh2b"
             >
-                <div className="flex items-center gap-2 mb-3">
+                <div className="flex items-center gap-2 mb-3" data-oid="wghxbcf">
                     <button
                         onClick={() => setActiveTab('all')}
-                        className={`flex-1 text-sm px-4 py-1.5 rounded-md transition-colors cursor-pointer ${activeTab === 'all'
-                            ? 'text-white bg-background-tertiary/20'
-                            : 'text-muted-foreground hover:bg-background-tertiary/10'
-                            }`}
+                        className={`flex-1 text-sm px-4 py-1.5 rounded-md transition-colors cursor-pointer ${
+                            activeTab === 'all'
+                                ? 'text-white bg-background-tertiary/20'
+                                : 'text-muted-foreground hover:bg-background-tertiary/10'
+                        }`}
+                        data-oid="iwn6nxz"
                     >
                         All sides
                     </button>
                     <button
                         onClick={() => setActiveTab('individual')}
-                        className={`flex-1 text-sm px-4 py-1.5 rounded-md transition-colors cursor-pointer ${activeTab === 'individual'
-                            ? 'text-white bg-background-tertiary/20'
-                            : 'text-muted-foreground hover:bg-background-tertiary/10'
-                            }`}
+                        className={`flex-1 text-sm px-4 py-1.5 rounded-md transition-colors cursor-pointer ${
+                            activeTab === 'individual'
+                                ? 'text-white bg-background-tertiary/20'
+                                : 'text-muted-foreground hover:bg-background-tertiary/10'
+                        }`}
+                        data-oid="ny6zn-5"
                     >
                         Individual
                     </button>
@@ -77,6 +84,7 @@ export const Border = observer(() => {
                         onChange={(value) => handleBoxChange('borderWidth', value.toString())}
                         unit={boxState.borderWidth.unit}
                         onUnitChange={(unit) => handleUnitChange('borderWidth', unit)}
+                        data-oid="lbbg1qc"
                     />
                 ) : (
                     <SpacingInputs
@@ -88,6 +96,7 @@ export const Border = observer(() => {
                             left: boxState.borderLeftWidth.num ?? 0,
                         }}
                         onChange={handleIndividualChange}
+                        data-oid="l0ybn9t"
                     />
                 )}
             </DropdownMenuContent>

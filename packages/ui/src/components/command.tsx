@@ -22,6 +22,7 @@ function Command({ className, ...props }: React.ComponentProps<typeof CommandPri
                 className,
             )}
             {...props}
+            data-oid="qac4e3s"
         />
     );
 }
@@ -31,18 +32,18 @@ function CommandDialog({
     description = 'Search for a command to run...',
     children,
     ...props
-}: React.ComponentProps<typeof Dialog> & {
-    title?: string;
-    description?: string;
-}) {
+}: React.ComponentProps<typeof Dialog> & { title?: string; description?: string }) {
     return (
-        <Dialog {...props}>
-            <DialogHeader className="sr-only">
-                <DialogTitle>{title}</DialogTitle>
-                <DialogDescription>{description}</DialogDescription>
+        <Dialog {...props} data-oid="148.-ek">
+            <DialogHeader className="sr-only" data-oid="i7ik49s">
+                <DialogTitle data-oid="bq7u5xd">{title}</DialogTitle>
+                <DialogDescription data-oid="j_9kzy5">{description}</DialogDescription>
             </DialogHeader>
-            <DialogContent className="overflow-hidden p-0">
-                <Command className="[&_[cmdk-group-heading]]:text-muted-foreground **:data-[slot=command-input-wrapper]:h-12 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group]]:px-2 [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5">
+            <DialogContent className="overflow-hidden p-0" data-oid="itqvcao">
+                <Command
+                    className="[&_[cmdk-group-heading]]:text-muted-foreground **:data-[slot=command-input-wrapper]:h-12 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group]]:px-2 [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5"
+                    data-oid="sljzt:h"
+                >
                     {children}
                 </Command>
             </DialogContent>
@@ -58,8 +59,9 @@ function CommandInput({
         <div
             data-slot="command-input-wrapper"
             className="flex h-9 items-center gap-2 border-b px-3"
+            data-oid="7112ktv"
         >
-            <SearchIcon className="size-4 shrink-0 opacity-50" />
+            <SearchIcon className="size-4 shrink-0 opacity-50" data-oid="9mawarh" />
             <CommandPrimitive.Input
                 data-slot="command-input"
                 className={cn(
@@ -67,6 +69,7 @@ function CommandInput({
                     className,
                 )}
                 {...props}
+                data-oid="b3f9hs-"
             />
         </div>
     );
@@ -78,6 +81,7 @@ function CommandList({ className, ...props }: React.ComponentProps<typeof Comman
             data-slot="command-list"
             className={cn('max-h-[300px] scroll-py-1 overflow-x-hidden overflow-y-auto', className)}
             {...props}
+            data-oid="fvm:ffl"
         />
     );
 }
@@ -88,6 +92,7 @@ function CommandEmpty({ ...props }: React.ComponentProps<typeof CommandPrimitive
             data-slot="command-empty"
             className="py-6 text-center text-sm"
             {...props}
+            data-oid="-.0ebe0"
         />
     );
 }
@@ -104,6 +109,7 @@ function CommandGroup({
                 className,
             )}
             {...props}
+            data-oid="5e0ath1"
         />
     );
 }
@@ -117,6 +123,7 @@ function CommandSeparator({
             data-slot="command-separator"
             className={cn('bg-border -mx-1 h-px', className)}
             {...props}
+            data-oid="vgypjit"
         />
     );
 }
@@ -130,6 +137,7 @@ function CommandItem({ className, ...props }: React.ComponentProps<typeof Comman
                 className,
             )}
             {...props}
+            data-oid="xq2jtzi"
         />
     );
 }
@@ -140,6 +148,7 @@ function CommandShortcut({ className, ...props }: React.ComponentProps<'span'>) 
             data-slot="command-shortcut"
             className={cn('text-muted-foreground ml-auto text-xs tracking-widest', className)}
             {...props}
+            data-oid="x7cbi0r"
         />
     );
 }

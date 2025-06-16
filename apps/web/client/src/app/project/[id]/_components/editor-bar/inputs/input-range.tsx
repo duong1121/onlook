@@ -31,10 +31,11 @@ export const InputRange = ({
 
     // Create debounced onChange handler
     const debouncedOnChange = useMemo(
-        () => debounce((newValue: number) => {
-            onChange?.(newValue);
-        }, 500),
-        [onChange]
+        () =>
+            debounce((newValue: number) => {
+                onChange?.(newValue);
+            }, 500),
+        [onChange],
     );
 
     // Cleanup debounce on unmount
@@ -90,8 +91,8 @@ export const InputRange = ({
     };
 
     return (
-        <div className="flex items-center gap-2">
-            <div className="flex-1 flex items-center gap-2">
+        <div className="flex items-center gap-2" data-oid=".:tmyb8">
+            <div className="flex-1 flex items-center gap-2" data-oid="t2_o5dq">
                 <input
                     ref={rangeRef}
                     type="range"
@@ -110,8 +111,13 @@ export const InputRange = ({
                         [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:mt-[-2px] [&::-webkit-slider-thumb]:cursor-grab hover:[&::-webkit-slider-thumb]:bg-white/90 active:[&::-webkit-slider-thumb]:cursor-grabbing
                         [&::-moz-range-thumb]:appearance-none [&::-moz-range-thumb]:w-4 [&::-moz-range-thumb]:h-4 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-white [&::-moz-range-thumb]:border-0 [&::-moz-range-thumb]:cursor-grab hover:[&::-moz-range-thumb]:bg-white/90 active:[&::-moz-range-thumb]:cursor-grabbing
                         [&::-ms-thumb]:appearance-none [&::-ms-thumb]:w-4 [&::-ms-thumb]:h-4 [&::-ms-thumb]:rounded-full [&::-ms-thumb]:bg-white [&::-ms-thumb]:cursor-grab hover:[&::-ms-thumb]:bg-white/90 active:[&::-ms-thumb]:cursor-grabbing"
+                    data-oid="i_bofu_"
                 />
-                <div className="flex items-center bg-background-tertiary/50 justify-between rounded-md px-3 h-[36px]">
+
+                <div
+                    className="flex items-center bg-background-tertiary/50 justify-between rounded-md px-3 h-[36px]"
+                    data-oid="rt8-ha8"
+                >
                     <input
                         type="text"
                         inputMode="numeric"
@@ -125,18 +131,27 @@ export const InputRange = ({
                                 handleBlur();
                             }
                         }}
+                        data-oid="tbrc41x"
                     />
 
-                    <DropdownMenu>
-                        <DropdownMenuTrigger className="text-[12px] text-muted-foreground focus:outline-none cursor-pointer">
+                    <DropdownMenu data-oid="ilt4zdz">
+                        <DropdownMenuTrigger
+                            className="text-[12px] text-muted-foreground focus:outline-none cursor-pointer"
+                            data-oid="di5.4.i"
+                        >
                             {unit === 'px' ? '' : unit}
                         </DropdownMenuTrigger>
-                        <DropdownMenuContent align="start" className="min-w-0 w-[64px]">
+                        <DropdownMenuContent
+                            align="start"
+                            className="min-w-0 w-[64px]"
+                            data-oid="wsly_b."
+                        >
                             {UNITS.map((unitOption: string) => (
                                 <DropdownMenuItem
                                     key={unitOption}
                                     onClick={() => onUnitChange?.(unitOption)}
                                     className="text-[12px] text-center px-2"
+                                    data-oid="nkn01g-"
                                 >
                                     {unitOption}
                                 </DropdownMenuItem>

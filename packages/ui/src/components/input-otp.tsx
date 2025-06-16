@@ -10,9 +10,7 @@ function InputOTP({
     className,
     containerClassName,
     ...props
-}: React.ComponentProps<typeof OTPInput> & {
-    containerClassName?: string;
-}) {
+}: React.ComponentProps<typeof OTPInput> & { containerClassName?: string }) {
     return (
         <OTPInput
             data-slot="input-otp"
@@ -22,6 +20,7 @@ function InputOTP({
             )}
             className={cn('disabled:cursor-not-allowed', className)}
             {...props}
+            data-oid="-pcia8_"
         />
     );
 }
@@ -32,6 +31,7 @@ function InputOTPGroup({ className, ...props }: React.ComponentProps<'div'>) {
             data-slot="input-otp-group"
             className={cn('flex items-center', className)}
             {...props}
+            data-oid="7rcfv8m"
         />
     );
 }
@@ -40,9 +40,7 @@ function InputOTPSlot({
     index,
     className,
     ...props
-}: React.ComponentProps<'div'> & {
-    index: number;
-}) {
+}: React.ComponentProps<'div'> & { index: number }) {
     const inputOTPContext = React.useContext(OTPInputContext);
     const { char, hasFakeCaret, isActive } = inputOTPContext?.slots[index] ?? {};
 
@@ -55,11 +53,18 @@ function InputOTPSlot({
                 className,
             )}
             {...props}
+            data-oid="9w_w3k0"
         >
             {char}
             {hasFakeCaret && (
-                <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-                    <div className="animate-caret-blink bg-foreground h-4 w-px duration-1000" />
+                <div
+                    className="pointer-events-none absolute inset-0 flex items-center justify-center"
+                    data-oid="3os7iyf"
+                >
+                    <div
+                        className="animate-caret-blink bg-foreground h-4 w-px duration-1000"
+                        data-oid="-:im_ez"
+                    />
                 </div>
             )}
         </div>
@@ -68,8 +73,8 @@ function InputOTPSlot({
 
 function InputOTPSeparator({ ...props }: React.ComponentProps<'div'>) {
     return (
-        <div data-slot="input-otp-separator" role="separator" {...props}>
-            <MinusIcon />
+        <div data-slot="input-otp-separator" role="separator" {...props} data-oid="cy5kcwt">
+            <MinusIcon data-oid="552b:yy" />
         </div>
     );
 }

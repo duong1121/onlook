@@ -58,7 +58,7 @@ export const BottomBar = observer(() => {
     const toolbarItems = TOOLBAR_ITEMS({ t });
 
     return (
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="wait" data-oid="yf.ytjx">
             {editorEngine.state.editorMode !== EditorMode.PREVIEW && (
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -72,8 +72,9 @@ export const BottomBar = observer(() => {
                         stiffness: 200,
                         damping: 25,
                     }}
+                    data-oid="unsge.:"
                 >
-                    <TerminalArea>
+                    <TerminalArea data-oid="4uvwsr7">
                         <ToggleGroup
                             type="single"
                             value={editorEngine.state.editorMode}
@@ -82,21 +83,23 @@ export const BottomBar = observer(() => {
                                     editorEngine.state.editorMode = value as EditorMode;
                                 }
                             }}
+                            data-oid="ybv8mn1"
                         >
                             {toolbarItems.map((item) => (
-                                <Tooltip key={item.mode}>
-                                    <TooltipTrigger asChild>
+                                <Tooltip key={item.mode} data-oid="b:x17ok">
+                                    <TooltipTrigger asChild data-oid="05bk:s3">
                                         <ToggleGroupItem
                                             value={item.mode}
                                             aria-label={item.hotkey.description}
                                             disabled={item.disabled}
                                             className="hover:text-foreground-hover text-foreground-tertiary"
+                                            data-oid="pvr7rru"
                                         >
-                                            <item.icon />
+                                            <item.icon data-oid="uykfmwr" />
                                         </ToggleGroupItem>
                                     </TooltipTrigger>
-                                    <TooltipContent>
-                                        <HotkeyLabel hotkey={item.hotkey} />
+                                    <TooltipContent data-oid="c6vpgsq">
+                                        <HotkeyLabel hotkey={item.hotkey} data-oid="b0fj_36" />
                                     </TooltipContent>
                                 </Tooltip>
                             ))}

@@ -1,6 +1,6 @@
 function Error({ statusCode }: { statusCode: number }) {
     return (
-        <p>
+        <p data-oid=":u2uiyy">
             {statusCode
                 ? `An error ${statusCode} occurred on server`
                 : 'An error occurred on client'}

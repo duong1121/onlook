@@ -4,7 +4,7 @@ import * as React from 'react';
 import { cn } from '../utils';
 
 function Breadcrumb({ ...props }: React.ComponentProps<'nav'>) {
-    return <nav aria-label="breadcrumb" data-slot="breadcrumb" {...props} />;
+    return <nav aria-label="breadcrumb" data-slot="breadcrumb" {...props} data-oid="ns7o30_" />;
 }
 
 function BreadcrumbList({ className, ...props }: React.ComponentProps<'ol'>) {
@@ -16,6 +16,7 @@ function BreadcrumbList({ className, ...props }: React.ComponentProps<'ol'>) {
                 className,
             )}
             {...props}
+            data-oid="2y5uo91"
         />
     );
 }
@@ -26,6 +27,7 @@ function BreadcrumbItem({ className, ...props }: React.ComponentProps<'li'>) {
             data-slot="breadcrumb-item"
             className={cn('inline-flex items-center gap-1.5', className)}
             {...props}
+            data-oid="wa-6dqq"
         />
     );
 }
@@ -34,9 +36,7 @@ function BreadcrumbLink({
     asChild,
     className,
     ...props
-}: React.ComponentProps<'a'> & {
-    asChild?: boolean;
-}) {
+}: React.ComponentProps<'a'> & { asChild?: boolean }) {
     const Comp = asChild ? Slot : 'a';
 
     return (
@@ -44,6 +44,7 @@ function BreadcrumbLink({
             data-slot="breadcrumb-link"
             className={cn('hover:text-foreground transition-colors', className)}
             {...props}
+            data-oid="2p6prn-"
         />
     );
 }
@@ -57,6 +58,7 @@ function BreadcrumbPage({ className, ...props }: React.ComponentProps<'span'>) {
             aria-current="page"
             className={cn('text-foreground font-normal', className)}
             {...props}
+            data-oid="1tvmsbu"
         />
     );
 }
@@ -69,8 +71,9 @@ function BreadcrumbSeparator({ children, className, ...props }: React.ComponentP
             aria-hidden="true"
             className={cn('[&>svg]:size-3.5', className)}
             {...props}
+            data-oid=".gdx:g."
         >
-            {children ?? <ChevronRightIcon />}
+            {children ?? <ChevronRightIcon data-oid="epipgn0" />}
         </li>
     );
 }
@@ -83,9 +86,12 @@ function BreadcrumbEllipsis({ className, ...props }: React.ComponentProps<'span'
             aria-hidden="true"
             className={cn('flex size-9 items-center justify-center', className)}
             {...props}
+            data-oid="9zpreh."
         >
-            <DotsHorizontalIcon className="size-4" />
-            <span className="sr-only">More</span>
+            <DotsHorizontalIcon className="size-4" data-oid="70f_014" />
+            <span className="sr-only" data-oid="y7ka__8">
+                More
+            </span>
         </span>
     );
 }

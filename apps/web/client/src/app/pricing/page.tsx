@@ -26,15 +26,27 @@ export default function PricingPage() {
     }));
 
     return (
-        <div className="flex flex-col min-h-screen justify-center items-center">
-            <div className="fixed top-0 left-0 w-full h-12 bg-background/80 backdrop-blur-sm z-50">
-                <TopBar />
+        <div className="flex flex-col min-h-screen justify-center items-center" data-oid="m7fvo_q">
+            <div
+                className="fixed top-0 left-0 w-full h-12 bg-background/80 backdrop-blur-sm z-50"
+                data-oid="ttn673r"
+            >
+                <TopBar data-oid="vqx943o" />
             </div>
-            <main className="flex-1 pt-28 w-full max-w-6xl mx-auto px-8 flex flex-col items-center">
-                <h1 className="text-foreground-primary text-4xl font-light mb-10">
+            <main
+                className="flex-1 pt-28 w-full max-w-6xl mx-auto px-8 flex flex-col items-center"
+                data-oid=":zyk5ie"
+            >
+                <h1
+                    className="text-foreground-primary text-4xl font-light mb-10"
+                    data-oid="ecowmi8"
+                >
                     {t(transKeys.pricing.titles.choosePlan)}
                 </h1>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
+                <div
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full"
+                    data-oid="y_z8.sz"
+                >
                     {data.map((plan) => (
                         <PricingCard
                             key={plan.key}
@@ -42,12 +54,17 @@ export default function PricingPage() {
                             price={plan.price}
                             description={plan.description}
                             features={plan.features}
-                            buttonText={plan.key === 'basic' ? t(transKeys.pricing.buttons.currentPlan) : `Get ${t(transKeys.pricing.plans[plan.key].name)}`}
+                            buttonText={
+                                plan.key === 'basic'
+                                    ? t(transKeys.pricing.buttons.currentPlan)
+                                    : `Get ${t(transKeys.pricing.plans[plan.key].name)}`
+                            }
+                            data-oid="f_wux4d"
                         />
                     ))}
                 </div>
             </main>
-            <Footer />
+            <Footer data-oid="fis-1of" />
         </div>
     );
 }

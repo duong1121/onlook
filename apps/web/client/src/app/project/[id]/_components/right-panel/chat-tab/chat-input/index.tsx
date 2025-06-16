@@ -233,29 +233,30 @@ export const ChatInput = observer(() => {
                     handleDragStateChange(false, e);
                 }
             }}
+            data-oid="fu7w:kc"
         >
             {/* TODO: Reenable suggestions */}
             {/* <Suggestions
-                ref={suggestionRef}
-                disabled={disabled}
-                inputValue={inputValue}
-                setInput={(suggestion) => {
-                    setInputValue(suggestion);
-                    textareaRef.current?.focus();
-                    setTimeout(() => {
-                        if (textareaRef.current) {
-                            textareaRef.current.scrollTop = textareaRef.current.scrollHeight;
-                        }
-                    }, 100);
-                }}
-                onSuggestionFocus={(isFocused) => {
-                    if (!isFocused) {
-                        textareaRef.current?.focus();
-                    }
-                }}
-            /> */}
-            <div className="flex flex-col w-full p-4">
-                <InputContextPills />
+        ref={suggestionRef}
+        disabled={disabled}
+        inputValue={inputValue}
+        setInput={(suggestion) => {
+        setInputValue(suggestion);
+        textareaRef.current?.focus();
+        setTimeout(() => {
+         if (textareaRef.current) {
+             textareaRef.current.scrollTop = textareaRef.current.scrollHeight;
+         }
+        }, 100);
+        }}
+        onSuggestionFocus={(isFocused) => {
+        if (!isFocused) {
+         textareaRef.current?.focus();
+        }
+        }}
+        /> */}
+            <div className="flex flex-col w-full p-4" data-oid="_jmhb51">
+                <InputContextPills data-oid="t2tvf-h" />
                 <Textarea
                     ref={textareaRef}
                     disabled={disabled}
@@ -291,13 +292,23 @@ export const ChatInput = observer(() => {
                     onDrop={(e) => {
                         bubbleDragEvent(e, 'drop');
                     }}
+                    data-oid="d-:j8_w"
                 />
             </div>
-            <div className="flex flex-row w-full justify-between pt-2 pb-2 px-2">
-                <ActionButtons disabled={disabled} handleImageEvent={handleImageEvent} />
+            <div className="flex flex-row w-full justify-between pt-2 pb-2 px-2" data-oid="j2przvm">
+                <ActionButtons
+                    disabled={disabled}
+                    handleImageEvent={handleImageEvent}
+                    data-oid=".h50xy9"
+                />
+
                 {isWaiting ? (
-                    <Tooltip open={actionTooltipOpen} onOpenChange={setActionTooltipOpen}>
-                        <TooltipTrigger asChild>
+                    <Tooltip
+                        open={actionTooltipOpen}
+                        onOpenChange={setActionTooltipOpen}
+                        data-oid="29q1jwi"
+                    >
+                        <TooltipTrigger asChild data-oid="23h6bb3">
                             <Button
                                 size={'icon'}
                                 variant={'secondary'}
@@ -306,11 +317,12 @@ export const ChatInput = observer(() => {
                                     setActionTooltipOpen(false);
                                     stop();
                                 }}
+                                data-oid="gdrwhkq"
                             >
-                                <Icons.Stop />
+                                <Icons.Stop data-oid="gmrpmbg" />
                             </Button>
                         </TooltipTrigger>
-                        <TooltipContent>{'Stop response'}</TooltipContent>
+                        <TooltipContent data-oid="_k1t8t7">{'Stop response'}</TooltipContent>
                     </Tooltip>
                 ) : (
                     <Button
@@ -319,8 +331,9 @@ export const ChatInput = observer(() => {
                         className="text-smallPlus w-fit h-full py-0.5 px-2.5 text-primary"
                         disabled={inputEmpty || status !== 'ready'}
                         onClick={sendMessage}
+                        data-oid="x.bmv30"
                     >
-                        <Icons.ArrowRight />
+                        <Icons.ArrowRight data-oid="iz_ejsi" />
                     </Button>
                 )}
             </div>

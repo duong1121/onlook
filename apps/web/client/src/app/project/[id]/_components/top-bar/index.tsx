@@ -26,25 +26,34 @@ export const TopBar = observer(({ projectId }: { projectId: string }) => {
             click: () => editorEngine.action.undo(),
             isDisabled: !editorEngine.history.canUndo || isWaiting,
             hotkey: Hotkey.UNDO,
-            icon: <Icons.Reset className="h-4 w-4 mr-1" />,
+            icon: <Icons.Reset className="h-4 w-4 mr-1" data-oid="2haz0e7" />,
         },
         {
             click: () => editorEngine.action.redo(),
             isDisabled: !editorEngine.history.canRedo || isWaiting,
             hotkey: Hotkey.REDO,
-            icon: <Icons.Reset className="h-4 w-4 mr-1 scale-x-[-1]" />,
+            icon: <Icons.Reset className="h-4 w-4 mr-1 scale-x-[-1]" data-oid="jru_8el" />,
         },
     ];
 
     return (
-        <div className="bg-background-primary/20 backdrop-blur-md flex flex-row h-10 p-0 justify-center items-center">
-            <div className="flex flex-row flex-grow basis-0 space-x-1 justify-start items-center">
-                <ProjectBreadcrumb />
+        <div
+            className="bg-background-primary/20 backdrop-blur-md flex flex-row h-10 p-0 justify-center items-center"
+            data-oid="31eb7s6"
+        >
+            <div
+                className="flex flex-row flex-grow basis-0 space-x-1 justify-start items-center"
+                data-oid="rqxqdem"
+            >
+                <ProjectBreadcrumb data-oid="o58dyw3" />
             </div>
-            <ModeToggle />
-            <div className="flex flex-grow basis-0 justify-end items-center gap-2 mr-2">
+            <ModeToggle data-oid="62k_:wo" />
+            <div
+                className="flex flex-grow basis-0 justify-end items-center gap-2 mr-2"
+                data-oid="qag422x"
+            >
                 {isEnabled('NEXT_PUBLIC_FEATURE_COLLABORATION') && (
-                    <Members projectId={projectId} />
+                    <Members projectId={projectId} data-oid="0-y5j0_" />
                 )}
                 <motion.div
                     className="space-x-0 hidden lg:block"
@@ -55,49 +64,54 @@ export const TopBar = observer(({ projectId }: { projectId: string }) => {
                         damping: 30,
                         delay: 0,
                     }}
+                    data-oid="-wc.ig1"
                 >
                     {UNDO_REDO_BUTTONS.map(({ click, hotkey, icon, isDisabled }) => (
-                        <Tooltip key={hotkey.description}>
-                            <TooltipTrigger asChild>
-                                <span>
+                        <Tooltip key={hotkey.description} data-oid=".23ry8n">
+                            <TooltipTrigger asChild data-oid="7m4-0mn">
+                                <span data-oid="ati1h-a">
                                     <Button
                                         variant="ghost"
                                         size="icon"
                                         className="h-8"
                                         onClick={click}
                                         disabled={isDisabled}
+                                        data-oid="56_n5_j"
                                     >
                                         {icon}
                                     </Button>
                                 </span>
                             </TooltipTrigger>
-                            <TooltipContent side="bottom" hideArrow>
-                                <HotkeyLabel hotkey={hotkey} />
+                            <TooltipContent side="bottom" hideArrow data-oid=".8nti7o">
+                                <HotkeyLabel hotkey={hotkey} data-oid="9geuyab" />
                             </TooltipContent>
                         </Tooltip>
                     ))}
                 </motion.div>
                 {/* TODO: Enable */}
                 {/* <Tooltip>
-                        <TooltipTrigger asChild>
-                            <Button
-                                variant="ghost"
-                                size="icon"
-                                className="h-8"
-                                onClick={() => {
-                                    editorEngine.settingsTab = SettingsTabValue.VERSIONS;
-                                    editorEngine.isSettingsOpen = true;
-                                }}
-                            >
-                                <Icons.CounterClockwiseClock className="h-4 w-4" />
-                            </Button>
-                        </TooltipTrigger>
-                        <TooltipContent side="bottom">
-                            {t(transKeys.editor.toolbar.versionHistory)}
-                        </TooltipContent>
-                    </Tooltip> */}
-                <PublishButton />
-                <CurrentUserAvatar className="size-8 cursor-pointer hover:opacity-80" />
+                 <TooltipTrigger asChild>
+                     <Button
+                         variant="ghost"
+                         size="icon"
+                         className="h-8"
+                         onClick={() => {
+                             editorEngine.settingsTab = SettingsTabValue.VERSIONS;
+                             editorEngine.isSettingsOpen = true;
+                         }}
+                     >
+                         <Icons.CounterClockwiseClock className="h-4 w-4" />
+                     </Button>
+                 </TooltipTrigger>
+                 <TooltipContent side="bottom">
+                     {t(transKeys.editor.toolbar.versionHistory)}
+                 </TooltipContent>
+             </Tooltip> */}
+                <PublishButton data-oid="xb7c.bw" />
+                <CurrentUserAvatar
+                    className="size-8 cursor-pointer hover:opacity-80"
+                    data-oid="sbg8l9t"
+                />
             </div>
         </div>
     );

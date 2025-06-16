@@ -6,63 +6,65 @@ import { cn } from '@onlook/ui/utils';
 import { useTranslations } from 'next-intl';
 import { useAuthContext } from '../auth/auth-context';
 
-export const GithubLoginButton = ({
-    className,
-}: {
-    className?: string;
-}) => {
+export const GithubLoginButton = ({ className }: { className?: string }) => {
     const t = useTranslations();
     const { lastSignInMethod, handleLogin, isPending } = useAuthContext();
     const isLastSignInMethod = lastSignInMethod === SignInMethod.GITHUB;
 
     return (
-        <div className={cn('flex flex-col items-center w-full', className)}>
+        <div className={cn('flex flex-col items-center w-full', className)} data-oid="evspd6f">
             <Button
                 variant="outline"
                 className={`w-full items-center justify-center text-active text-small ${isLastSignInMethod ? 'bg-teal-100 dark:bg-teal-950 border-teal-300 dark:border-teal-700 text-teal-900 dark:text-teal-100 text-small hover:bg-teal-200/50 dark:hover:bg-teal-800 hover:border-teal-500/70 dark:hover:border-teal-500' : 'bg-background-onlook'}`}
                 onClick={() => handleLogin(SignInMethod.GITHUB)}
                 disabled={isPending}
+                data-oid="v1wf715"
             >
                 {isPending ? (
-                    <Icons.Shadow className="w-4 h-4 mr-2 animate-spin" />
+                    <Icons.Shadow className="w-4 h-4 mr-2 animate-spin" data-oid="ed:.-hw" />
                 ) : (
-                    <Icons.GitHubLogo className="w-4 h-4 mr-2" />
+                    <Icons.GitHubLogo className="w-4 h-4 mr-2" data-oid="f8-m-vm" />
                 )}
                 {t(transKeys.welcome.login.github)}
             </Button>
             {isLastSignInMethod && (
-                <p className="text-teal-500 text-small mt-1">{t(transKeys.welcome.login.lastUsed)}</p>
+                <p className="text-teal-500 text-small mt-1" data-oid="bm29dzo">
+                    {t(transKeys.welcome.login.lastUsed)}
+                </p>
             )}
         </div>
     );
 };
 
-export const GoogleLoginButton = ({
-    className,
-}: {
-    className?: string;
-}) => {
+export const GoogleLoginButton = ({ className }: { className?: string }) => {
     const t = useTranslations();
     const { lastSignInMethod, handleLogin, isPending } = useAuthContext();
     const isLastSignInMethod = lastSignInMethod === SignInMethod.GOOGLE;
 
     return (
-        <div className={cn('flex flex-col items-center w-full', className)}>
+        <div className={cn('flex flex-col items-center w-full', className)} data-oid="1k6yf:2">
             <Button
                 variant="outline"
                 className={`w-full items-center justify-center text-active text-small ${isLastSignInMethod ? 'bg-teal-100 dark:bg-teal-950 border-teal-300 dark:border-teal-700 text-teal-900 dark:text-teal-100 text-small hover:bg-teal-200/50 dark:hover:bg-teal-800 hover:border-teal-500/70 dark:hover:border-teal-500' : 'bg-background-onlook'}`}
                 onClick={() => handleLogin(SignInMethod.GOOGLE)}
                 disabled={isPending}
+                data-oid="5t8ew.:"
             >
                 {isPending ? (
-                    <Icons.Shadow className="w-4 h-4 mr-2 animate-spin" />
+                    <Icons.Shadow className="w-4 h-4 mr-2 animate-spin" data-oid="-vkd2kh" />
                 ) : (
-                    <Icons.GoogleLogo viewBox="0 0 24 24" className="w-4 h-4 mr-2" />
+                    <Icons.GoogleLogo
+                        viewBox="0 0 24 24"
+                        className="w-4 h-4 mr-2"
+                        data-oid="9f2hj4e"
+                    />
                 )}
                 {t(transKeys.welcome.login.google)}
             </Button>
             {isLastSignInMethod && (
-                <p className="text-teal-500 text-small mt-1">{t(transKeys.welcome.login.lastUsed)}</p>
+                <p className="text-teal-500 text-small mt-1" data-oid="khrjpp3">
+                    {t(transKeys.welcome.login.lastUsed)}
+                </p>
             )}
         </div>
     );

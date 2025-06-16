@@ -19,16 +19,30 @@ const faqs = [
 
 export function FAQSection() {
     return (
-        <div className="w-full max-w-6xl mx-auto py-32 px-8 flex flex-col md:flex-row items-start gap-24 md:gap-12">
-            <div className="flex-1 flex flex-col items-start">
-                <h2 className="text-foreground-primary text-[5vw] leading-[1.1] font-light mb-8 max-w-3xl">
-                    What did<br />we miss?
+        <div
+            className="w-full max-w-6xl mx-auto py-32 px-8 flex flex-col md:flex-row items-start gap-24 md:gap-12"
+            data-oid="jspzjrg"
+        >
+            <div className="flex-1 flex flex-col items-start" data-oid="o64001_">
+                <h2
+                    className="text-foreground-primary text-[5vw] leading-[1.1] font-light mb-8 max-w-3xl"
+                    data-oid="hawr7:n"
+                >
+                    What did
+                    <br data-oid="ie:pruv" />
+                    we miss?
                 </h2>
-                <ButtonLink href="/faq" rightIcon={<Icons.ArrowRight className="w-5 h-5" />}>Read our FAQs</ButtonLink>
+                <ButtonLink
+                    href="/faq"
+                    rightIcon={<Icons.ArrowRight className="w-5 h-5" data-oid="7u8p_mt" />}
+                    data-oid="jx3sop."
+                >
+                    Read our FAQs
+                </ButtonLink>
             </div>
-            <div className="flex-1 flex flex-col gap-6">
-                <FAQDropdown faqs={faqs} />
+            <div className="flex-1 flex flex-col gap-6" data-oid="81xyjvq">
+                <FAQDropdown faqs={faqs} data-oid=":yhevah" />
             </div>
         </div>
     );
-} 
+}

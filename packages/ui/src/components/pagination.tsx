@@ -12,6 +12,7 @@ function Pagination({ className, ...props }: React.ComponentProps<'nav'>) {
             data-slot="pagination"
             className={cn('mx-auto flex w-full justify-center', className)}
             {...props}
+            data-oid="tiybqx8"
         />
     );
 }
@@ -22,12 +23,13 @@ function PaginationContent({ className, ...props }: React.ComponentProps<'ul'>) 
             data-slot="pagination-content"
             className={cn('flex flex-row items-center gap-1', className)}
             {...props}
+            data-oid="5s:y4qu"
         />
     );
 }
 
 function PaginationItem({ ...props }: React.ComponentProps<'li'>) {
-    return <li data-slot="pagination-item" {...props} />;
+    return <li data-slot="pagination-item" {...props} data-oid="ups_ew5" />;
 }
 
 type PaginationLinkProps = {
@@ -49,6 +51,7 @@ function PaginationLink({ className, isActive, size = 'icon', ...props }: Pagina
                 className,
             )}
             {...props}
+            data-oid="ed:_5hu"
         />
     );
 }
@@ -60,9 +63,12 @@ function PaginationPrevious({ className, ...props }: React.ComponentProps<typeof
             size="default"
             className={cn('gap-1 px-2.5 sm:pl-2.5', className)}
             {...props}
+            data-oid="84wlfn0"
         >
-            <ChevronLeftIcon />
-            <span className="hidden sm:block">Previous</span>
+            <ChevronLeftIcon data-oid="dign7ti" />
+            <span className="hidden sm:block" data-oid="i20j:mm">
+                Previous
+            </span>
         </PaginationLink>
     );
 }
@@ -74,9 +80,12 @@ function PaginationNext({ className, ...props }: React.ComponentProps<typeof Pag
             size="default"
             className={cn('gap-1 px-2.5 sm:pr-2.5', className)}
             {...props}
+            data-oid="3j2irfl"
         >
-            <span className="hidden sm:block">Next</span>
-            <ChevronRightIcon />
+            <span className="hidden sm:block" data-oid="9phg-5o">
+                Next
+            </span>
+            <ChevronRightIcon data-oid="3e2sp8i" />
         </PaginationLink>
     );
 }
@@ -88,9 +97,12 @@ function PaginationEllipsis({ className, ...props }: React.ComponentProps<'span'
             data-slot="pagination-ellipsis"
             className={cn('flex size-9 items-center justify-center', className)}
             {...props}
+            data-oid="bwzh8mm"
         >
-            <MoreHorizontalIcon className="size-4" />
-            <span className="sr-only">More pages</span>
+            <MoreHorizontalIcon className="size-4" data-oid="hcjltzo" />
+            <span className="sr-only" data-oid="fxvifd:">
+                More pages
+            </span>
         </span>
     );
 }

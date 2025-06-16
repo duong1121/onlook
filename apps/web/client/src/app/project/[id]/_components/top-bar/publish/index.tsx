@@ -13,10 +13,11 @@ export const PublishButton = observer(() => {
             onOpenChange={(open: boolean) => {
                 editorEngine.state.publishOpen = open;
             }}
+            data-oid="v:5kdjq"
         >
-            <TriggerButton />
-            <DropdownMenuContent align="end" className="w-96 p-0 text-sm">
-                <PublishDropdown />
+            <TriggerButton data-oid="84az1_4" />
+            <DropdownMenuContent align="end" className="w-96 p-0 text-sm" data-oid="b8r8g_v">
+                <PublishDropdown data-oid="9fzmnsz" />
             </DropdownMenuContent>
         </DropdownMenu>
     );
