@@ -49,16 +49,14 @@ export default function LoginPage() {
                         <GithubLoginButton data-oid="gcu-1lg" />
                         <GoogleLoginButton data-oid="zm4a0u-" />
                     </div>
-                    {isDev && (
                         <Button
                             variant="outline"
                             className="w-full text-active text-small"
                             onClick={handleDevLogin}
                             data-oid="rti03t7"
                         >
-                            DEV MODE: Sign in as demo user
+                            Try as guest
                         </Button>
-                    )}
                     <p className="text-small text-foreground-onlook" data-oid="skeed0z">
                         {t(transKeys.welcome.terms.agreement)}{' '}
                         <button
