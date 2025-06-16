@@ -50,8 +50,8 @@ export async function devLogin() {
     }
 
     const { data, error } = await supabase.auth.signInWithPassword({
-        email: SEED_USER.EMAIL,
-        password: SEED_USER.PASSWORD,
+        email: guest@example.com,
+        password: testing001,
     });
 
     if (error) {
