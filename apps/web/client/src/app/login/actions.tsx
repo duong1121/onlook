@@ -24,7 +24,7 @@ export async function login(provider: SignInMethod) {
     const { data, error } = await supabase.auth.signInWithOAuth({
         provider,
         options: {
-            redirectTo: `${origin}/auth/callback`,
+            redirectTo: `https://onlook-1.onrender.com/auth/callback`,
         },
     });
 
